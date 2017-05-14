@@ -75,6 +75,13 @@ extension UIView {
         layer.add(animation, forKey: "shake")
     }
     
+    func setGrayBorder() {
+        
+        self.borderColor = gray3
+        self.borderWidth = 1
+        self.cornerRadius = 4
+    }
+    
 }
 
 

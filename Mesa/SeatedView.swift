@@ -57,6 +57,7 @@ class SeatedView : UIView {
     override func awakeFromNib() {
         
         cosmetics()
+        tableNumber.setGrayBorder()
         configurePickerView()
     }
     
