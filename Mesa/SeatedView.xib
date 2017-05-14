@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SeatedView" customModule="Mesa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you seated?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-si-h9d">
+                    <rect key="frame" x="20" y="25" width="215" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackLeftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-pz-oL9">
+                    <rect key="frame" x="335" y="30" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="iGH-pz-oL9" secondAttribute="height" multiplier="1:1" id="GZF-o1-ZhO"/>
+                        <constraint firstAttribute="width" constant="20" id="H3f-ea-F8u"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-Fe-SwX" userLabel="backButton">
+                    <rect key="frame" x="315.5" y="9.5" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="OXz-hv-5f9"/>
+                        <constraint firstAttribute="height" constant="60" id="a1q-Wi-Z6j"/>
+                    </constraints>
+                    <connections>
+                        <action selector="backButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="SG2-lA-HCJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mk-Va-QYK">
+                    <rect key="frame" x="20" y="264.5" width="335" height="66.5"/>
+                    <color key="backgroundColor" red="0.25136822460000002" green="0.77981352810000004" blue="0.13962155579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="Place Order">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.25136822460000002" green="0.77981352810000004" blue="0.13962155579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="placeOrder:" destination="iN0-l3-epB" eventType="touchUpInside" id="ynO-3R-3xN"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Table Number ( Ask your waiter )" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCn-My-vXA" customClass="CustomSearchTextField" customModule="Mesa" customModuleProvider="target">
+                    <rect key="frame" x="20" y="81" width="335" height="66.5"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awF-bN-C9Q" userLabel="WaiterName" customClass="AKPickerView" customModule="Mesa" customModuleProvider="target">
+                    <rect key="frame" x="20" y="167.5" width="335" height="66.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Mk-Va-QYK" firstAttribute="top" secondItem="awF-bN-C9Q" secondAttribute="bottom" constant="30" id="3HX-Or-9wY"/>
+                <constraint firstItem="0Mk-Va-QYK" firstAttribute="trailing" secondItem="cCn-My-vXA" secondAttribute="trailing" id="3Yd-4d-fzz"/>
+                <constraint firstItem="iGH-pz-oL9" firstAttribute="width" secondItem="iGH-pz-oL9" secondAttribute="height" multiplier="1:1" id="Cgs-Wi-6ON"/>
+                <constraint firstItem="awF-bN-C9Q" firstAttribute="top" secondItem="cCn-My-vXA" secondAttribute="bottom" constant="20" id="DoB-30-5HA"/>
+                <constraint firstItem="iGH-pz-oL9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="GO0-FS-isv"/>
+                <constraint firstItem="awF-bN-C9Q" firstAttribute="leading" secondItem="cCn-My-vXA" secondAttribute="leading" id="HHD-hY-erC"/>
+                <constraint firstItem="cCn-My-vXA" firstAttribute="top" secondItem="Gip-si-h9d" secondAttribute="bottom" constant="30" id="Ijh-Eb-4CQ"/>
+                <constraint firstAttribute="trailing" secondItem="cCn-My-vXA" secondAttribute="trailing" constant="20" id="Klm-wq-ADv"/>
+                <constraint firstItem="awF-bN-C9Q" firstAttribute="width" secondItem="cCn-My-vXA" secondAttribute="width" id="MGv-XJ-bEu"/>
+                <constraint firstItem="iGH-pz-oL9" firstAttribute="centerY" secondItem="xc5-Fe-SwX" secondAttribute="centerY" id="OeZ-HL-Xc9"/>
+                <constraint firstAttribute="trailing" secondItem="iGH-pz-oL9" secondAttribute="trailing" constant="20" id="RFX-Lx-WTz"/>
+                <constraint firstItem="cCn-My-vXA" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="T9C-B0-oXF"/>
+                <constraint firstItem="0Mk-Va-QYK" firstAttribute="leading" secondItem="cCn-My-vXA" secondAttribute="leading" id="TXl-dK-JpI"/>
+                <constraint firstItem="Gip-si-h9d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="afx-3C-UMl"/>
+                <constraint firstItem="iGH-pz-oL9" firstAttribute="width" secondItem="iGH-pz-oL9" secondAttribute="height" multiplier="1:1" id="aun-cp-4Bc"/>
+                <constraint firstItem="Gip-si-h9d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="h5N-Za-bWf"/>
+                <constraint firstItem="awF-bN-C9Q" firstAttribute="height" secondItem="cCn-My-vXA" secondAttribute="height" id="oc9-rl-rVa"/>
+                <constraint firstItem="awF-bN-C9Q" firstAttribute="trailing" secondItem="cCn-My-vXA" secondAttribute="trailing" id="qQQ-Wn-nH0"/>
+                <constraint firstItem="0Mk-Va-QYK" firstAttribute="height" secondItem="cCn-My-vXA" secondAttribute="height" id="rGK-zj-0Kj"/>
+                <constraint firstItem="iGH-pz-oL9" firstAttribute="centerX" secondItem="xc5-Fe-SwX" secondAttribute="centerX" id="sTO-xV-vJ9"/>
+                <constraint firstItem="cCn-My-vXA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="xFL-P8-n6k"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="placeOrderLayer" destination="0Mk-Va-QYK" id="PyC-J9-o3J"/>
+                <outlet property="tableNumber" destination="cCn-My-vXA" id="x0H-Ga-8dA"/>
+                <outlet property="waiterPicker" destination="awF-bN-C9Q" id="i6d-Ey-V8b"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blackLeftArrow" width="144" height="115"/>
+    </resources>
+</document>

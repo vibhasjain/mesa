@@ -1,0 +1,6 @@
+framework module Pods_Mesa {
+  umbrella header "Pods-Mesa-umbrella.h"
+
+  export *
+  module * { export * }
+}
