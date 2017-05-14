@@ -27,7 +27,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     @IBOutlet weak var catLabel: UILabel!
     
     @IBAction func orderTap(_ sender: Any) {
-    
+        
     }
     
     var sections = [Section]()
@@ -54,15 +54,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     @IBOutlet weak var categoryConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
-                
+        
         self.orderCount.text = "\(self.cart.items.count)"
         
-        if !UserDefaults.standard.bool(forKey: "tooltipHasAppeared") {
-            
-            self.tapTooltip.alpha = 1
-            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
-            
-        }
+        //        if !UserDefaults.standard.bool(forKey: "tooltipHasAppeared") {
+        
+        self.tapTooltip.alpha = 1
+        //            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
+        
+        //        }
         
         floater = self.view.frame.width/2
         
@@ -80,8 +80,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 
                 let itemViews:[ItemView] = self.createItemViews()
                 
-                self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
-                
                 self.catLabel.text = self.categoryText
                 
                 self.stringAttributed.addAttribute(NSForegroundColorAttributeName, value: UIColor.white.withAlphaComponent(1), range: NSRange.init(location: 0, length: self.categories[0].count))
@@ -93,6 +91,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             
         }
         
+
     }
     
     func createItemViews() -> [ItemView] {
@@ -121,14 +120,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             }
             
             item.currentItemCount = 1
+            item.generateBars(screenWidth : self.view.frame.width, screenHeight : self.view.frame.height)
             item.displayItem()
-            
             itemViews.append(item)
             
         }
         
         self.stringAttributed = NSMutableAttributedString.init(string: categoryText)
         
+        self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
+
         return itemViews
     }
     
@@ -229,7 +230,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         }
         
     }
-
+    
     
     func createCategoryLabel( name : String, x : Int ) {
         

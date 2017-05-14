@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaS-lg-zo4" userLabel="CartButton">
-                                <rect key="frame" x="245" y="619" width="110" height="28"/>
+                                <rect key="frame" x="245" y="609" width="110" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIB-fO-ogx" userLabel="itemCount">
                                         <rect key="frame" x="90" y="5" width="10" height="19.5"/>
@@ -109,7 +109,7 @@
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="MDS-SU-KlY"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OTM-jM-Ygp"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="UVK-7c-BHQ"/>
-                            <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="20" id="cSp-XW-ObB"/>
+                            <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="30" id="cSp-XW-ObB"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fti-DO-ESC"/>
                             <constraint firstAttribute="trailing" secondItem="UG6-AN-Nyg" secondAttribute="trailing" id="jaL-tq-ysJ"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tif-5u-m7b"/>
