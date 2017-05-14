@@ -56,7 +56,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vC1-xx-cKb" userLabel="Order">
-                                        <rect key="frame" x="28" y="4.5" width="42" height="19.5"/>
+                                        <rect key="frame" x="28" y="4.5" width="42" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -99,20 +99,32 @@
                                     <outletCollection property="gestureRecognizers" destination="ipR-2b-r4z" appends="YES" id="8Ut-IH-5h3"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-AM-1nV" userLabel="cartTap">
+                                <rect key="frame" x="205" y="589" width="190" height="68"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zmw-Fv-iM5" appends="YES" id="VGt-fa-q1j"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="BaS-lg-zo4" firstAttribute="width" secondItem="bKY-AM-1nV" secondAttribute="width" constant="-80" id="7Sh-QK-CzX"/>
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ECL-av-IM4"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EGy-v1-XF3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UG6-AN-Nyg" secondAttribute="bottom" id="M2L-5e-J4u"/>
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="MDS-SU-KlY"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OTM-jM-Ygp"/>
+                            <constraint firstItem="BaS-lg-zo4" firstAttribute="centerY" secondItem="bKY-AM-1nV" secondAttribute="centerY" id="Q3q-UD-upv"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="UVK-7c-BHQ"/>
                             <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="30" id="cSp-XW-ObB"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fti-DO-ESC"/>
                             <constraint firstAttribute="trailing" secondItem="UG6-AN-Nyg" secondAttribute="trailing" id="jaL-tq-ysJ"/>
+                            <constraint firstItem="BaS-lg-zo4" firstAttribute="height" secondItem="bKY-AM-1nV" secondAttribute="height" constant="-40" id="sLv-D6-wsW"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tif-5u-m7b"/>
+                            <constraint firstItem="BaS-lg-zo4" firstAttribute="centerX" secondItem="bKY-AM-1nV" secondAttribute="centerX" id="uMT-p0-LUM"/>
                             <constraint firstAttribute="trailing" secondItem="BaS-lg-zo4" secondAttribute="trailing" constant="20" id="xgh-by-wHZ"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xqn-sI-npj"/>
                         </constraints>
@@ -132,7 +144,12 @@
                 <tapGestureRecognizer id="ipR-2b-r4z">
                     <connections>
                         <action selector="orderTap:" destination="BYZ-38-t0r" id="Ls4-zQ-pQB"/>
-                        <segue destination="aAy-0F-GLg" kind="presentation" modalPresentationStyle="overFullScreen" id="oj8-E7-T3d"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zmw-Fv-iM5">
+                    <connections>
+                        <action selector="orderTapExtension:" destination="BYZ-38-t0r" id="bSG-Op-27a"/>
+                        <segue destination="aAy-0F-GLg" kind="presentation" modalPresentationStyle="overFullScreen" id="8iM-zi-DLq"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

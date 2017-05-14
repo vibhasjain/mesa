@@ -38,6 +38,8 @@ class ItemView: UIView {
     var availables : [Bool] = []
     var items : [Item] = []
     var barViews : [UIView] = []
+    let glowAlpha : CGFloat = 0.75
+    let deGlowAlpha : CGFloat = 0.3
     
     var currentItemCount = 1
     
@@ -52,6 +54,11 @@ class ItemView: UIView {
         addItemToCart()
     }
     
+    @IBAction func addTap(_ sender: Any) {
+        addItemToCart()
+    }
+    
+    
     @IBAction func topTouch(_ sender: Any) {
         
         delegate?.removeTooltip()
@@ -63,6 +70,7 @@ class ItemView: UIView {
         } else {
             
             currentItemCount = 1
+            deGlowAll()
             
         }
         
@@ -73,14 +81,16 @@ class ItemView: UIView {
     @IBAction func bottomTouch(_ sender: Any) {
         
         delegate?.removeTooltip()
-
+        
         if currentItemCount > 1 {
             
             currentItemCount -= 1
+            deGlowCurrent()
             
         } else {
             
             currentItemCount = names.count
+            glowAll()
             
         }
         
@@ -89,19 +99,6 @@ class ItemView: UIView {
     }
     
     override func awakeFromNib() {
-              
-//        let bar = UIView(frame: CGRect(x: 20, y: self.frame.height - 10, width: self.frame.width/10, height: 3))
-//        bar.backgroundColor = UIColor.white.withAlphaComponent(1)
-//        bar.cornerRadius = 1.5
-//        self.addSubview(bar)
-//        self.bringSubview(toFront: bar)
-//        
-//        let bar2 = UIView(frame: CGRect(x: 20 + 2 + (self.frame.width/10), y: self.frame.height - 10, width: self.frame.width/10, height: 3))
-//        bar2.backgroundColor = UIColor.white.withAlphaComponent(1)
-//        bar2.cornerRadius = 1.5
-//        self.addSubview(bar2)
-//        self.bringSubview(toFront: bar2)
-        
         
     }
     
@@ -140,11 +137,12 @@ class ItemView: UIView {
     
     func displayItem()  {
         
+        glowCurrent()
+        
         itemName.text = names[currentItemCount-1]
         itemDescription.text = details[currentItemCount-1]
         itemPrice.text = "$ \(prices[currentItemCount-1])"
         itemCount.text = "\(currentItemCount) / \(names.count)"
-        barViews[currentItemCount-1].alpha = 1
         
         if availables[currentItemCount-1] == false {
             
@@ -186,19 +184,52 @@ class ItemView: UIView {
         
         let count : CGFloat = CGFloat(items.count)
         let space : CGFloat = 3
-        let width = (screenWidth - 40 - ((count-1) * space ))/count
-        let yPosition : CGFloat = screenHeight - 10
-        let alpha: CGFloat = 0.3
+        let width = (screenWidth - ((count-1) * space ))/count
+        let barHeight : CGFloat = 2
+        let yPosition : CGFloat = screenHeight - barHeight
         
         for itemNum in 0..<items.count {
             
-            let bar = UIView(frame: CGRect(x: 20 + (CGFloat(itemNum) * (space + width)), y: yPosition, width: width, height: 3))
-            bar.backgroundColor = UIColor.white.withAlphaComponent(alpha)
-            bar.cornerRadius = 1.5
+            let bar = UIView(frame: CGRect(x: 0 + (CGFloat(itemNum) * (space + width)), y: yPosition, width: width, height: barHeight))
+            bar.backgroundColor = UIColor.white
+            bar.alpha = deGlowAlpha
+//            bar.cornerRadius = 1.5
             barViews.append(bar)
             self.addSubview(barViews[itemNum])
             self.bringSubview(toFront: barViews[itemNum])
             
+        }
+    }
+    
+    func glowCurrent() {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.barViews[self.currentItemCount-1].alpha = self.glowAlpha
+        }
+    }
+    
+    func deGlowCurrent() {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.barViews[self.currentItemCount].alpha = self.deGlowAlpha
+        }
+    }
+    
+    func deGlowAll() {
+        
+        UIView.animate(withDuration: 0.3) {
+            for view in 1..<self.barViews.count {
+                self.barViews[view].alpha = self.deGlowAlpha
+            }
+        }
+    }
+    
+    func glowAll() {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.barViews.forEach { (view) in
+                view.alpha = self.glowAlpha
+            }
         }
     }
     
