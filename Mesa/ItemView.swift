@@ -183,17 +183,19 @@ class ItemView: UIView {
     func generateBars(screenWidth : CGFloat, screenHeight : CGFloat) {
         
         let count : CGFloat = CGFloat(items.count)
-        let space : CGFloat = 3
-        let width = (screenWidth - ((count-1) * space ))/count
+        let space : CGFloat = 2
         let barHeight : CGFloat = 2
         let yPosition : CGFloat = screenHeight - barHeight
+        let sideSpace : CGFloat = 20
+        let width = (screenWidth - (2*sideSpace) - ((count-1) * space ))/count
+
         
         for itemNum in 0..<items.count {
             
-            let bar = UIView(frame: CGRect(x: 0 + (CGFloat(itemNum) * (space + width)), y: yPosition, width: width, height: barHeight))
+            let bar = UIView(frame: CGRect(x: sideSpace + (CGFloat(itemNum) * (space + width)), y: yPosition, width: width, height: barHeight))
             bar.backgroundColor = UIColor.white
             bar.alpha = deGlowAlpha
-//            bar.cornerRadius = 1.5
+            bar.cornerRadius = 1
             barViews.append(bar)
             self.addSubview(barViews[itemNum])
             self.bringSubview(toFront: barViews[itemNum])
