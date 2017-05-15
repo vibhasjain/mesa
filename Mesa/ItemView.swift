@@ -70,7 +70,6 @@ class ItemView: UIView {
         } else {
             
             currentItemCount = 1
-            deGlowAll()
             
         }
         
@@ -85,12 +84,11 @@ class ItemView: UIView {
         if currentItemCount > 1 {
             
             currentItemCount -= 1
-            deGlowCurrent()
+            
             
         } else {
             
             currentItemCount = names.count
-            glowAll()
             
         }
         
@@ -183,9 +181,10 @@ class ItemView: UIView {
     func generateBars(screenWidth : CGFloat, screenHeight : CGFloat) {
         
         let count : CGFloat = CGFloat(items.count)
-        let space : CGFloat = 2
-        let barHeight : CGFloat = 2
-        let yPosition : CGFloat = screenHeight - barHeight
+        let space : CGFloat = 3
+        let barHeight : CGFloat = 10
+        let visibleHeight : CGFloat = 2
+        let yPosition : CGFloat = screenHeight - visibleHeight
         let sideSpace : CGFloat = 20
         let width = (screenWidth - (2*sideSpace) - ((count-1) * space ))/count
 
@@ -205,8 +204,11 @@ class ItemView: UIView {
     
     func glowCurrent() {
         
+        deGlowAll()
         UIView.animate(withDuration: 0.3) {
             self.barViews[self.currentItemCount-1].alpha = self.glowAlpha
+            self.barViews[self.currentItemCount-1].transform = CGAffineTransform(translationX: 0, y: -2)
+            self.barViews[self.currentItemCount-1].cornerRadius = 1.5
         }
     }
     
@@ -220,8 +222,10 @@ class ItemView: UIView {
     func deGlowAll() {
         
         UIView.animate(withDuration: 0.3) {
-            for view in 1..<self.barViews.count {
+            for view in 0..<self.barViews.count {
                 self.barViews[view].alpha = self.deGlowAlpha
+                self.barViews[view].transform = CGAffineTransform(translationX: 0, y: 0)
+                self.barViews[view].cornerRadius = 1
             }
         }
     }

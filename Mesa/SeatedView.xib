@@ -60,7 +60,7 @@
                         <action selector="placeOrder:" destination="iN0-l3-epB" eventType="touchUpInside" id="ynO-3R-3xN"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Table Number ( Ask your waiter )" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCn-My-vXA" customClass="CustomSearchTextField" customModule="Mesa" customModuleProvider="target">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Table Number ( Ask your waiter )" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCn-My-vXA" customClass="CustomSearchTextField" customModule="Mesa" customModuleProvider="target">
                     <rect key="frame" x="20" y="81" width="335" height="66.5"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
