@@ -30,6 +30,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
+    @IBAction func topRightTap(_ sender: Any) {
+        guard scrollView.contentOffset.x<CGFloat(self.sections.count-1)*self.view.frame.width else { return }
+        scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x + self.view.frame.width, y: scrollView.contentOffset.y), animated: true)
+    }
+    
+    @IBAction func topLeftTap(_ sender: Any) {
+        
+        guard scrollView.contentOffset.x>0 else { return }
+        scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x - self.view.frame.width, y: scrollView.contentOffset.y), animated: true)
+    }
+    
     @IBAction func orderTapExtension(_ sender: Any) {
     }
     

@@ -207,7 +207,7 @@ class ItemView: UIView {
         deGlowAll()
         UIView.animate(withDuration: 0.3) {
             self.barViews[self.currentItemCount-1].alpha = self.glowAlpha
-            self.barViews[self.currentItemCount-1].transform = CGAffineTransform(translationX: 0, y: -2)
+            self.barViews[self.currentItemCount-1].transform = CGAffineTransform(translationX: 0, y: -3)
             self.barViews[self.currentItemCount-1].cornerRadius = 1.5
         }
     }

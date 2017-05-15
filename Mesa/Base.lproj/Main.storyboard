@@ -38,6 +38,22 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZ8-Ls-kqz" userLabel="topRight">
+                                <rect key="frame" x="187.5" y="9" width="187.5" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9Zs-4K-aHA" appends="YES" id="Ldt-Un-UJk"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAK-Mo-xfb" userLabel="topLeft">
+                                <rect key="frame" x="0.0" y="9" width="187.5" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jI9-M4-mwR" appends="YES" id="xtU-v8-GLp"/>
+                                </connections>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaS-lg-zo4" userLabel="CartButton">
                                 <rect key="frame" x="245" y="614" width="110" height="28"/>
                                 <subviews>
@@ -111,20 +127,28 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="RAK-Mo-xfb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="11T-GH-0uj"/>
+                            <constraint firstItem="uZ8-Ls-kqz" firstAttribute="width" secondItem="RAK-Mo-xfb" secondAttribute="width" id="5nW-nP-Yh1"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="width" secondItem="bKY-AM-1nV" secondAttribute="width" constant="-80" id="7Sh-QK-CzX"/>
+                            <constraint firstItem="uZ8-Ls-kqz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="7eH-Bo-gfO"/>
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ECL-av-IM4"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EGy-v1-XF3"/>
+                            <constraint firstItem="uZ8-Ls-kqz" firstAttribute="height" secondItem="RAK-Mo-xfb" secondAttribute="height" id="HKj-D0-K6h"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UG6-AN-Nyg" secondAttribute="bottom" id="M2L-5e-J4u"/>
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="MDS-SU-KlY"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OTM-jM-Ygp"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerY" secondItem="bKY-AM-1nV" secondAttribute="centerY" id="Q3q-UD-upv"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="UVK-7c-BHQ"/>
                             <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="25" id="cSp-XW-ObB"/>
+                            <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="BTr-gw-7ci" secondAttribute="centerY" constant="10" id="fOB-eB-O5a"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fti-DO-ESC"/>
+                            <constraint firstItem="uZ8-Ls-kqz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="9" id="j9R-Al-BwF"/>
                             <constraint firstAttribute="trailing" secondItem="UG6-AN-Nyg" secondAttribute="trailing" id="jaL-tq-ysJ"/>
+                            <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="RAK-Mo-xfb" secondAttribute="centerY" id="n5g-KD-bFs"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="height" secondItem="bKY-AM-1nV" secondAttribute="height" constant="-40" id="sLv-D6-wsW"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tif-5u-m7b"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerX" secondItem="bKY-AM-1nV" secondAttribute="centerX" id="uMT-p0-LUM"/>
+                            <constraint firstAttribute="trailing" secondItem="uZ8-Ls-kqz" secondAttribute="trailing" id="uPV-0G-ghN"/>
                             <constraint firstAttribute="trailing" secondItem="BaS-lg-zo4" secondAttribute="trailing" constant="20" id="xgh-by-wHZ"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xqn-sI-npj"/>
                         </constraints>
@@ -150,6 +174,16 @@
                     <connections>
                         <action selector="orderTapExtension:" destination="BYZ-38-t0r" id="bSG-Op-27a"/>
                         <segue destination="aAy-0F-GLg" kind="presentation" modalPresentationStyle="overFullScreen" id="8iM-zi-DLq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9Zs-4K-aHA">
+                    <connections>
+                        <action selector="topRightTap:" destination="BYZ-38-t0r" id="1ZL-We-YT9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jI9-M4-mwR">
+                    <connections>
+                        <action selector="topLeftTap:" destination="BYZ-38-t0r" id="ECx-LT-9MB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
