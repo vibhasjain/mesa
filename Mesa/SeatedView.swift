@@ -22,7 +22,7 @@ class SeatedView : UIView {
     
     @IBOutlet weak var waiterPicker: AKPickerView!
     
-    let waiterNames = ["Waiter Name 👉","John Lennon","Paul McCartney","George Harrison","Ringo Starr"]
+    let waiterNames = ["Waiter Name","John Lennon","Paul McCartney","George Harrison","Ringo Starr"]
     
     var selectedWaiter = 0
     
