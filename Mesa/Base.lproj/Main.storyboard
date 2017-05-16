@@ -54,7 +54,7 @@
                                     <outletCollection property="gestureRecognizers" destination="jI9-M4-mwR" appends="YES" id="xtU-v8-GLp"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaS-lg-zo4" userLabel="CartButton">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaS-lg-zo4" userLabel="CartButton">
                                 <rect key="frame" x="245" y="614" width="110" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIB-fO-ogx" userLabel="itemCount">

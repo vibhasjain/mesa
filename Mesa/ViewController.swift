@@ -69,11 +69,21 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        
         self.orderCount.text = "\(self.cart.items.count)"
+        
         
         //        if !UserDefaults.standard.bool(forKey: "tooltipHasAppeared") {
         
-        self.tapTooltip.alpha = 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            UIView.animate(withDuration: 0.5, animations: { 
+                self.tapTooltip.alpha = 1
+                self.orderButtonView.alpha = 1
+            })
+            
+        })
+        
         //            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
         
         //        }
@@ -83,8 +93,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         self.catLabel.text = ""
         
         scrollView.delegate = self
-        
-        super.viewDidLoad()
         
         getCategories { (sections) in
             
