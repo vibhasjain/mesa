@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01CDBEE5A4D64ED24407D0FF /* Pods_Mesa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B0F6DF838E6942B995B365 /* Pods_Mesa.framework */; };
+		0C35223EE30826CE9B8680B1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E742E9B8CCE1488CA66CB11A /* AVFoundation.framework */; };
+		1488FA9845AC4E030749D115 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBF6A806153274ACE00D53B /* CoreMedia.framework */; };
+		317B9C9BA4C31D908C38CABE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96328CEE1CF2DEC129FC64B5 /* QuartzCore.framework */; };
 		330909571EB86A43008021D9 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330909561EB86A43008021D9 /* Cart.swift */; };
 		330909591EB86CF8008021D9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330909581EB86CF8008021D9 /* CartViewController.swift */; };
 		3309095E1EB9896C008021D9 /* itemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309095C1EB9896C008021D9 /* itemCell.swift */; };
@@ -34,9 +37,17 @@
 		33F3C9721EAFEBEB001EF325 /* Mesa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33F3C9701EAFEBEB001EF325 /* Mesa.xcdatamodeld */; };
 		33F3C9741EAFEBEB001EF325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F3C9731EAFEBEB001EF325 /* Assets.xcassets */; };
 		33F3C9771EAFEBEB001EF325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F3C9751EAFEBEB001EF325 /* LaunchScreen.storyboard */; };
+		3BF888EA641B87698566BE6A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2017E63AD24744ECA2EA280B /* CoreTelephony.framework */; };
+		7AAA9649A8AD6E6B08B5F366 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B5D214513B036CA24F288 /* AssetsLibrary.framework */; };
+		7F04E37946F3063C1CB89D12 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEBC58C3A18A5E36C723B06 /* CoreVideo.framework */; };
+		C9ED3B08902892C9F43C25F1 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D996A11F8C1B59FB988EABF6 /* BuddyBuildSDK.framework */; };
+		CD5E06584BEFEF909EFD44E3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83FAD6F27F2C476AA19BE16 /* CoreText.framework */; };
+		E3223AF0AA07BD1863439230 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BCB8C4037A390FA0D3C2C9 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16BCB8C4037A390FA0D3C2C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2017E63AD24744ECA2EA280B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		330909561EB86A43008021D9 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		330909581EB86CF8008021D9 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3309095C1EB9896C008021D9 /* itemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemCell.swift; sourceTree = "<group>"; };
@@ -67,7 +78,15 @@
 		33F3C9781EAFEBEB001EF325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		368EA540EDFDB3E3DA4C39F5 /* Pods-Mesa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mesa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mesa/Pods-Mesa.debug.xcconfig"; sourceTree = "<group>"; };
 		4762FE7E7EC4C4E7DE0A2C3F /* Pods-Mesa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mesa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mesa/Pods-Mesa.release.xcconfig"; sourceTree = "<group>"; };
+		4BEBC58C3A18A5E36C723B06 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5EBF6A806153274ACE00D53B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		63B0F6DF838E6942B995B365 /* Pods_Mesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mesa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96328CEE1CF2DEC129FC64B5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A83FAD6F27F2C476AA19BE16 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D996A11F8C1B59FB988EABF6 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		E43AF26DD719B48CC37070C5 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E742E9B8CCE1488CA66CB11A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F61B5D214513B036CA24F288 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +95,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CDBEE5A4D64ED24407D0FF /* Pods_Mesa.framework in Frameworks */,
+				C9ED3B08902892C9F43C25F1 /* BuddyBuildSDK.framework in Frameworks */,
+				7AAA9649A8AD6E6B08B5F366 /* AssetsLibrary.framework in Frameworks */,
+				CD5E06584BEFEF909EFD44E3 /* CoreText.framework in Frameworks */,
+				3BF888EA641B87698566BE6A /* CoreTelephony.framework in Frameworks */,
+				E3223AF0AA07BD1863439230 /* SystemConfiguration.framework in Frameworks */,
+				317B9C9BA4C31D908C38CABE /* QuartzCore.framework in Frameworks */,
+				0C35223EE30826CE9B8680B1 /* AVFoundation.framework in Frameworks */,
+				1488FA9845AC4E030749D115 /* CoreMedia.framework in Frameworks */,
+				7F04E37946F3063C1CB89D12 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +196,7 @@
 				33F3C9671EAFEBEB001EF325 /* Products */,
 				6AB977A16CB2A9A19E127042 /* Pods */,
 				5965554ECB7D3711CDA0826E /* Frameworks */,
+				E43AF26DD719B48CC37070C5 /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +231,15 @@
 			isa = PBXGroup;
 			children = (
 				63B0F6DF838E6942B995B365 /* Pods_Mesa.framework */,
+				D996A11F8C1B59FB988EABF6 /* BuddyBuildSDK.framework */,
+				F61B5D214513B036CA24F288 /* AssetsLibrary.framework */,
+				A83FAD6F27F2C476AA19BE16 /* CoreText.framework */,
+				2017E63AD24744ECA2EA280B /* CoreTelephony.framework */,
+				16BCB8C4037A390FA0D3C2C9 /* SystemConfiguration.framework */,
+				96328CEE1CF2DEC129FC64B5 /* QuartzCore.framework */,
+				E742E9B8CCE1488CA66CB11A /* AVFoundation.framework */,
+				5EBF6A806153274ACE00D53B /* CoreMedia.framework */,
+				4BEBC58C3A18A5E36C723B06 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -486,10 +524,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 44PY6HEEAQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -500,10 +543,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 44PY6HEEAQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
