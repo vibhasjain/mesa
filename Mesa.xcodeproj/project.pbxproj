@@ -31,6 +31,10 @@
 		337392A21EBBF4770043BE07 /* CreditCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337392A11EBBF4770043BE07 /* CreditCardFormatter.swift */; };
 		33752E7D1EBADF8000FB747B /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33752E7C1EBADF8000FB747B /* PaymentView.swift */; };
 		33752E801EBAE22B00FB747B /* PaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33752E7F1EBAE22B00FB747B /* PaymentView.xib */; };
+		3390CAF31ED05D5900E6CBB5 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390CAF21ED05D5900E6CBB5 /* OnboardingVC.swift */; };
+		3390CAF61ED05FAC00E6CBB5 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3390CAF51ED05FAC00E6CBB5 /* OnboardingView.xib */; };
+		3390CAF81ED05FBB00E6CBB5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390CAF71ED05FBB00E6CBB5 /* OnboardingView.swift */; };
+		3390CAFA1ED06E7A00E6CBB5 /* UILabelExenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390CAF91ED06E7A00E6CBB5 /* UILabelExenstion.swift */; };
 		33F3C96A1EAFEBEB001EF325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3C9691EAFEBEB001EF325 /* AppDelegate.swift */; };
 		33F3C96C1EAFEBEB001EF325 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3C96B1EAFEBEB001EF325 /* ViewController.swift */; };
 		33F3C96F1EAFEBEB001EF325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F3C96D1EAFEBEB001EF325 /* Main.storyboard */; };
@@ -68,6 +72,10 @@
 		337392A11EBBF4770043BE07 /* CreditCardFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardFormatter.swift; sourceTree = "<group>"; };
 		33752E7C1EBADF8000FB747B /* PaymentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		33752E7F1EBAE22B00FB747B /* PaymentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentView.xib; sourceTree = "<group>"; };
+		3390CAF21ED05D5900E6CBB5 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		3390CAF51ED05FAC00E6CBB5 /* OnboardingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
+		3390CAF71ED05FBB00E6CBB5 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3390CAF91ED06E7A00E6CBB5 /* UILabelExenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExenstion.swift; sourceTree = "<group>"; };
 		33F3C9661EAFEBEB001EF325 /* Mesa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mesa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F3C9691EAFEBEB001EF325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F3C96B1EAFEBEB001EF325 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +91,7 @@
 		63B0F6DF838E6942B995B365 /* Pods_Mesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mesa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96328CEE1CF2DEC129FC64B5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A83FAD6F27F2C476AA19BE16 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		D996A11F8C1B59FB988EABF6 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		D996A11F8C1B59FB988EABF6 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		E43AF26DD719B48CC37070C5 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E742E9B8CCE1488CA66CB11A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F61B5D214513B036CA24F288 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -164,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				335A7EE31EB291E20095FB78 /* UIViewExtension.swift */,
+				3390CAF91ED06E7A00E6CBB5 /* UILabelExenstion.swift */,
 				3335B6F11EBB1A6900D7A67D /* CustomTextField.swift */,
 				3332F8E91EC525730089A0EC /* AKPickerView.swift */,
 				337392A11EBBF4770043BE07 /* CreditCardFormatter.swift */,
@@ -189,6 +198,16 @@
 			name = "Payment View";
 			sourceTree = "<group>";
 		};
+		3390CAF41ED05F9300E6CBB5 /* Onboarding View */ = {
+			isa = PBXGroup;
+			children = (
+				3390CAF51ED05FAC00E6CBB5 /* OnboardingView.xib */,
+				3390CAF71ED05FBB00E6CBB5 /* OnboardingView.swift */,
+				3390CAF21ED05D5900E6CBB5 /* OnboardingVC.swift */,
+			);
+			name = "Onboarding View";
+			sourceTree = "<group>";
+		};
 		33F3C95D1EAFEBEB001EF325 = {
 			isa = PBXGroup;
 			children = (
@@ -211,14 +230,15 @@
 		33F3C9681EAFEBEB001EF325 /* Mesa */ = {
 			isa = PBXGroup;
 			children = (
-				337392A01EBBF4600043BE07 /* Extensions */,
+				3390CAF41ED05F9300E6CBB5 /* Onboarding View */,
+				335A7EED1EB2CF5A0095FB78 /* Storyboards */,
 				335A7EEC1EB2CF530095FB78 /* View Controllers */,
+				332424E91EB283D100A399DB /* Item View */,
+				337392A01EBBF4600043BE07 /* Extensions */,
 				3335B6EA1EBB058400D7A67D /* Seated View */,
 				33752E811EBAE83E00FB747B /* Payment View */,
 				335A7EEB1EB2CF3F0095FB78 /* Classes */,
 				33752E7E1EBAE1E800FB747B /* Item Cell */,
-				332424E91EB283D100A399DB /* Item View */,
-				335A7EED1EB2CF5A0095FB78 /* Storyboards */,
 				33F3C9731EAFEBEB001EF325 /* Assets.xcassets */,
 				33F3C9691EAFEBEB001EF325 /* AppDelegate.swift */,
 				33F3C9781EAFEBEB001EF325 /* Info.plist */,
@@ -317,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F3C9771EAFEBEB001EF325 /* LaunchScreen.storyboard in Resources */,
+				3390CAF61ED05FAC00E6CBB5 /* OnboardingView.xib in Resources */,
 				3335B6EE1EBB05E100D7A67D /* SeatedView.xib in Resources */,
 				33F3C9741EAFEBEB001EF325 /* Assets.xcassets in Resources */,
 				33F3C96F1EAFEBEB001EF325 /* Main.storyboard in Resources */,
@@ -387,7 +408,9 @@
 				335A7EE61EB2CD7E0095FB78 /* Contentful.swift in Sources */,
 				33F3C96C1EAFEBEB001EF325 /* ViewController.swift in Sources */,
 				3335B6F21EBB1A6900D7A67D /* CustomTextField.swift in Sources */,
+				3390CAF81ED05FBB00E6CBB5 /* OnboardingView.swift in Sources */,
 				333661F91EC056CE00A3C2D3 /* Keychain.swift in Sources */,
+				3390CAFA1ED06E7A00E6CBB5 /* UILabelExenstion.swift in Sources */,
 				33F3C9721EAFEBEB001EF325 /* Mesa.xcdatamodeld in Sources */,
 				33752E7D1EBADF8000FB747B /* PaymentView.swift in Sources */,
 				337392A21EBBF4770043BE07 /* CreditCardFormatter.swift in Sources */,
@@ -398,6 +421,7 @@
 				3335B6EC1EBB05A000D7A67D /* SeatedView.swift in Sources */,
 				330909591EB86CF8008021D9 /* CartViewController.swift in Sources */,
 				330909571EB86A43008021D9 /* Cart.swift in Sources */,
+				3390CAF31ED05D5900E6CBB5 /* OnboardingVC.swift in Sources */,
 				335A7EE21EB28B4B0095FB78 /* ItemView.swift in Sources */,
 				335A7EEA1EB2CEB00095FB78 /* Section.swift in Sources */,
 			);
