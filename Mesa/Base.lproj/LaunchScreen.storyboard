@@ -22,26 +22,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoz" translatesAutoresizingMaskIntoConstraints="NO" id="kX5-7E-LtS">
-                                <rect key="frame" x="19" y="166.5" width="337.5" height="333.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelloGradient" translatesAutoresizingMaskIntoConstraints="NO" id="Jhb-nV-4hH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mesaLetterLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kX5-7E-LtS">
+                                <rect key="frame" x="150.5" y="166.5" width="75" height="333.5"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.77647058823529413" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.77647058823529413" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kX5-7E-LtS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Bx-Xv-XzL"/>
-                            <constraint firstItem="kX5-7E-LtS" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.9" id="C3o-sm-03a"/>
+                            <constraint firstAttribute="trailing" secondItem="Jhb-nV-4hH" secondAttribute="trailing" id="5d8-N5-WiI"/>
+                            <constraint firstItem="kX5-7E-LtS" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.2" id="C3o-sm-03a"/>
                             <constraint firstItem="kX5-7E-LtS" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="I5n-Xm-SZd"/>
+                            <constraint firstItem="Jhb-nV-4hH" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="I5o-TO-xxH"/>
                             <constraint firstItem="kX5-7E-LtS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="U5i-gf-q1o"/>
+                            <constraint firstItem="Jhb-nV-4hH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ejw-mk-3Mh"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Jhb-nV-4hH" secondAttribute="bottom" id="ht5-F5-Ucb"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="logoz" width="1714" height="1129"/>
+        <image name="mesaLetterLogo" width="1017" height="1066"/>
+        <image name="yelloGradient" width="1536" height="1536"/>
     </resources>
 </document>

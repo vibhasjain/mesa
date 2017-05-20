@@ -84,6 +84,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             
         })
         
+        animateTooltip()
+        
         //            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
         
         //        }
@@ -280,10 +282,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
+    func animateTooltip() {
+        UIView.animate(withDuration: 0.25, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: -2)
+        }, completion: nil)
+    }
+    
     func removeTooltip() {
         
-        UIView.animate(withDuration: 0.3) {
+        guard let _ = self.tapTooltip else { return }
+        
+        UIView.animate(withDuration: 0.3, animations: { 
             self.tapTooltip.alpha = 0
+        }) { (true) in
+            self.tapTooltip.removeFromSuperview()
         }
     }
     

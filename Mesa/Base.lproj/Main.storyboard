@@ -28,7 +28,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tappity" translatesAutoresizingMaskIntoConstraints="NO" id="foF-IB-UpR">
-                                <rect key="frame" x="46.5" y="315" width="281.5" height="36"/>
+                                <rect key="frame" x="84.5" y="315" width="206" height="36"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-gw-7ci">
@@ -138,7 +138,7 @@
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="MDS-SU-KlY"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OTM-jM-Ygp"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerY" secondItem="bKY-AM-1nV" secondAttribute="centerY" id="Q3q-UD-upv"/>
-                            <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="UVK-7c-BHQ"/>
+                            <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.55" id="UVK-7c-BHQ"/>
                             <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="25" id="cSp-XW-ObB"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="BTr-gw-7ci" secondAttribute="centerY" constant="10" id="fOB-eB-O5a"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fti-DO-ESC"/>
