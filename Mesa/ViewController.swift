@@ -302,6 +302,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     func removeTooltip() {
         
+        guard let _ = self.tapTooltip else { return }
         
         UIView.animate(withDuration: 0.3, animations: { 
             self.tapTooltip.alpha = 0
