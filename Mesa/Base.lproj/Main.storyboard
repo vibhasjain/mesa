@@ -39,7 +39,7 @@
                                 </state>
                                 <connections>
                                     <action selector="welcomeButton:" destination="J85-Kb-Hyw" eventType="touchUpInside" id="HP8-Vr-Xh2"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="WMb-g1-ize"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="WMb-g1-ize"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XM0-u3-zM4" userLabel="dots">

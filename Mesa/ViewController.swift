@@ -67,6 +67,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBOutlet weak var categoryConstraint: NSLayoutConstraint!
     
+    override func viewDidAppear(_ animated: Bool) {
+        animateTooltip()
+        tapTooltip.shadow()
+
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -84,7 +90,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             
         })
         
-        animateTooltip()
         
         //            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
         

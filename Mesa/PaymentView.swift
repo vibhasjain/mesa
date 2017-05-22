@@ -265,7 +265,7 @@ class PaymentView : UIView, UITextFieldDelegate {
     
     func cosmetics() {
         
-        self.saveButtonLayer.greenShadow()
+        if !AppDelegate.isIPhone5() { self.saveButtonLayer.greenShadow() }
         setBorders()
     }
 }

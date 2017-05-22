@@ -51,7 +51,7 @@ class SeatedView : UIView {
     
     func cosmetics() {
         
-        self.placeOrderLayer.greenShadow()
+        if !AppDelegate.isIPhone5() {  self.placeOrderLayer.greenShadow() }
     }
     
     override func awakeFromNib() {
