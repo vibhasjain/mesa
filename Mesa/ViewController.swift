@@ -68,8 +68,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     @IBOutlet weak var categoryConstraint: NSLayoutConstraint!
     
     override func viewDidAppear(_ animated: Bool) {
+        
         animateTooltip()
-        tapTooltip.shadow()
 
     }
     
@@ -157,8 +157,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.stringAttributed = NSMutableAttributedString.init(string: categoryText)
         
-        self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
-
+        if categories.count != 0 {
+            self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
+        }
         return itemViews
     }
     
@@ -288,14 +289,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     }
     
     func animateTooltip() {
+        
+        guard let _ = self.tapTooltip else { return }
+
         UIView.animate(withDuration: 0.25, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: -2)
         }, completion: nil)
+        
+        tapTooltip.shadow()
+
     }
     
     func removeTooltip() {
         
-        guard let _ = self.tapTooltip else { return }
         
         UIView.animate(withDuration: 0.3, animations: { 
             self.tapTooltip.alpha = 0
