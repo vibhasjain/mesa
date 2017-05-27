@@ -95,6 +95,16 @@ extension UIView {
         self.cornerRadius = 4
     }
     
+    func fadeOut(completion : () -> Void) {
+        
+        UIView.animate(withDuration: 0.2) { 
+            self.alpha = 0
+        }
+        
+        completion()
+    }
+    
+    
 }
 
 

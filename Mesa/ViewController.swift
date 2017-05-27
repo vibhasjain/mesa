@@ -73,10 +73,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
 
     }
     
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        self.catLabel.alpha = 0
+//        self.scrollView.alpha = 0.5
         self.orderCount.text = "\(self.cart.items.count)"
         
         
@@ -85,7 +88,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             UIView.animate(withDuration: 0.5, animations: { 
                 self.tapTooltip.alpha = 1
-                self.orderButtonView.alpha = 1
             })
             
         })
@@ -111,16 +113,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 
                 self.catLabel.text = self.categoryText
                 
-                self.stringAttributed.addAttribute(NSForegroundColorAttributeName, value: UIColor.white.withAlphaComponent(1), range: NSRange.init(location: 0, length: self.categories[0].count))
-                
-                self.catLabel.attributedText = self.stringAttributed
-                
                 self.setupScrollView(itemViews: itemViews)
+                
+                self.attributeCategories()
             }
             
         }
         
-
     }
     
     func createItemViews() -> [ItemView] {
@@ -157,9 +156,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.stringAttributed = NSMutableAttributedString.init(string: categoryText)
         
-        if categories.count != 0 {
-            self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
-        }
         return itemViews
     }
     
@@ -306,8 +302,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         UIView.animate(withDuration: 0.3, animations: { 
             self.tapTooltip.alpha = 0
+            self.orderButtonView.alpha = 1
+            self.catLabel.alpha = 1
+//            self.scrollView.alpha = 1
         }) { (true) in
             self.tapTooltip.removeFromSuperview()
+            
         }
     }
     
@@ -321,6 +321,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
+    func attributeCategories() {
+        guard categories.count != 0 else { return }
+            self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
+            self.stringAttributed.addAttribute(NSForegroundColorAttributeName, value: UIColor.white.withAlphaComponent(1), range: NSRange.init(location: 0, length: self.categories[0].count))
+            self.catLabel.attributedText = self.stringAttributed
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CartViewController {

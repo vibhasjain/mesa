@@ -39,7 +39,6 @@
                                 </state>
                                 <connections>
                                     <action selector="welcomeButton:" destination="J85-Kb-Hyw" eventType="touchUpInside" id="HP8-Vr-Xh2"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="WMb-g1-ize"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XM0-u3-zM4" userLabel="dots">
@@ -140,7 +139,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vGz-BC-Yzy" firstAttribute="leading" secondItem="UoV-T8-2tZ" secondAttribute="leading" id="0eL-XG-B8p"/>
                             <constraint firstAttribute="trailing" secondItem="vGz-BC-Yzy" secondAttribute="trailing" id="6UI-n5-v5U"/>
@@ -158,8 +157,10 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="blackDot" destination="AeM-vi-W0I" id="Cbz-Vx-Rl6"/>
+                        <outlet property="dots" destination="XM0-u3-zM4" id="Pk3-ml-ZwK"/>
                         <outlet property="scrollView" destination="vGz-BC-Yzy" id="VLe-hd-YmY"/>
                         <outlet property="welcomeButtonLayer" destination="Xmb-dc-rl4" id="0UW-eO-ZaB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="welcome" id="XBn-bI-aVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLy-dN-NGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,8 +183,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tappity" translatesAutoresizingMaskIntoConstraints="NO" id="foF-IB-UpR">
-                                <rect key="frame" x="84.5" y="315" width="206" height="36"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigTooltip" translatesAutoresizingMaskIntoConstraints="NO" id="foF-IB-UpR">
+                                <rect key="frame" x="47" y="172.5" width="281" height="321"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-gw-7ci">
@@ -293,7 +294,7 @@
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="MDS-SU-KlY"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OTM-jM-Ygp"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerY" secondItem="bKY-AM-1nV" secondAttribute="centerY" id="Q3q-UD-upv"/>
-                            <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.55" id="UVK-7c-BHQ"/>
+                            <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="UVK-7c-BHQ"/>
                             <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="25" id="cSp-XW-ObB"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="BTr-gw-7ci" secondAttribute="centerY" constant="10" id="fOB-eB-O5a"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fti-DO-ESC"/>
@@ -570,10 +571,10 @@
     </scenes>
     <resources>
         <image name="arrow" width="515" height="515"/>
+        <image name="bigTooltip" width="247" height="321"/>
         <image name="card" width="86" height="56"/>
         <image name="close" width="22" height="22"/>
         <image name="dunzo" width="233" height="233"/>
         <image name="orderIcon" width="46" height="48"/>
-        <image name="tappity" width="254" height="36"/>
     </resources>
 </document>

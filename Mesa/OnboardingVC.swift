@@ -12,11 +12,23 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var dots: UIView!
+    
     @IBOutlet weak var blackDot: UIView!
     
     @IBOutlet weak var welcomeButtonLayer: UIButton!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     @IBAction func welcomeButton(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.75, animations: {
+            self.view.alpha = 0
+        }) { (true) in
+            self.performSegue(withIdentifier: "welcome", sender: Any?.self)
+        }
     }
     
     var obText = ["Order from your phone at your favorite restaurants",
