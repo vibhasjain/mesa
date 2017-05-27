@@ -16,6 +16,8 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var blackDot: UIView!
     
+    var images = [ "onboardingDummy" , "onboardingDummy" , "split" ]
+    
     @IBOutlet weak var welcomeButtonLayer: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,7 +66,7 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
             
             let obView:OnboardingView = Bundle.main.loadNibNamed("OnboardingView", owner: self, options: nil)?.first as! OnboardingView
             
-            obView.image.image = UIImage(named: "onboardingDummy")
+            obView.image.image = UIImage(named: images[i])
             obView.text.text = obText[i]
             
             obView.frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)

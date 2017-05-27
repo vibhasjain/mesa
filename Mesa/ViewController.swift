@@ -83,9 +83,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     override func viewDidAppear(_ animated: Bool) {
         
         animateTooltip()
-        UIView.animate(withDuration: 1) {
-            self.closeButtonLayer.alpha = 1
-        }
+        self.view.fadeIn()
 
     }
     
@@ -94,22 +92,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-//        self.catLabel.alpha = 0
-//        self.scrollView.alpha = 0.5
-        
-        self.closeButtonLayer.alpha = 0
+        self.view.disappear()
+
         
         self.orderCount.text = "\(self.cart.items.count)"
         
         
         //        if !UserDefaults.standard.bool(forKey: "tooltipHasAppeared") {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            UIView.animate(withDuration: 0.5, animations: { 
-                self.tapTooltip.alpha = 1
-            })
-            
-        })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+//            UIView.animate(withDuration: 0.5, animations: { 
+//                self.tapTooltip.alpha = 1
+//            })
+//            
+//        })
         
         
         //            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
@@ -346,6 +342,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     func updateItemCount() {
         
         self.orderCount.text = "\(Cart.shared.items.count)"
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.05, initialSpringVelocity: 1.8, options: [], animations: {
+            self.orderCount.transform = CGAffineTransform(translationX: 0, y: -3)
+        }) { (true) in
+            UIView.animate(withDuration: 0.1, animations: { 
+                self.orderCount.transform = CGAffineTransform(translationX: 0, y: 0)
+
+            })
+        }
     }
     
     override func didReceiveMemoryWarning() {
