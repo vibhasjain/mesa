@@ -24,11 +24,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
+    @IBAction func tapTool(_ sender: Any) {
+        
+        removeTooltip()
+    }
+    
     @IBOutlet weak var orderButtonView: UIView!
+    
+    @IBOutlet weak var tapTooltip: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var tapTooltip: UIImageView!
     
     @IBOutlet weak var orderCount: UILabel!
     
@@ -82,30 +88,28 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     override func viewDidAppear(_ animated: Bool) {
         
-        animateTooltip()
+        //        animateTooltip()
         self.view.fadeIn()
-
+        
     }
-    
-    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.view.disappear()
-
+        
         
         self.orderCount.text = "\(self.cart.items.count)"
         
         
         //        if !UserDefaults.standard.bool(forKey: "tooltipHasAppeared") {
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-//            UIView.animate(withDuration: 0.5, animations: { 
-//                self.tapTooltip.alpha = 1
-//            })
-//            
-//        })
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        //            UIView.animate(withDuration: 0.5, animations: {
+        //                self.tapTooltip.alpha = 1
+        //            })
+        //
+        //        })
         
         
         //            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
@@ -315,28 +319,34 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     func animateTooltip() {
         
         guard let _ = self.tapTooltip else { return }
-
+        
         UIView.animate(withDuration: 0.25, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: -2)
         }, completion: nil)
         
         tapTooltip.shadow()
-
+        
     }
     
     func removeTooltip() {
         
         guard let _ = self.tapTooltip else { return }
         
+//        UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
+//            self.tapTooltip.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+//        }, completion: nil)
+//        
         UIView.animate(withDuration: 0.3, animations: { 
+            self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: 20)
             self.tapTooltip.alpha = 0
-            self.orderButtonView.alpha = 1
-            self.catLabel.alpha = 1
-//            self.scrollView.alpha = 1
+
         }) { (true) in
-            self.tapTooltip.removeFromSuperview()
-            
+
+                self.tapTooltip.removeFromSuperview()
+        
         }
+        
+        
     }
     
     func updateItemCount() {
@@ -345,9 +355,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.05, initialSpringVelocity: 1.8, options: [], animations: {
             self.orderCount.transform = CGAffineTransform(translationX: 0, y: -3)
         }) { (true) in
-            UIView.animate(withDuration: 0.1, animations: { 
+            UIView.animate(withDuration: 0.1, animations: {
                 self.orderCount.transform = CGAffineTransform(translationX: 0, y: 0)
-
+                
             })
         }
     }
@@ -359,9 +369,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     func attributeCategories() {
         guard categories.count != 0 else { return }
-            self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
-            self.stringAttributed.addAttribute(NSForegroundColorAttributeName, value: UIColor.white.withAlphaComponent(1), range: NSRange.init(location: 0, length: self.categories[0].count))
-            self.catLabel.attributedText = self.stringAttributed
+        self.categoryConstraint.constant = self.floater - (self.categories[0].width/2)
+        self.stringAttributed.addAttribute(NSForegroundColorAttributeName, value: UIColor.white.withAlphaComponent(1), range: NSRange.init(location: 0, length: self.categories[0].count))
+        self.catLabel.attributedText = self.stringAttributed
         
     }
     

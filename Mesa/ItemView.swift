@@ -62,8 +62,6 @@ class ItemView: UIView {
     
     @IBAction func topTouch(_ sender: Any) {
         
-        delegate?.removeTooltip()
-        
         if currentItemCount < ids.count {
             
             currentItemCount += 1
@@ -80,7 +78,6 @@ class ItemView: UIView {
     
     @IBAction func bottomTouch(_ sender: Any) {
         
-        delegate?.removeTooltip()
         
         if currentItemCount > 1 {
             
