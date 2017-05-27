@@ -25,7 +25,9 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     @IBAction func welcomeButton(_ sender: Any) {
         
         UIView.animate(withDuration: 0.75, animations: {
-            self.view.alpha = 0
+            self.dots.alpha = 0
+            self.welcomeButtonLayer.alpha = 0
+            self.scrollView.alpha = 0
         }) { (true) in
             self.performSegue(withIdentifier: "welcome", sender: Any?.self)
         }

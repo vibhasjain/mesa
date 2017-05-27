@@ -30,6 +30,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
+    @IBAction func swipeDown(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
     @IBAction func topRightTap(_ sender: Any) {
         guard scrollView.contentOffset.x<CGFloat(self.sections.count-1)*self.view.frame.width else { return }
         scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x + self.view.frame.width, y: scrollView.contentOffset.y), animated: true)

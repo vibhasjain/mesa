@@ -11,6 +11,104 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="pOP-U3-7aZ">
+            <objects>
+                <viewController id="3de-26-SN2" customClass="HomeViewController" customModule="Mesa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="baX-dR-puj"/>
+                        <viewControllerLayoutGuide type="bottom" id="hA0-pU-EgT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1am-91-WvJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRF-Op-Oqr" userLabel="TopNav">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ2-mT-5SF">
+                                        <rect key="frame" x="162" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="BJ2-mT-5SF" secondAttribute="height" multiplier="1:1" id="amI-Z5-34A"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="logoBlackSpaced"/>
+                                        <connections>
+                                            <action selector="mesaButton:" destination="3de-26-SN2" eventType="touchUpInside" id="Z24-5n-q2u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-mo-Pbq">
+                                        <rect key="frame" x="10" y="4" width="42.5" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aT8-mo-Pbq" secondAttribute="height" multiplier="1:1" id="q3y-KR-sgN"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="account"/>
+                                        <connections>
+                                            <action selector="account:" destination="3de-26-SN2" eventType="touchUpInside" id="ghv-zH-g1X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeJ-tp-Tcg">
+                                        <rect key="frame" x="323" y="4" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eeJ-tp-Tcg" secondAttribute="height" multiplier="1:1" id="Z2N-qb-mS0"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="search"/>
+                                        <connections>
+                                            <action selector="search:" destination="3de-26-SN2" eventType="touchUpInside" id="cts-Uu-IBR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aT8-mo-Pbq" firstAttribute="height" secondItem="XRF-Op-Oqr" secondAttribute="height" multiplier="0.85" id="Gvn-4j-GjA"/>
+                                    <constraint firstAttribute="trailing" secondItem="eeJ-tp-Tcg" secondAttribute="trailing" constant="10" id="HxM-tj-r6o"/>
+                                    <constraint firstItem="aT8-mo-Pbq" firstAttribute="centerY" secondItem="XRF-Op-Oqr" secondAttribute="centerY" id="Lgv-a5-eWP"/>
+                                    <constraint firstAttribute="height" constant="50" id="OCQ-rk-hIJ"/>
+                                    <constraint firstItem="BJ2-mT-5SF" firstAttribute="centerY" secondItem="XRF-Op-Oqr" secondAttribute="centerY" id="Opv-Gc-Cxx"/>
+                                    <constraint firstItem="eeJ-tp-Tcg" firstAttribute="height" secondItem="aT8-mo-Pbq" secondAttribute="height" id="hVP-GN-t5V"/>
+                                    <constraint firstItem="BJ2-mT-5SF" firstAttribute="height" secondItem="XRF-Op-Oqr" secondAttribute="height" id="jt2-uz-mUj"/>
+                                    <constraint firstItem="eeJ-tp-Tcg" firstAttribute="centerY" secondItem="XRF-Op-Oqr" secondAttribute="centerY" id="lKc-op-uIC"/>
+                                    <constraint firstItem="aT8-mo-Pbq" firstAttribute="leading" secondItem="XRF-Op-Oqr" secondAttribute="leading" constant="10" id="rqv-4O-i9I"/>
+                                    <constraint firstItem="BJ2-mT-5SF" firstAttribute="centerX" secondItem="XRF-Op-Oqr" secondAttribute="centerX" id="vAc-jG-jlk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dEn-Vk-NDk">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3de-26-SN2" id="kH2-8l-P9Q"/>
+                                    <outlet property="delegate" destination="3de-26-SN2" id="EK5-c2-dwT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XRF-Op-Oqr" firstAttribute="leading" secondItem="1am-91-WvJ" secondAttribute="leading" id="FUF-Fg-qlM"/>
+                            <constraint firstItem="dEn-Vk-NDk" firstAttribute="top" secondItem="XRF-Op-Oqr" secondAttribute="bottom" id="ISY-RQ-21N"/>
+                            <constraint firstAttribute="trailing" secondItem="dEn-Vk-NDk" secondAttribute="trailing" id="PcB-Pz-EXg"/>
+                            <constraint firstItem="dEn-Vk-NDk" firstAttribute="leading" secondItem="1am-91-WvJ" secondAttribute="leading" id="SqU-Sy-IyV"/>
+                            <constraint firstAttribute="trailing" secondItem="XRF-Op-Oqr" secondAttribute="trailing" id="gj3-M6-1BX"/>
+                            <constraint firstItem="XRF-Op-Oqr" firstAttribute="top" secondItem="1am-91-WvJ" secondAttribute="top" id="wVS-ML-QHn"/>
+                            <constraint firstItem="hA0-pU-EgT" firstAttribute="top" secondItem="dEn-Vk-NDk" secondAttribute="bottom" id="wXr-r7-LOT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dEn-Vk-NDk" id="Icc-XY-TSi"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showMenu" id="yJv-VZ-gAj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUL-DB-h28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830" y="19"/>
+        </scene>
         <!--OnboardingVC-->
         <scene sceneID="9f1-Iq-eSY">
             <objects>
@@ -139,7 +237,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vGz-BC-Yzy" firstAttribute="leading" secondItem="UoV-T8-2tZ" secondAttribute="leading" id="0eL-XG-B8p"/>
                             <constraint firstAttribute="trailing" secondItem="vGz-BC-Yzy" secondAttribute="trailing" id="6UI-n5-v5U"/>
@@ -160,12 +258,12 @@
                         <outlet property="dots" destination="XM0-u3-zM4" id="Pk3-ml-ZwK"/>
                         <outlet property="scrollView" destination="vGz-BC-Yzy" id="VLe-hd-YmY"/>
                         <outlet property="welcomeButtonLayer" destination="Xmb-dc-rl4" id="0UW-eO-ZaB"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="welcome" id="XBn-bI-aVY"/>
+                        <segue destination="3de-26-SN2" kind="show" identifier="welcome" animates="NO" id="flA-jD-rsf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLy-dN-NGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665" y="38"/>
+            <point key="canvasLocation" x="-1940" y="20"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -182,9 +280,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG6-AN-Nyg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gAQ-J2-Ew2" appends="YES" id="USm-1s-7nH"/>
+                                </connections>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigTooltip" translatesAutoresizingMaskIntoConstraints="NO" id="foF-IB-UpR">
-                                <rect key="frame" x="47" y="172.5" width="281" height="321"/>
+                                <rect key="frame" x="47" y="219.5" width="281" height="227"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-gw-7ci">
@@ -342,6 +444,11 @@
                         <action selector="topLeftTap:" destination="BYZ-38-t0r" id="ECx-LT-9MB"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="down" id="gAQ-J2-Ew2">
+                    <connections>
+                        <action selector="swipeDown:" destination="BYZ-38-t0r" id="EG4-3p-2Oq"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="220" y="20.239880059970016"/>
         </scene>
@@ -570,11 +677,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account" width="155" height="152"/>
         <image name="arrow" width="515" height="515"/>
-        <image name="bigTooltip" width="247" height="321"/>
+        <image name="bigTooltip" width="264" height="227"/>
         <image name="card" width="86" height="56"/>
         <image name="close" width="22" height="22"/>
         <image name="dunzo" width="233" height="233"/>
+        <image name="logoBlackSpaced" width="155" height="152"/>
         <image name="orderIcon" width="46" height="48"/>
+        <image name="search" width="155" height="152"/>
     </resources>
 </document>

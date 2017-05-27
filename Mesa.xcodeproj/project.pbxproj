@@ -35,6 +35,9 @@
 		3390CAF61ED05FAC00E6CBB5 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3390CAF51ED05FAC00E6CBB5 /* OnboardingView.xib */; };
 		3390CAF81ED05FBB00E6CBB5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390CAF71ED05FBB00E6CBB5 /* OnboardingView.swift */; };
 		3390CAFA1ED06E7A00E6CBB5 /* UILabelExenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390CAF91ED06E7A00E6CBB5 /* UILabelExenstion.swift */; };
+		33C108AC1ED9B22E004965D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C108AB1ED9B22E004965D4 /* HomeViewController.swift */; };
+		33C108AE1ED9B2BC004965D4 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C108AD1ED9B2BC004965D4 /* RestaurantCell.xib */; };
+		33C108B01ED9B2EB004965D4 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C108AF1ED9B2EB004965D4 /* RestaurantCell.swift */; };
 		33F3C96A1EAFEBEB001EF325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3C9691EAFEBEB001EF325 /* AppDelegate.swift */; };
 		33F3C96C1EAFEBEB001EF325 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3C96B1EAFEBEB001EF325 /* ViewController.swift */; };
 		33F3C96F1EAFEBEB001EF325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F3C96D1EAFEBEB001EF325 /* Main.storyboard */; };
@@ -76,6 +79,9 @@
 		3390CAF51ED05FAC00E6CBB5 /* OnboardingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		3390CAF71ED05FBB00E6CBB5 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3390CAF91ED06E7A00E6CBB5 /* UILabelExenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExenstion.swift; sourceTree = "<group>"; };
+		33C108AB1ED9B22E004965D4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		33C108AD1ED9B2BC004965D4 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		33C108AF1ED9B2EB004965D4 /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		33F3C9661EAFEBEB001EF325 /* Mesa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mesa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F3C9691EAFEBEB001EF325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33F3C96B1EAFEBEB001EF325 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		335A7EEC1EB2CF530095FB78 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				33C108AB1ED9B22E004965D4 /* HomeViewController.swift */,
 				33F3C96B1EAFEBEB001EF325 /* ViewController.swift */,
 				330909581EB86CF8008021D9 /* CartViewController.swift */,
 			);
@@ -208,6 +215,15 @@
 			name = "Onboarding View";
 			sourceTree = "<group>";
 		};
+		33C108B11ED9B2EF004965D4 /* Restaurant Cell */ = {
+			isa = PBXGroup;
+			children = (
+				33C108AD1ED9B2BC004965D4 /* RestaurantCell.xib */,
+				33C108AF1ED9B2EB004965D4 /* RestaurantCell.swift */,
+			);
+			name = "Restaurant Cell";
+			sourceTree = "<group>";
+		};
 		33F3C95D1EAFEBEB001EF325 = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +246,9 @@
 		33F3C9681EAFEBEB001EF325 /* Mesa */ = {
 			isa = PBXGroup;
 			children = (
+				33F3C9731EAFEBEB001EF325 /* Assets.xcassets */,
 				3390CAF41ED05F9300E6CBB5 /* Onboarding View */,
+				33C108B11ED9B2EF004965D4 /* Restaurant Cell */,
 				335A7EED1EB2CF5A0095FB78 /* Storyboards */,
 				335A7EEC1EB2CF530095FB78 /* View Controllers */,
 				332424E91EB283D100A399DB /* Item View */,
@@ -239,7 +257,6 @@
 				33752E811EBAE83E00FB747B /* Payment View */,
 				335A7EEB1EB2CF3F0095FB78 /* Classes */,
 				33752E7E1EBAE1E800FB747B /* Item Cell */,
-				33F3C9731EAFEBEB001EF325 /* Assets.xcassets */,
 				33F3C9691EAFEBEB001EF325 /* AppDelegate.swift */,
 				33F3C9781EAFEBEB001EF325 /* Info.plist */,
 				33F3C9701EAFEBEB001EF325 /* Mesa.xcdatamodeld */,
@@ -338,6 +355,7 @@
 			files = (
 				33F3C9771EAFEBEB001EF325 /* LaunchScreen.storyboard in Resources */,
 				3390CAF61ED05FAC00E6CBB5 /* OnboardingView.xib in Resources */,
+				33C108AE1ED9B2BC004965D4 /* RestaurantCell.xib in Resources */,
 				3335B6EE1EBB05E100D7A67D /* SeatedView.xib in Resources */,
 				33F3C9741EAFEBEB001EF325 /* Assets.xcassets in Resources */,
 				33F3C96F1EAFEBEB001EF325 /* Main.storyboard in Resources */,
@@ -402,12 +420,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C108B01ED9B2EB004965D4 /* RestaurantCell.swift in Sources */,
 				3332F8EA1EC525730089A0EC /* AKPickerView.swift in Sources */,
 				335A7EE41EB291E20095FB78 /* UIViewExtension.swift in Sources */,
 				3309095E1EB9896C008021D9 /* itemCell.swift in Sources */,
 				335A7EE61EB2CD7E0095FB78 /* Contentful.swift in Sources */,
 				33F3C96C1EAFEBEB001EF325 /* ViewController.swift in Sources */,
 				3335B6F21EBB1A6900D7A67D /* CustomTextField.swift in Sources */,
+				33C108AC1ED9B22E004965D4 /* HomeViewController.swift in Sources */,
 				3390CAF81ED05FBB00E6CBB5 /* OnboardingView.swift in Sources */,
 				333661F91EC056CE00A3C2D3 /* Keychain.swift in Sources */,
 				3390CAFA1ED06E7A00E6CBB5 /* UILabelExenstion.swift in Sources */,
