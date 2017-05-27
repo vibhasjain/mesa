@@ -104,6 +104,21 @@ extension UIView {
         completion()
     }
     
+    func disappear() {
+        
+        self.subviews.forEach { (view) in
+            view.alpha = 0
+        }
+    }
+    
+    func fadeIn() {
+        
+        self.subviews.forEach { (view) in
+            UIView.animate(withDuration: 0.3, animations: { 
+                view.alpha = 1
+            })
+        }
+    }
     
 }
 

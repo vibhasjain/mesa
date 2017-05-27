@@ -37,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-mo-Pbq">
-                                        <rect key="frame" x="10" y="4" width="42.5" height="42"/>
+                                        <rect key="frame" x="10" y="5" width="40.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aT8-mo-Pbq" secondAttribute="height" multiplier="1:1" id="q3y-KR-sgN"/>
                                         </constraints>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeJ-tp-Tcg">
-                                        <rect key="frame" x="323" y="4" width="42" height="42"/>
+                                        <rect key="frame" x="325" y="5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eeJ-tp-Tcg" secondAttribute="height" multiplier="1:1" id="Z2N-qb-mS0"/>
                                         </constraints>
@@ -60,7 +60,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="aT8-mo-Pbq" firstAttribute="height" secondItem="XRF-Op-Oqr" secondAttribute="height" multiplier="0.85" id="Gvn-4j-GjA"/>
+                                    <constraint firstItem="aT8-mo-Pbq" firstAttribute="height" secondItem="XRF-Op-Oqr" secondAttribute="height" multiplier="0.8" id="Gvn-4j-GjA"/>
                                     <constraint firstAttribute="trailing" secondItem="eeJ-tp-Tcg" secondAttribute="trailing" constant="10" id="HxM-tj-r6o"/>
                                     <constraint firstItem="aT8-mo-Pbq" firstAttribute="centerY" secondItem="XRF-Op-Oqr" secondAttribute="centerY" id="Lgv-a5-eWP"/>
                                     <constraint firstAttribute="height" constant="50" id="OCQ-rk-hIJ"/>
@@ -102,6 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="dEn-Vk-NDk" id="Icc-XY-TSi"/>
+                        <outlet property="topNav" destination="XRF-Op-Oqr" id="so8-cf-Ux4"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="showMenu" id="yJv-VZ-gAj"/>
                     </connections>
                 </viewController>
@@ -162,7 +163,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PI-ij-XK8" userLabel="dotRight">
-                                        <rect key="frame" x="211.5" y="0.0" width="8" height="8"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="8" height="8"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6PI-ij-XK8" secondAttribute="height" multiplier="1:1" id="3xF-oc-VbT"/>
@@ -181,7 +182,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rb-T1-hV3" userLabel="dotLeft">
-                                        <rect key="frame" x="155.5" y="0.0" width="8" height="8"/>
+                                        <rect key="frame" x="160.5" y="0.0" width="8" height="8"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Rb-T1-hV3" secondAttribute="height" multiplier="1:1" id="Va2-qV-eBc"/>
@@ -200,7 +201,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-vi-W0I" userLabel="blackDot">
-                                        <rect key="frame" x="155.5" y="0.0" width="8" height="8"/>
+                                        <rect key="frame" x="160.5" y="0.0" width="8" height="8"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="8" id="fhT-uE-8r8"/>
@@ -211,7 +212,7 @@
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
+                                                <real key="value" value="4.5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
@@ -226,9 +227,9 @@
                                     <constraint firstItem="AeM-vi-W0I" firstAttribute="centerY" secondItem="5Rb-T1-hV3" secondAttribute="centerY" id="Nj9-ou-fiu"/>
                                     <constraint firstItem="6PI-ij-XK8" firstAttribute="width" secondItem="6PI-ij-XK8" secondAttribute="height" multiplier="1:1" id="O61-Yd-sek"/>
                                     <constraint firstItem="MJk-bh-Gvd" firstAttribute="centerY" secondItem="XM0-u3-zM4" secondAttribute="centerY" id="Q5j-PJ-wxa"/>
-                                    <constraint firstItem="6PI-ij-XK8" firstAttribute="leading" secondItem="MJk-bh-Gvd" secondAttribute="trailing" constant="20" id="Uk3-v4-xF5"/>
+                                    <constraint firstItem="6PI-ij-XK8" firstAttribute="leading" secondItem="MJk-bh-Gvd" secondAttribute="trailing" constant="15" id="Uk3-v4-xF5"/>
                                     <constraint firstItem="5Rb-T1-hV3" firstAttribute="width" secondItem="5Rb-T1-hV3" secondAttribute="height" multiplier="1:1" id="Xt9-M0-VoP"/>
-                                    <constraint firstItem="MJk-bh-Gvd" firstAttribute="leading" secondItem="5Rb-T1-hV3" secondAttribute="trailing" constant="20" id="XzA-Om-z6y"/>
+                                    <constraint firstItem="MJk-bh-Gvd" firstAttribute="leading" secondItem="5Rb-T1-hV3" secondAttribute="trailing" constant="15" id="XzA-Om-z6y"/>
                                     <constraint firstAttribute="height" constant="8" id="ZFO-Dp-ppo"/>
                                     <constraint firstItem="AeM-vi-W0I" firstAttribute="width" secondItem="AeM-vi-W0I" secondAttribute="height" multiplier="1:1" id="aq8-mh-jg9"/>
                                     <constraint firstItem="AeM-vi-W0I" firstAttribute="centerX" secondItem="5Rb-T1-hV3" secondAttribute="centerX" id="hY6-bj-zGv"/>
@@ -381,6 +382,17 @@
                                     <outletCollection property="gestureRecognizers" destination="zmw-Fv-iM5" appends="YES" id="VGt-fa-q1j"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha9-j0-dpk">
+                                <rect key="frame" x="10" y="10" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ha9-j0-dpk" secondAttribute="height" multiplier="1:1" id="gkf-SS-VXD"/>
+                                    <constraint firstAttribute="height" constant="45" id="v7t-vJ-HlD"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="closeButton"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uzG-yc-773"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -397,6 +409,8 @@
                             <constraint firstItem="foF-IB-UpR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OTM-jM-Ygp"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerY" secondItem="bKY-AM-1nV" secondAttribute="centerY" id="Q3q-UD-upv"/>
                             <constraint firstItem="foF-IB-UpR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="UVK-7c-BHQ"/>
+                            <constraint firstItem="ha9-j0-dpk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Unx-i0-kFj"/>
+                            <constraint firstItem="ha9-j0-dpk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="Y9x-jF-E9z"/>
                             <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="25" id="cSp-XW-ObB"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="BTr-gw-7ci" secondAttribute="centerY" constant="10" id="fOB-eB-O5a"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fti-DO-ESC"/>
@@ -416,6 +430,7 @@
                     <connections>
                         <outlet property="catLabel" destination="BTr-gw-7ci" id="9ED-eH-RVB"/>
                         <outlet property="categoryConstraint" destination="ECL-av-IM4" id="hDU-UN-DHD"/>
+                        <outlet property="closeButtonLayer" destination="ha9-j0-dpk" id="fmm-Q6-Ogl"/>
                         <outlet property="orderButtonView" destination="BaS-lg-zo4" id="k3x-2c-KmX"/>
                         <outlet property="orderCount" destination="IIB-fO-ogx" id="FGm-5e-oTD"/>
                         <outlet property="scrollView" destination="UG6-AN-Nyg" id="jek-1H-PjJ"/>
@@ -682,6 +697,7 @@
         <image name="bigTooltip" width="264" height="227"/>
         <image name="card" width="86" height="56"/>
         <image name="close" width="22" height="22"/>
+        <image name="closeButton" width="155" height="152"/>
         <image name="dunzo" width="233" height="233"/>
         <image name="logoBlackSpaced" width="155" height="152"/>
         <image name="orderIcon" width="46" height="48"/>

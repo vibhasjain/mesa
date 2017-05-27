@@ -14,37 +14,36 @@ class HomeViewController: UIViewController  {
     
     @IBAction func search(_ sender: Any) {
     }
-
+    
     @IBAction func mesaButton(_ sender: Any) {
     }
+    
+    @IBOutlet weak var topNav: UIView!
     
     @IBAction func account(_ sender: Any) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.disappear()
         
         tableView.register(UINib(nibName: "RestaurantCell", bundle: nil), forCellReuseIdentifier: "RestaurantCell")
-
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.fadeIn()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+        
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
@@ -54,6 +53,11 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if AppDelegate.isIPhone5() {
+            
+            return self.view.frame.height*0.55
+        }
         return self.view.frame.height*0.45
     }
     
@@ -83,8 +87,10 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "showMenu", sender: self)
         
+        if indexPath.row == 0 {
+            self.performSegue(withIdentifier: "showMenu", sender: self)
+        }
     }
     
     

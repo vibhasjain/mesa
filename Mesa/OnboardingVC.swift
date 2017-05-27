@@ -78,7 +78,7 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
         
         let relativePosition = scrollView.contentOffset.x/view.frame.width
         
-        blackDot.transform = CGAffineTransform(translationX: relativePosition*28, y: 0)
+        blackDot.transform = CGAffineTransform(translationX: relativePosition*23, y: 0)
         
         if relativePosition == 2.0 {
             

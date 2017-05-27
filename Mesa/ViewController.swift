@@ -16,6 +16,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var cart = Cart()
     
+    @IBOutlet weak var closeButtonLayer: UIButton!
+    
+    @IBAction func closeButton(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     @IBOutlet weak var orderButtonView: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -75,6 +83,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     override func viewDidAppear(_ animated: Bool) {
         
         animateTooltip()
+        UIView.animate(withDuration: 1) {
+            self.closeButtonLayer.alpha = 1
+        }
 
     }
     
@@ -83,8 +94,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.catLabel.alpha = 0
+//        self.catLabel.alpha = 0
 //        self.scrollView.alpha = 0.5
+        
+        self.closeButtonLayer.alpha = 0
+        
         self.orderCount.text = "\(self.cart.items.count)"
         
         
@@ -189,9 +203,21 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.orderButtonView.alpha = 0
         
+        UIView.animate(withDuration: 0.15, animations: {
+            self.closeButtonLayer.alpha = 0
+        })
+        
+        
+        if relativePosition == 0 {
+            
+            UIView.animate(withDuration: 0.15, animations: {
+                self.closeButtonLayer.alpha = 1
+            })
+        }
+        
         if difference == 0 {
             
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.15, animations: {
                 self.orderButtonView.alpha = 1
             })
             
@@ -257,6 +283,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         if primitivePosition >= 0 && primitivePosition <= categories.count-2 {
             
             self.categoryConstraint.constant = self.categories[primitivePosition].centerX + (( self.categories[primitivePosition + 1].centerX - self.categories[primitivePosition].centerX) * CGFloat(relativePosition-CGFloat(primitivePosition)) )
+            
             
         }
         

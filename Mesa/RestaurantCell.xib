@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="491" height="266"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="naV-4d-1Na">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolder" translatesAutoresizingMaskIntoConstraints="NO" id="naV-4d-1Na">
                     <rect key="frame" x="0.0" y="0.0" width="491" height="199.5"/>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="84.5" y="-110"/>
         </view>
     </objects>
+    <resources>
+        <image name="placeHolder" width="330" height="186"/>
+    </resources>
 </document>
