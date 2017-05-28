@@ -20,13 +20,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBAction func okGotIt(_ sender: Any) {
         removeTooltip()
-
+        
     }
     
     @IBAction func close(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
-
+        
     }
     
     
@@ -141,22 +141,24 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         scrollView.delegate = self
         
-        getCategories { (sections) in
-            
-            self.sections = sections
-            
-            DispatchQueue.main.async {
+            getCategories { (sections) in
+                                
+                self.sections = sections
                 
-                let itemViews:[ItemView] = self.createItemViews()
+                DispatchQueue.main.async {
+                    
+                    let itemViews:[ItemView] = self.createItemViews()
+                    
+                    self.catLabel.text = self.categoryText
+                    
+                    self.setupScrollView(itemViews: itemViews)
+                    
+                    self.attributeCategories()
+                }
                 
-                self.catLabel.text = self.categoryText
-                
-                self.setupScrollView(itemViews: itemViews)
-                
-                self.attributeCategories()
             }
-            
-        }
+        
+        
         
     }
     
@@ -186,7 +188,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             }
             
             item.currentItemCount = 1
-//            item.generateBars(screenWidth : self.view.frame.width, screenHeight : self.view.frame.height)
+            //            item.generateBars(screenWidth : self.view.frame.width, screenHeight : self.view.frame.height)
             item.displayItem()
             itemViews.append(item)
             
@@ -222,17 +224,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.orderButtonView.alpha = 0
         
-//        UIView.animate(withDuration: 0.15, animations: {
-//            self.closeButtonLayer.alpha = 0
-//        })
+        //        UIView.animate(withDuration: 0.15, animations: {
+        //            self.closeButtonLayer.alpha = 0
+        //        })
         
         
-//        if relativePosition == 0 {
-//            
-//            UIView.animate(withDuration: 0.15, animations: {
-//                self.closeButtonLayer.alpha = 1
-//            })
-//        }
+        //        if relativePosition == 0 {
+        //
+        //            UIView.animate(withDuration: 0.15, animations: {
+        //                self.closeButtonLayer.alpha = 1
+        //            })
+        //        }
         
         if difference == 0 {
             
@@ -351,19 +353,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         guard let _ = self.tapTooltip else { return }
         
-//        UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
-//            self.tapTooltip.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-//        }, completion: nil)
-//        
-        UIView.animate(withDuration: 0.3, animations: { 
+        //        UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
+        //            self.tapTooltip.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        //        }, completion: nil)
+        //
+        UIView.animate(withDuration: 0.3, animations: {
             self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: 0)
             self.OKView.transform = CGAffineTransform(translationX: 0, y: 0)
-
-
+            
+            
         }) { (true) in
-
-                self.tapTooltip.removeFromSuperview()
-        
+            
+            self.tapTooltip.removeFromSuperview()
+            
         }
         
         

@@ -22,12 +22,13 @@ var images : [URL: UIImage] = [:]
 
 let client: Client = Client(spaceIdentifier: SPACE_ID, accessToken: ACCESS_TOKEN)
 
-var categorySequence = [String] ()
-
 func getCategories( completion : @escaping ([Section]) -> Void )  {
     
     var sections : [Section] = []
     var sortedSections : [Section] = []
+    
+    var categorySequence = [String] ()
+    
     
     /*
      
@@ -200,6 +201,7 @@ func getCategories( completion : @escaping ([Section]) -> Void )  {
                 sections.append(section)
                 
             }
+            
             
             for sortedCategoryID in categorySequence {
                 

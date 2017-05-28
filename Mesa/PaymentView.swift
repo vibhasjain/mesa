@@ -179,7 +179,7 @@ class PaymentView : UIView, UITextFieldDelegate {
             
         }
         
-        guard let cvvInt = Int(cvv.text!) else {
+        guard let _ = Int(cvv.text!) else {
             
             cvv.borderColor = UIColor.red
             return false
