@@ -16,6 +16,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var cart = Cart()
     
+    @IBOutlet weak var OKView: UIView!
+    
+    @IBAction func okGotIt(_ sender: Any) {
+        removeTooltip()
+
+    }
     
     @IBAction func close(_ sender: Any) {
         
@@ -26,7 +32,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBAction func tapTool(_ sender: Any) {
         
-        removeTooltip()
     }
     
     @IBOutlet weak var orderButtonView: UIView!
@@ -97,6 +102,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 view.shadow()
                 
                 UIView.animate(withDuration: 0.3, delay: 10, options: [], animations: {
+                    view.transform = CGAffineTransform(translationX: 0, y: -310)
+                    self.OKView.transform = CGAffineTransform(translationX: 0, y: -310)
                     view.alpha = 1
                 }, completion: nil)
             } else {
@@ -110,7 +117,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         super.viewDidLoad()
         self.view.disappear()
-        
         
         self.orderCount.text = "\(self.cart.items.count)"
         
@@ -350,8 +356,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
 //        }, completion: nil)
 //        
         UIView.animate(withDuration: 0.3, animations: { 
-            self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: 20)
-            self.tapTooltip.alpha = 0
+            self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.OKView.transform = CGAffineTransform(translationX: 0, y: 0)
+
 
         }) { (true) in
 
