@@ -16,13 +16,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var cart = Cart()
     
-    @IBOutlet weak var closeButtonLayer: UIButton!
     
-    @IBAction func closeButton(_ sender: Any) {
+    @IBAction func close(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
-        
+
     }
+    
     
     @IBAction func tapTool(_ sender: Any) {
         
@@ -89,8 +89,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     override func viewDidAppear(_ animated: Bool) {
         
         //        animateTooltip()
-        self.view.fadeIn()
         
+        self.view.subviews.forEach { (view) in
+            
+            if view == tapTooltip {
+                
+                UIView.animate(withDuration: 0.3, delay: 5, options: [], animations: {
+                    view.alpha = 1
+                }, completion: nil)
+            } else {
+                
+                view.fadeSelfIn()
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -167,7 +178,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             }
             
             item.currentItemCount = 1
-            item.generateBars(screenWidth : self.view.frame.width, screenHeight : self.view.frame.height)
+//            item.generateBars(screenWidth : self.view.frame.width, screenHeight : self.view.frame.height)
             item.displayItem()
             itemViews.append(item)
             
@@ -203,17 +214,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.orderButtonView.alpha = 0
         
-        UIView.animate(withDuration: 0.15, animations: {
-            self.closeButtonLayer.alpha = 0
-        })
+//        UIView.animate(withDuration: 0.15, animations: {
+//            self.closeButtonLayer.alpha = 0
+//        })
         
         
-        if relativePosition == 0 {
-            
-            UIView.animate(withDuration: 0.15, animations: {
-                self.closeButtonLayer.alpha = 1
-            })
-        }
+//        if relativePosition == 0 {
+//            
+//            UIView.animate(withDuration: 0.15, animations: {
+//                self.closeButtonLayer.alpha = 1
+//            })
+//        }
         
         if difference == 0 {
             

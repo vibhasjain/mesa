@@ -84,6 +84,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
+                <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="abb-25-3HM">
+                    <rect key="frame" x="155" y="28" width="18" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="3ZC-0S-5Bl"/>
+                        <constraint firstAttribute="width" secondItem="abb-25-3HM" secondAttribute="height" multiplier="1:1" id="FDl-Sn-zxD"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -100,6 +107,7 @@
                 <constraint firstItem="xQz-Z6-LHn" firstAttribute="centerY" secondItem="iJz-Ce-gUV" secondAttribute="centerY" id="Q8Y-F9-wyU"/>
                 <constraint firstItem="xQz-Z6-LHn" firstAttribute="width" secondItem="xQz-Z6-LHn" secondAttribute="height" multiplier="1:1" id="QL5-YW-fYT"/>
                 <constraint firstItem="eru-yb-14V" firstAttribute="height" secondItem="fRG-U7-mk6" secondAttribute="height" id="Saa-Ic-TbI"/>
+                <constraint firstItem="abb-25-3HM" firstAttribute="leading" secondItem="VCi-cO-xsC" secondAttribute="trailing" constant="12" id="Swg-OW-Cfj"/>
                 <constraint firstAttribute="trailing" secondItem="eru-yb-14V" secondAttribute="trailing" constant="20" id="Una-vH-E2t"/>
                 <constraint firstItem="fRG-U7-mk6" firstAttribute="top" secondItem="VCi-cO-xsC" secondAttribute="bottom" constant="30" id="VRl-Ao-p3T"/>
                 <constraint firstItem="1Fu-qy-5QM" firstAttribute="height" secondItem="fRG-U7-mk6" secondAttribute="height" id="XPb-Ao-93a"/>
@@ -107,6 +115,7 @@
                 <constraint firstItem="VCi-cO-xsC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="bYf-6Z-tk3"/>
                 <constraint firstItem="6Sz-U3-dka" firstAttribute="leading" secondItem="aOE-b2-F9e" secondAttribute="trailing" constant="20" id="d7X-40-3gM"/>
                 <constraint firstItem="6Sz-U3-dka" firstAttribute="height" secondItem="aOE-b2-F9e" secondAttribute="height" id="fKR-rZ-GAD"/>
+                <constraint firstItem="abb-25-3HM" firstAttribute="centerY" secondItem="VCi-cO-xsC" secondAttribute="centerY" constant="-1" id="fc7-fh-PM7"/>
                 <constraint firstItem="VCi-cO-xsC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="jpB-IP-r8g"/>
                 <constraint firstAttribute="trailing" secondItem="fRG-U7-mk6" secondAttribute="trailing" constant="20" id="oTu-KI-sdt"/>
                 <constraint firstItem="aOE-b2-F9e" firstAttribute="height" secondItem="fRG-U7-mk6" secondAttribute="height" id="tE8-1m-cVg"/>
@@ -123,9 +132,11 @@
                 <outlet property="saveButtonLayer" destination="eru-yb-14V" id="Usz-kV-noO"/>
                 <outlet property="yy" destination="6Sz-U3-dka" id="hEW-II-F5l"/>
             </connections>
+            <point key="canvasLocation" x="33.5" y="96.5"/>
         </view>
     </objects>
     <resources>
         <image name="blackRightArrow" width="144" height="115"/>
+        <image name="lock" width="72" height="92"/>
     </resources>
 </document>

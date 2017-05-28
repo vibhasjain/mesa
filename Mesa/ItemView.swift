@@ -133,7 +133,7 @@ class ItemView: UIView {
     
     func displayItem()  {
         
-        glowCurrent()
+//        glowCurrent()
         
         itemName.text = names[currentItemCount-1]
         itemDescription.text = details[currentItemCount-1]
@@ -172,6 +172,7 @@ class ItemView: UIView {
             DispatchQueue.main.async {
                 self.itemImage.image = fetchedImage
                 refresher.removeFromSuperview()
+                self.popItemCount()
             }
         })
     }
@@ -235,6 +236,20 @@ class ItemView: UIView {
                 view.alpha = self.glowAlpha
             }
         }
+    }
+    
+    func popItemCount() {
+        
+        UIView.animate(withDuration: 0.15, delay: 0.25, options: [], animations: {
+            self.itemCount.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }, completion: { (true) in
+            
+            UIView.animate(withDuration: 0.1, animations: { 
+                self.itemCount.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        
+        }
+        )
     }
     
     

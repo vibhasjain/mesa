@@ -120,6 +120,12 @@ extension UIView {
         }
     }
     
+    func fadeSelfIn() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 1
+        })
+    }
+    
 }
 
 
