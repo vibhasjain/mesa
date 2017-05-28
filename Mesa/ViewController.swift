@@ -94,7 +94,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             
             if view == tapTooltip {
                 
-                UIView.animate(withDuration: 0.3, delay: 5, options: [], animations: {
+                view.shadow()
+                
+                UIView.animate(withDuration: 0.3, delay: 10, options: [], animations: {
                     view.alpha = 1
                 }, completion: nil)
             } else {

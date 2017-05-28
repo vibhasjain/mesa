@@ -240,11 +240,11 @@ class ItemView: UIView {
     
     func popItemCount() {
         
-        UIView.animate(withDuration: 0.15, delay: 0.25, options: [], animations: {
+        UIView.animate(withDuration: 0.15, delay: 0, options: [], animations: {
             self.itemCount.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }, completion: { (true) in
             
-            UIView.animate(withDuration: 0.1, animations: { 
+            UIView.animate(withDuration: 0.05, animations: {
                 self.itemCount.transform = CGAffineTransform(scaleX: 1, y: 1)
             })
         

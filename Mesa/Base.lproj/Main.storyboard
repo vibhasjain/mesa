@@ -414,7 +414,7 @@
                                 </connections>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWL-zs-kVN">
-                                <rect key="frame" x="47.5" y="213" width="281" height="241"/>
+                                <rect key="frame" x="47.5" y="416" width="281" height="241"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HWL-zs-kVN" secondAttribute="height" multiplier="281:241" id="4Hd-D0-Wje"/>
@@ -429,7 +429,6 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="RAK-Mo-xfb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="11T-GH-0uj"/>
-                            <constraint firstItem="HWL-zs-kVN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Rc-Ib-oJ6"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="width" secondItem="RAK-Mo-xfb" secondAttribute="width" id="5nW-nP-Yh1"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="width" secondItem="bKY-AM-1nV" secondAttribute="width" constant="-80" id="7Sh-QK-CzX"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="7eH-Bo-gfO"/>
@@ -448,6 +447,7 @@
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="9" id="j9R-Al-BwF"/>
                             <constraint firstAttribute="trailing" secondItem="UG6-AN-Nyg" secondAttribute="trailing" id="jaL-tq-ysJ"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="RAK-Mo-xfb" secondAttribute="centerY" id="n5g-KD-bFs"/>
+                            <constraint firstAttribute="bottom" secondItem="HWL-zs-kVN" secondAttribute="bottom" constant="10" id="raF-rY-Cio"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="height" secondItem="bKY-AM-1nV" secondAttribute="height" constant="-40" id="sLv-D6-wsW"/>
                             <constraint firstItem="UG6-AN-Nyg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tif-5u-m7b"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerX" secondItem="bKY-AM-1nV" secondAttribute="centerX" id="uMT-p0-LUM"/>
