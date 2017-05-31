@@ -16,6 +16,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var cart = Cart()
     
+    var number = 0
+    
     @IBOutlet weak var OKView: UIView!
     
     @IBAction func okGotIt(_ sender: Any) {
@@ -141,7 +143,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         scrollView.delegate = self
         
-            getCategories { (sections) in
+            getCategories(number: number) { (sections) in
                                 
                 self.sections = sections
                 

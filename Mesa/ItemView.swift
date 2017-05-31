@@ -25,6 +25,8 @@ class ItemView: UIView {
     @IBOutlet weak var priceButton: UIView!
     @IBOutlet weak var addLine: UIView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var rightTap: UIImageView!
+    @IBOutlet weak var leftTap: UIImageView!
     
     @IBOutlet weak var addButtonText: UIButton!
     
@@ -72,6 +74,8 @@ class ItemView: UIView {
             
         }
         
+        flashTap(rightTap)
+        
         displayItem()
         
     }
@@ -90,6 +94,7 @@ class ItemView: UIView {
             
         }
         
+        flashTap(leftTap)
         displayItem()
         
     }
@@ -250,6 +255,19 @@ class ItemView: UIView {
         
         }
         )
+    }
+    
+    func flashTap(_ side : UIImageView) {
+        
+        UIView.animate(withDuration: 0.1, animations: { 
+            side.alpha = 0.75
+        }) { (true) in
+            UIView.animate(withDuration: 0.25, animations: {
+                side.alpha = 0
+            })
+            
+        }
+        
     }
     
     

@@ -10,19 +10,15 @@ import Foundation
 import Contentful
 import Interstellar
 
-let SPACE_ID = "bm180y4szy4w"
-
-let ACCESS_TOKEN = "a62475e6071759cdb99cb432b8f95e98fcd2b75ecccfac79f2549e20c1728422"
-
-let menuIdentifier = "64Ji1DtRrqeKKKUAW8CSIk"
-
 private let queue = DispatchQueue(label: "privateQueue", qos: DispatchQoS.background, attributes: .concurrent, autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.inherit, target: nil)
 
 var images : [URL: UIImage] = [:]
 
-let client: Client = Client(spaceIdentifier: SPACE_ID, accessToken: ACCESS_TOKEN)
 
-func getCategories( completion : @escaping ([Section]) -> Void )  {
+func getCategories(number : Int, completion : @escaping ([Section]) -> Void )  {
+    
+    let client: Client = Client(spaceIdentifier: spaces[number], accessToken: tokens[number])
+
     
     var sections : [Section] = []
     var sortedSections : [Section] = []
@@ -153,7 +149,7 @@ func getCategories( completion : @escaping ([Section]) -> Void )  {
     
     //  FETCHING SEQUENCE OF CATEGORIES VIA MENU IDENTIFIER
     
-    client.fetchEntry(identifier: menuIdentifier) {(result : Result<Contentful.Entry>) in
+    client.fetchEntry(identifier: menus[number]) {(result : Result<Contentful.Entry>) in
         
         switch result {
             

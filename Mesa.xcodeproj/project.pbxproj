@@ -22,6 +22,7 @@
 		3335B6F01EBB124100D7A67D /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3335B6EF1EBB124100D7A67D /* CreditCard.swift */; };
 		3335B6F21EBB1A6900D7A67D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3335B6F11EBB1A6900D7A67D /* CustomTextField.swift */; };
 		333661F91EC056CE00A3C2D3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333661F81EC056CE00A3C2D3 /* Keychain.swift */; };
+		333EC41E1EDE65EA00A2F4DD /* AccessTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333EC41D1EDE65EA00A2F4DD /* AccessTokens.swift */; };
 		335A7EE01EB287760095FB78 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A7EDF1EB287760095FB78 /* ItemView.xib */; };
 		335A7EE21EB28B4B0095FB78 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A7EE11EB28B4B0095FB78 /* ItemView.swift */; };
 		335A7EE41EB291E20095FB78 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A7EE31EB291E20095FB78 /* UIViewExtension.swift */; };
@@ -66,6 +67,7 @@
 		3335B6EF1EBB124100D7A67D /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		3335B6F11EBB1A6900D7A67D /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		333661F81EC056CE00A3C2D3 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		333EC41D1EDE65EA00A2F4DD /* AccessTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokens.swift; sourceTree = "<group>"; };
 		335A7EDF1EB287760095FB78 /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView.xib; sourceTree = "<group>"; };
 		335A7EE11EB28B4B0095FB78 /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		335A7EE31EB291E20095FB78 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				333661F81EC056CE00A3C2D3 /* Keychain.swift */,
 				335A7EE51EB2CD7E0095FB78 /* Contentful.swift */,
+				333EC41D1EDE65EA00A2F4DD /* AccessTokens.swift */,
 				3335B6EF1EBB124100D7A67D /* CreditCard.swift */,
 				330909561EB86A43008021D9 /* Cart.swift */,
 				335A7EE71EB2CEA50095FB78 /* Item.swift */,
@@ -433,6 +436,7 @@
 				3390CAFA1ED06E7A00E6CBB5 /* UILabelExenstion.swift in Sources */,
 				33F3C9721EAFEBEB001EF325 /* Mesa.xcdatamodeld in Sources */,
 				33752E7D1EBADF8000FB747B /* PaymentView.swift in Sources */,
+				333EC41E1EDE65EA00A2F4DD /* AccessTokens.swift in Sources */,
 				337392A21EBBF4770043BE07 /* CreditCardFormatter.swift in Sources */,
 				3335B6F01EBB124100D7A67D /* CreditCard.swift in Sources */,
 				335A7EE81EB2CEA50095FB78 /* Item.swift in Sources */,

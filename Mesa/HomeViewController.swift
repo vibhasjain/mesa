@@ -49,16 +49,16 @@ class HomeViewController: UIViewController  {
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if AppDelegate.isIPhone5() {
             
-            return self.view.frame.height*0.55
+            return self.view.frame.height*0.57
         }
-        return self.view.frame.height*0.45
+        return self.view.frame.height*0.47
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,11 +73,14 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         case 0:
             cell.restaurantPhoto.image = UIImage(named: "fattybao")
             cell.restaurantName.text = "The Fatty Bao"
-            cell.restaurantAddress.text = "2733 Madison Avenue NYC"
+            cell.restaurantAddress.text = "2733 Madison Ave NYC"
         case 1:
+            cell.restaurantPhoto.image = UIImage(named: "districtM")
+            cell.restaurantName.text = "District M"
+            cell.restaurantAddress.text = "700 8th Ave NYC"
+        case 2:
             cell.restaurantName.text = "Coming Soon"
             cell.restaurantAddress.text = "More Restaurants"
-            cell.seeMenu.alpha = 0
         default: break
         }
         
@@ -88,10 +91,17 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.row == 0 {
-            self.performSegue(withIdentifier: "showMenu", sender: self)
+        if indexPath.row != 2 {
+            self.performSegue(withIdentifier: "showMenu", sender: indexPath.row)
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ViewController {
+            if let number = sender as? Int {
+                destination.number = number
+            }
+        }
+    }
     
 }
