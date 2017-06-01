@@ -101,13 +101,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             
             if view == tapTooltip {
                 
-                view.shadow()
+//                toolTipComeIn(view: view)
                 
-                UIView.animate(withDuration: 0.3, delay: 10, options: [], animations: {
-                    view.transform = CGAffineTransform(translationX: 0, y: -160)
-                    self.OKView.transform = CGAffineTransform(translationX: 0, y: -160)
-                    view.alpha = 1
-                }, completion: nil)
             } else {
                 
                 view.fadeSelfIn()
@@ -349,6 +344,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         tapTooltip.shadow()
         
+    }
+    
+    func toolTipComeIn(view : UIView) {
+        view.shadow()
+        
+        UIView.animate(withDuration: 0.3, delay: 10, options: [], animations: {
+            view.transform = CGAffineTransform(translationX: 0, y: -160)
+            self.OKView.transform = CGAffineTransform(translationX: 0, y: -160)
+            view.alpha = 1
+        }, completion: nil)
+
     }
     
     func removeTooltip() {

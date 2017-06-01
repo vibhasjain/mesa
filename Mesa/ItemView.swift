@@ -17,6 +17,7 @@ protocol ItemViewDelegate: class {
 
 class ItemView: UIView {
     
+    @IBOutlet weak var rightCircle: UIImageView!
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemCount: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
@@ -27,9 +28,14 @@ class ItemView: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var rightTap: UIImageView!
     @IBOutlet weak var leftTap: UIImageView!
+    @IBOutlet weak var tapForNext: UILabel!
+    @IBOutlet weak var blackRightArrow: UIImageView!
     
     @IBOutlet weak var addButtonText: UIButton!
     
+    @IBAction func tapRightCircle(_ sender: Any) {
+        
+    }
     weak var delegate : ItemViewDelegate?
     
     var ids : [String] = []
@@ -63,6 +69,30 @@ class ItemView: UIView {
     
     
     @IBAction func topTouch(_ sender: Any) {
+        
+        
+        if tapForNext.isHidden == false {
+            
+
+        UIView.animate(withDuration: 0.2, animations: { 
+            self.rightCircle.frame = CGRect(x: -500, y: -500, width: 1200, height: 1200)
+            self.tapForNext.alpha = 1
+            self.blackRightArrow.alpha = 0
+        }) { (true) in
+            
+            UIView.animate(withDuration: 1.5, animations: {
+                self.rightCircle.alpha = 0
+                self.tapForNext.alpha = 0
+            }) { (true) in
+                
+                self.tapForNext.isHidden = true
+            }
+           
+        }
+            
+        }
+        
+
         
         if currentItemCount < ids.count {
             
@@ -100,6 +130,9 @@ class ItemView: UIView {
     }
     
     override func awakeFromNib() {
+        
+        self.tapForNext.alpha = 0
+        
         
     }
     
