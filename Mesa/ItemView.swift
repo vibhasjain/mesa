@@ -31,6 +31,7 @@ class ItemView: UIView {
     @IBOutlet weak var tapForNext: UILabel!
     @IBOutlet weak var blackRightArrow: UIImageView!
     
+    @IBOutlet weak var rightHandView: UIView!
     @IBOutlet weak var addButtonText: UIButton!
     
     @IBAction func tapRightCircle(_ sender: Any) {
@@ -74,18 +75,19 @@ class ItemView: UIView {
         if tapForNext.isHidden == false {
             
 
-        UIView.animate(withDuration: 0.2, animations: { 
+        UIView.animate(withDuration: 0.35, animations: {
             self.rightCircle.frame = CGRect(x: -500, y: -500, width: 1200, height: 1200)
-            self.tapForNext.alpha = 1
+            self.rightHandView.alpha = 1
             self.blackRightArrow.alpha = 0
+            self.blackRightArrow.frame.origin.x += 20
         }) { (true) in
             
-            UIView.animate(withDuration: 1.5, animations: {
+            UIView.animate(withDuration: 2.5, animations: {
                 self.rightCircle.alpha = 0
-                self.tapForNext.alpha = 0
+                self.rightHandView.alpha = 0
             }) { (true) in
                 
-                self.tapForNext.isHidden = true
+                self.rightHandView.isHidden = true
             }
            
         }
@@ -131,7 +133,7 @@ class ItemView: UIView {
     
     override func awakeFromNib() {
         
-        self.tapForNext.alpha = 0
+        self.rightHandView.alpha = 0
         
         
     }

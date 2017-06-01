@@ -71,12 +71,32 @@
                                 <outletCollection property="gestureRecognizers" destination="eQZ-hK-oaz" appends="YES" id="0qm-g2-CyR"/>
                             </connections>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap for next dish" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlp-7t-Xj2">
-                            <rect key="frame" x="40" y="0.0" width="145" height="477"/>
-                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTQ-2d-Lkp">
+                            <rect key="frame" x="-0.5" y="138.5" width="225" height="200"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlp-7t-Xj2">
+                                    <rect key="frame" x="61" y="146" width="103.5" height="54"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightHand" translatesAutoresizingMaskIntoConstraints="NO" id="qR7-9t-2bc">
+                                    <rect key="frame" x="-7.5" y="3" width="240" height="128"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="qR7-9t-2bc" secondAttribute="height" multiplier="15:8" id="CLK-Za-M2I"/>
+                                        <constraint firstAttribute="height" constant="128" id="eqd-KW-pJV"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="6FX-Za-vOT"/>
+                                <constraint firstAttribute="bottom" secondItem="mlp-7t-Xj2" secondAttribute="bottom" id="D3A-bw-ryL"/>
+                                <constraint firstItem="mlp-7t-Xj2" firstAttribute="top" secondItem="qR7-9t-2bc" secondAttribute="bottom" constant="15" id="Mo4-8X-Ie2"/>
+                                <constraint firstItem="mlp-7t-Xj2" firstAttribute="centerX" secondItem="NTQ-2d-Lkp" secondAttribute="centerX" id="OkP-yO-IYv"/>
+                                <constraint firstItem="qR7-9t-2bc" firstAttribute="centerX" secondItem="NTQ-2d-Lkp" secondAttribute="centerX" id="bCe-fW-n3z"/>
+                            </constraints>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackRightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="8xn-90-PaQ">
                             <rect key="frame" x="185.5" y="230.5" width="19" height="15"/>
                             <constraints>
@@ -91,15 +111,14 @@
                         <constraint firstItem="ysq-ca-wOQ" firstAttribute="centerX" secondItem="8xn-90-PaQ" secondAttribute="centerX" id="1SQ-WI-UZu"/>
                         <constraint firstItem="ysq-ca-wOQ" firstAttribute="centerY" secondItem="8xn-90-PaQ" secondAttribute="centerY" id="8k7-Sh-x62"/>
                         <constraint firstAttribute="bottom" secondItem="OZg-E7-yAk" secondAttribute="bottom" id="8l1-A0-dsb"/>
-                        <constraint firstItem="mlp-7t-Xj2" firstAttribute="leading" secondItem="B1Y-TG-acl" secondAttribute="leading" constant="40" id="9pb-PT-j25"/>
-                        <constraint firstItem="mlp-7t-Xj2" firstAttribute="top" secondItem="B1Y-TG-acl" secondAttribute="top" id="Aok-Rq-S2b"/>
                         <constraint firstItem="OZg-E7-yAk" firstAttribute="top" secondItem="B1Y-TG-acl" secondAttribute="top" id="PWJ-7E-AGJ"/>
                         <constraint firstItem="OZg-E7-yAk" firstAttribute="leading" secondItem="B1Y-TG-acl" secondAttribute="leading" id="QWC-Mn-21I"/>
                         <constraint firstItem="ysq-ca-wOQ" firstAttribute="centerY" secondItem="B1Y-TG-acl" secondAttribute="centerY" id="dYW-Ux-BTk"/>
-                        <constraint firstAttribute="trailing" secondItem="mlp-7t-Xj2" secondAttribute="trailing" constant="40" id="eF2-6f-z2S"/>
+                        <constraint firstItem="NTQ-2d-Lkp" firstAttribute="centerY" secondItem="B1Y-TG-acl" secondAttribute="centerY" id="ize-J9-SD8"/>
                         <constraint firstAttribute="trailing" secondItem="OZg-E7-yAk" secondAttribute="trailing" id="lGE-WH-nhz"/>
-                        <constraint firstAttribute="bottom" secondItem="mlp-7t-Xj2" secondAttribute="bottom" id="q3V-Iq-a70"/>
+                        <constraint firstItem="NTQ-2d-Lkp" firstAttribute="centerX" secondItem="B1Y-TG-acl" secondAttribute="centerX" id="mw3-PV-9oX"/>
                         <constraint firstAttribute="trailing" secondItem="ysq-ca-wOQ" secondAttribute="trailing" id="scM-Qd-rw8"/>
+                        <constraint firstItem="NTQ-2d-Lkp" firstAttribute="width" secondItem="B1Y-TG-acl" secondAttribute="width" id="yut-u8-llf"/>
                     </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="zeB-3l-oVc" appends="YES" id="7YX-gg-FaB"/>
@@ -252,6 +271,7 @@
                 <outlet property="priceButton" destination="sT7-a5-ApI" id="XV9-24-1ll"/>
                 <outlet property="priceLabel" destination="usw-2V-JeA" id="UxT-31-Toj"/>
                 <outlet property="rightCircle" destination="ysq-ca-wOQ" id="q80-v3-T9b"/>
+                <outlet property="rightHandView" destination="NTQ-2d-Lkp" id="dhv-mb-17X"/>
                 <outlet property="rightTap" destination="OZg-E7-yAk" id="YT5-eZ-GYM"/>
                 <outlet property="tapForNext" destination="mlp-7t-Xj2" id="gn4-1t-xJA"/>
             </connections>
@@ -289,6 +309,7 @@
         <image name="gradientBottomPNG" width="1437" height="535"/>
         <image name="gradientTopPNG" width="1437" height="535"/>
         <image name="leftTap" width="252" height="948"/>
+        <image name="rightHand" width="76" height="128"/>
         <image name="rightTap" width="448" height="946"/>
         <image name="tappity" width="254" height="36"/>
     </resources>
