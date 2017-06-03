@@ -438,6 +438,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     func removeCircle() {
         self.whiteCircle.isHidden = true
         self.blackRightArrow.isHidden = true
+        
+    }
+    
+    func tooltipHasAppeared() -> Bool {
+        
+        if self.whiteCircle.isHidden == true { return true }
+        else { return false }
     }
     
 }

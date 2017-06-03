@@ -13,6 +13,7 @@ protocol ItemViewDelegate: class {
     func removeTooltip ()
     func updateItemCount ()
     func removeCircle()
+    func tooltipHasAppeared() -> Bool
     
 }
 
@@ -274,7 +275,9 @@ class ItemView: UIView {
     }
     
     func nextDishTooltip() {
-        if tapForNext.isHidden == false {
+        
+        let tooltipHasAppeared : Bool = (delegate?.tooltipHasAppeared())!
+        if !tooltipHasAppeared {
             
             self.rightCircle.alpha = 1
             self.blackRightArrow.alpha = 1
