@@ -6,5 +6,6 @@ target 'Mesa' do
     pod 'Contentful'
     pod 'Interstellar'
     pod 'CreditCardValidator'
+    pod 'Alamofire'
     pod 'KeychainSwift', '~> 8.0'
 end

@@ -12,6 +12,7 @@ protocol ItemViewDelegate: class {
     
     func removeTooltip ()
     func updateItemCount ()
+    func removeCircle()
     
 }
 
@@ -71,29 +72,7 @@ class ItemView: UIView {
     
     @IBAction func topTouch(_ sender: Any) {
         
-        
-        if tapForNext.isHidden == false {
-            
-
-        UIView.animate(withDuration: 0.35, animations: {
-            self.rightCircle.frame = CGRect(x: -500, y: -500, width: 1200, height: 1200)
-            self.rightHandView.alpha = 1
-            self.blackRightArrow.alpha = 0
-            self.blackRightArrow.frame.origin.x += 20
-        }) { (true) in
-            
-            UIView.animate(withDuration: 2.5, animations: {
-                self.rightCircle.alpha = 0
-                self.rightHandView.alpha = 0
-            }) { (true) in
-                
-                self.rightHandView.isHidden = true
-            }
-           
-        }
-            
-        }
-        
+        nextDishTooltip()
 
         
         if currentItemCount < ids.count {
@@ -134,6 +113,8 @@ class ItemView: UIView {
     override func awakeFromNib() {
         
         self.rightHandView.alpha = 0
+        self.rightCircle.alpha = 0
+        self.blackRightArrow.alpha = 0
         
         
     }
@@ -290,6 +271,36 @@ class ItemView: UIView {
         
         }
         )
+    }
+    
+    func nextDishTooltip() {
+        if tapForNext.isHidden == false {
+            
+            self.rightCircle.alpha = 1
+            self.blackRightArrow.alpha = 1
+            delegate?.removeCircle()
+            
+            UIView.animate(withDuration: 0.35, animations: {
+                self.rightCircle.frame = CGRect(x: -500, y: -350, width: 1200, height: 1200)
+                self.rightCircle.alpha = 0.9
+                self.rightHandView.alpha = 1
+                self.blackRightArrow.alpha = 0
+                self.blackRightArrow.frame.origin.x += 20
+            }) { (true) in
+                
+                
+                UIView.animate(withDuration: 0.5, delay: 2, options: [], animations: {
+                    self.rightCircle.alpha = 0
+                    self.rightHandView.alpha = 0
+                }, completion: { (true) in
+                    self.rightHandView.isHidden = true
+                    self.rightCircle.isHidden = true
+                    self.blackRightArrow.isHidden = true
+                })
+                
+            }
+            
+        }
     }
     
     func flashTap(_ side : UIImageView) {

@@ -89,6 +89,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Contentful/Contentful.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CreditCardValidator/CreditCardValidator.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Decodable/Decodable.framework"
@@ -96,6 +97,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/KeychainSwift/KeychainSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Contentful/Contentful.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CreditCardValidator/CreditCardValidator.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Decodable/Decodable.framework"

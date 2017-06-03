@@ -60,28 +60,28 @@
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightTap" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-E7-yAk">
                             <rect key="frame" x="0.0" y="0.0" width="225" height="477"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circleOfYellow" translatesAutoresizingMaskIntoConstraints="NO" id="ysq-ca-wOQ">
-                            <rect key="frame" x="165" y="208.5" width="60" height="60"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCircle" translatesAutoresizingMaskIntoConstraints="NO" id="ysq-ca-wOQ">
+                            <rect key="frame" x="125" y="188.5" width="100" height="100"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ysq-ca-wOQ" secondAttribute="height" multiplier="1:1" id="pCW-sg-fYF"/>
-                                <constraint firstAttribute="height" constant="60" id="xq9-8P-Led"/>
+                                <constraint firstAttribute="height" constant="100" id="xq9-8P-Led"/>
                             </constraints>
                             <connections>
                                 <outletCollection property="gestureRecognizers" destination="eQZ-hK-oaz" appends="YES" id="0qm-g2-CyR"/>
                             </connections>
                         </imageView>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTQ-2d-Lkp">
-                            <rect key="frame" x="-0.5" y="138.5" width="225" height="200"/>
+                            <rect key="frame" x="-0.5" y="163.5" width="225" height="200"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlp-7t-Xj2">
-                                    <rect key="frame" x="61" y="146" width="103.5" height="54"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Dish" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlp-7t-Xj2">
+                                    <rect key="frame" x="56.5" y="92.5" width="112.5" height="107.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.67200338840484619" green="0.0035178284160792828" blue="0.99948805570602417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightHand" translatesAutoresizingMaskIntoConstraints="NO" id="qR7-9t-2bc">
-                                    <rect key="frame" x="-7.5" y="3" width="240" height="128"/>
+                                    <rect key="frame" x="-7.5" y="-50.5" width="240" height="128"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="qR7-9t-2bc" secondAttribute="height" multiplier="15:8" id="CLK-Za-M2I"/>
                                         <constraint firstAttribute="height" constant="128" id="eqd-KW-pJV"/>
@@ -90,6 +90,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="mlp-7t-Xj2" firstAttribute="width" secondItem="NTQ-2d-Lkp" secondAttribute="width" multiplier="0.5" id="0Ln-PN-cte"/>
                                 <constraint firstAttribute="height" constant="200" id="6FX-Za-vOT"/>
                                 <constraint firstAttribute="bottom" secondItem="mlp-7t-Xj2" secondAttribute="bottom" id="D3A-bw-ryL"/>
                                 <constraint firstItem="mlp-7t-Xj2" firstAttribute="top" secondItem="qR7-9t-2bc" secondAttribute="bottom" constant="15" id="Mo4-8X-Ie2"/>
@@ -98,7 +99,7 @@
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackRightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="8xn-90-PaQ">
-                            <rect key="frame" x="185.5" y="230.5" width="19" height="15"/>
+                            <rect key="frame" x="165.5" y="230.5" width="19" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="Pgr-3M-6ly"/>
                                 <constraint firstAttribute="width" secondItem="8xn-90-PaQ" secondAttribute="height" multiplier="144:115" id="usT-s7-Rf5"/>
@@ -113,13 +114,18 @@
                         <constraint firstAttribute="bottom" secondItem="OZg-E7-yAk" secondAttribute="bottom" id="8l1-A0-dsb"/>
                         <constraint firstItem="OZg-E7-yAk" firstAttribute="top" secondItem="B1Y-TG-acl" secondAttribute="top" id="PWJ-7E-AGJ"/>
                         <constraint firstItem="OZg-E7-yAk" firstAttribute="leading" secondItem="B1Y-TG-acl" secondAttribute="leading" id="QWC-Mn-21I"/>
+                        <constraint firstItem="ysq-ca-wOQ" firstAttribute="centerY" secondItem="NTQ-2d-Lkp" secondAttribute="centerY" constant="-25" id="Y2M-sh-Xi4"/>
                         <constraint firstItem="ysq-ca-wOQ" firstAttribute="centerY" secondItem="B1Y-TG-acl" secondAttribute="centerY" id="dYW-Ux-BTk"/>
-                        <constraint firstItem="NTQ-2d-Lkp" firstAttribute="centerY" secondItem="B1Y-TG-acl" secondAttribute="centerY" id="ize-J9-SD8"/>
                         <constraint firstAttribute="trailing" secondItem="OZg-E7-yAk" secondAttribute="trailing" id="lGE-WH-nhz"/>
                         <constraint firstItem="NTQ-2d-Lkp" firstAttribute="centerX" secondItem="B1Y-TG-acl" secondAttribute="centerX" id="mw3-PV-9oX"/>
                         <constraint firstAttribute="trailing" secondItem="ysq-ca-wOQ" secondAttribute="trailing" id="scM-Qd-rw8"/>
                         <constraint firstItem="NTQ-2d-Lkp" firstAttribute="width" secondItem="B1Y-TG-acl" secondAttribute="width" id="yut-u8-llf"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="zeB-3l-oVc" appends="YES" id="7YX-gg-FaB"/>
                     </connections>
@@ -305,12 +311,12 @@
     </objects>
     <resources>
         <image name="blackRightArrow" width="144" height="115"/>
-        <image name="circleOfYellow" width="155" height="152"/>
         <image name="gradientBottomPNG" width="1437" height="535"/>
         <image name="gradientTopPNG" width="1437" height="535"/>
         <image name="leftTap" width="252" height="948"/>
         <image name="rightHand" width="76" height="128"/>
         <image name="rightTap" width="448" height="946"/>
         <image name="tappity" width="254" height="36"/>
+        <image name="whiteCircle" width="236" height="231"/>
     </resources>
 </document>
