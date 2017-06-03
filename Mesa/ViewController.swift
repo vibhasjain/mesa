@@ -117,27 +117,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         super.viewDidLoad()
         self.view.disappear()
-        
-        let omnivoreURL = "https://api.omnivore.io/1.0/locations/cA7bX46i/tickets/?limit=2"
-        let apiKey = "4519030fd368400b84e06ad256a6232b"
-        
-        Alamofire.request(omnivoreURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Api-Key": apiKey]).responseJSON { (response) in
-            switch response.result {
-            case .failure(let error):
-                print(error)
-            case .success(let value):
-                print(value)
-            }
-        }
-        
-        Alamofire.request("https://google.com").responseString { (response) in
-            switch response.result {
-            case .failure(let error):
-                print(error)
-            case .success(let value):
-                print(value)
-            }
-        }
+
         
         self.orderCount.text = "\(self.cart.items.count)"
         
