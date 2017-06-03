@@ -100,6 +100,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         if let destination = segue.destination as? ViewController {
             if let number = sender as? Int {
                 destination.number = number
+                destination.cart.reset()
             }
         }
     }

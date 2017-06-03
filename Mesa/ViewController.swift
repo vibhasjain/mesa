@@ -117,8 +117,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         super.viewDidLoad()
         self.view.disappear()
-
-        
+        removeCircle()
         self.orderCount.text = "\(self.cart.items.count)"
         
         

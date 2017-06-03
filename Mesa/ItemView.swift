@@ -52,12 +52,17 @@ class ItemView: UIView {
     let glowAlpha : CGFloat = 0.75
     let deGlowAlpha : CGFloat = 0.3
     
+    @IBOutlet weak var menuView: UIVisualEffectView!
+    
     var currentItemCount = 1
     
     @IBAction func addButton(_ sender: UIButton) {
         
         addItemToCart()
         
+    }
+    @IBAction func menuTap(_ sender: Any) {
+        self.menuView.frame = CGRect(x: 20, y: self.itemName.frame.origin.y - 20, width: 20, height: 20)
     }
     
     @IBAction func priceTAP(_ sender: Any) {
@@ -112,10 +117,6 @@ class ItemView: UIView {
     }
     
     override func awakeFromNib() {
-        
-        self.rightHandView.alpha = 0
-        self.rightCircle.alpha = 0
-        self.blackRightArrow.alpha = 0
         
         
     }
@@ -292,7 +293,7 @@ class ItemView: UIView {
             }) { (true) in
                 
                 
-                UIView.animate(withDuration: 0.5, delay: 2, options: [], animations: {
+                UIView.animate(withDuration: 0.5, delay: 1, options: [], animations: {
                     self.rightCircle.alpha = 0
                     self.rightHandView.alpha = 0
                 }, completion: { (true) in
