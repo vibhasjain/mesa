@@ -212,7 +212,6 @@ class ItemView: UIView {
             addButtonText.alpha = 1
         }
         
-        resetMenuToggle()
         
         let refresher = UIActivityIndicatorView(frame: itemImage.frame)
         refresher.color = .white

@@ -220,6 +220,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
+        guard scrollView.contentOffset.y == 0 else { return }
+        
         let relativePosition = scrollView.contentOffset.x/view.frame.width
         let primitivePosition = Int(relativePosition)
         let difference = Double(relativePosition) - Double(primitivePosition)
