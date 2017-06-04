@@ -16,7 +16,7 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var blackDot: UIView!
     
-    var images = [ "onboardingDummy" , "pictures" , "split" ]
+    var images = [ "waiter" , "pictures" , "split" ]
     
     @IBOutlet weak var welcomeButtonLayer: UIButton!
     

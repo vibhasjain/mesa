@@ -10,10 +10,7 @@ import UIKit
 
 protocol ItemViewDelegate: class {
     
-    func removeTooltip ()
     func updateItemCount ()
-    func removeCircle()
-    func tooltipHasAppeared() -> Bool
     
 }
 
@@ -30,15 +27,9 @@ class ItemView: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var rightTap: UIImageView!
     @IBOutlet weak var leftTap: UIImageView!
-    @IBOutlet weak var tapForNext: UILabel!
-    @IBOutlet weak var blackRightArrow: UIImageView!
-    
-    @IBOutlet weak var rightHandView: UIView!
     @IBOutlet weak var addButtonText: UIButton!
     
-    @IBAction func tapRightCircle(_ sender: Any) {
-        
-    }
+  
     weak var delegate : ItemViewDelegate?
     
     var ids : [String] = []
@@ -49,9 +40,7 @@ class ItemView: UIView {
     var availables : [Bool] = []
     var items : [Item] = []
     var barViews : [UIView] = []
-    let glowAlpha : CGFloat = 0.75
-    let deGlowAlpha : CGFloat = 0.3
-    
+
     @IBOutlet weak var menuView: UIVisualEffectView!
     
     var currentItemCount = 1
@@ -78,8 +67,6 @@ class ItemView: UIView {
     
     @IBAction func topTouch(_ sender: Any) {
         
-        nextDishTooltip()
-
         
         if currentItemCount < ids.count {
             
@@ -156,7 +143,6 @@ class ItemView: UIView {
     
     func displayItem()  {
         
-//        glowCurrent()
         
         itemName.text = names[currentItemCount-1]
         itemDescription.text = details[currentItemCount-1]
@@ -199,67 +185,7 @@ class ItemView: UIView {
             }
         })
     }
-    
-    func generateBars(screenWidth : CGFloat, screenHeight : CGFloat) {
-        
-        let count : CGFloat = CGFloat(items.count)
-        let space : CGFloat = 3
-        let barHeight : CGFloat = 10
-        let visibleHeight : CGFloat = 2
-        let yPosition : CGFloat = screenHeight - visibleHeight
-        let sideSpace : CGFloat = 20
-        let width = (screenWidth - (2*sideSpace) - ((count-1) * space ))/count
 
-        
-        for itemNum in 0..<items.count {
-            
-            let bar = UIView(frame: CGRect(x: sideSpace + (CGFloat(itemNum) * (space + width)), y: yPosition, width: width, height: barHeight))
-            bar.backgroundColor = UIColor.white
-            bar.alpha = deGlowAlpha
-            bar.cornerRadius = 1
-            barViews.append(bar)
-            self.addSubview(barViews[itemNum])
-            self.bringSubview(toFront: barViews[itemNum])
-            
-        }
-    }
-    
-    func glowCurrent() {
-        
-        deGlowAll()
-        UIView.animate(withDuration: 0.3) {
-            self.barViews[self.currentItemCount-1].alpha = self.glowAlpha
-            self.barViews[self.currentItemCount-1].transform = CGAffineTransform(translationX: 0, y: -3)
-            self.barViews[self.currentItemCount-1].cornerRadius = 1.5
-        }
-    }
-    
-    func deGlowCurrent() {
-        
-        UIView.animate(withDuration: 0.3) {
-            self.barViews[self.currentItemCount].alpha = self.deGlowAlpha
-        }
-    }
-    
-    func deGlowAll() {
-        
-        UIView.animate(withDuration: 0.3) {
-            for view in 0..<self.barViews.count {
-                self.barViews[view].alpha = self.deGlowAlpha
-                self.barViews[view].transform = CGAffineTransform(translationX: 0, y: 0)
-                self.barViews[view].cornerRadius = 1
-            }
-        }
-    }
-    
-    func glowAll() {
-        
-        UIView.animate(withDuration: 0.3) {
-            self.barViews.forEach { (view) in
-                view.alpha = self.glowAlpha
-            }
-        }
-    }
     
     func popItemCount() {
         
@@ -273,38 +199,6 @@ class ItemView: UIView {
         
         }
         )
-    }
-    
-    func nextDishTooltip() {
-        
-        let tooltipHasAppeared : Bool = (delegate?.tooltipHasAppeared())!
-        if !tooltipHasAppeared {
-            
-            self.rightCircle.alpha = 1
-            self.blackRightArrow.alpha = 1
-            delegate?.removeCircle()
-            
-            UIView.animate(withDuration: 0.35, animations: {
-                self.rightCircle.frame = CGRect(x: -500, y: -350, width: 1200, height: 1200)
-                self.rightCircle.alpha = 0.9
-                self.rightHandView.alpha = 1
-                self.blackRightArrow.alpha = 0
-                self.blackRightArrow.frame.origin.x += 20
-            }) { (true) in
-                
-                
-                UIView.animate(withDuration: 0.5, delay: 1, options: [], animations: {
-                    self.rightCircle.alpha = 0
-                    self.rightHandView.alpha = 0
-                }, completion: { (true) in
-                    self.rightHandView.isHidden = true
-                    self.rightCircle.isHidden = true
-                    self.blackRightArrow.isHidden = true
-                })
-                
-            }
-            
-        }
     }
     
     func flashTap(_ side : UIImageView) {

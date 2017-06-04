@@ -17,16 +17,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var cart = Cart()
     
-    @IBOutlet weak var blackRightArrow: UIImageView!
-    @IBOutlet weak var whiteCircle: UIImageView!
     var number = 0
     
-    @IBOutlet weak var OKView: UIView!
-    
-    @IBAction func okGotIt(_ sender: Any) {
-        removeTooltip()
-        
-    }
     
     @IBAction func close(_ sender: Any) {
         
@@ -34,14 +26,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
-    
-    @IBAction func tapTool(_ sender: Any) {
-        
-    }
+
     
     @IBOutlet weak var orderButtonView: UIView!
-    
-    @IBOutlet weak var tapTooltip: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -102,14 +89,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.view.subviews.forEach { (view) in
             
-            if view == tapTooltip {
-                
-//                toolTipComeIn(view: view)
-                
-            } else {
-                
+
                 view.fadeSelfIn()
-            }
+            
         }
     }
     
@@ -117,7 +99,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         super.viewDidLoad()
         self.view.disappear()
-        removeCircle()
         self.orderCount.text = "\(self.cart.items.count)"
         
         
@@ -337,50 +318,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
-    func animateTooltip() {
-        
-        guard let _ = self.tapTooltip else { return }
-        
-        UIView.animate(withDuration: 0.25, delay: 0, options: [.repeat, .autoreverse], animations: {
-            self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: -2)
-        }, completion: nil)
-        
-        tapTooltip.shadow()
-        
-    }
-    
-    func toolTipComeIn(view : UIView) {
-        view.shadow()
-        
-        UIView.animate(withDuration: 0.3, delay: 10, options: [], animations: {
-            view.transform = CGAffineTransform(translationX: 0, y: -160)
-            self.OKView.transform = CGAffineTransform(translationX: 0, y: -160)
-            view.alpha = 1
-        }, completion: nil)
 
-    }
-    
-    func removeTooltip() {
-        
-        guard let _ = self.tapTooltip else { return }
-        
-        //        UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
-        //            self.tapTooltip.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        //        }, completion: nil)
-        //
-        UIView.animate(withDuration: 0.2, animations: {
-            self.tapTooltip.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.OKView.transform = CGAffineTransform(translationX: 0, y: 0)
-            
-            
-        }) { (true) in
-            
-            self.tapTooltip.removeFromSuperview()
-            
-        }
-        
-        
-    }
     
     func updateItemCount() {
         
@@ -414,17 +352,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         }
     }
     
-    func removeCircle() {
-        self.whiteCircle.isHidden = true
-        self.blackRightArrow.isHidden = true
-        
-    }
-    
-    func tooltipHasAppeared() -> Bool {
-        
-        if self.whiteCircle.isHidden == true { return true }
-        else { return false }
-    }
+
     
 }
 
