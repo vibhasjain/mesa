@@ -17,8 +17,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var cart = Cart()
     
+    @IBOutlet weak var menuTable: UITableView!
+    
     var number = 0
     
+    var itemViews : [ItemView] = []
+    
+    var currentCategory = 0
     
     @IBAction func close(_ sender: Any) {
         
@@ -87,9 +92,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         //        animateTooltip()
         
+        
         self.view.subviews.forEach { (view) in
-            
-
                 view.fadeSelfIn()
             
         }
@@ -100,7 +104,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         super.viewDidLoad()
         self.view.disappear()
         self.orderCount.text = "\(self.cart.items.count)"
-        
         
         //        if !UserDefaults.standard.bool(forKey: "tooltipHasAppeared") {
         
@@ -128,19 +131,27 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 
                 DispatchQueue.main.async {
                     
-                    let itemViews:[ItemView] = self.createItemViews()
+                    self.itemViews = self.createItemViews()
+                    
+                    self.setupTable()
                     
                     self.catLabel.text = self.categoryText
                     
-                    self.setupScrollView(itemViews: itemViews)
+                    self.setupScrollView()
                     
                     self.attributeCategories()
+                    
                 }
                 
             }
+    }
+    
+    func setupTable() {
         
-        
-        
+        menuTable.dataSource = self
+        menuTable.delegate = self
+        menuTable.register(UINib(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
+        menuTable.reloadData()
     }
     
     func createItemViews() -> [ItemView] {
@@ -180,19 +191,30 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         return itemViews
     }
     
-    func setupScrollView( itemViews : [ItemView]) {
+    func setupScrollView() {
         
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(itemViews.count), height: view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(itemViews.count), height: scrollView.frame.height)
         
         scrollView.isPagingEnabled = true
         
-        for i in 0..<itemViews.count {
+        for i in 0..<self.itemViews.count {
             
-            itemViews[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            self.itemViews[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
             
-            scrollView.addSubview(itemViews[i])
+            scrollView.addSubview(self.itemViews[i])
+            scrollView.bringSubview(toFront: menuTable)
             
+        }
+    }
+    
+    func showMenu() {
+        
+        if itemViews[currentCategory].menuIsExpanded {
+            menuTable.reloadData()
+            UIView.animate(withDuration: 0.15, animations: {
+                self.menuTable.alpha = 1
+            })
         }
     }
     
@@ -204,6 +226,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         let newDifference = CGFloat(difference/2 + 0.50)
         
         self.orderButtonView.alpha = 0
+        
+        itemViews.forEach { (view) in
+            
+            UIView.animate(withDuration: 0.15, animations: {
+                view.menuView.alpha = 0
+            })
+        }
+        
+        UIView.animate(withDuration: 0.15) {
+            self.menuTable.alpha = 0
+        }
         
         //        UIView.animate(withDuration: 0.15, animations: {
         //            self.closeButtonLayer.alpha = 0
@@ -219,9 +252,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         if difference == 0 {
             
+            itemViews.forEach { (view) in
+                
+                UIView.animate(withDuration: 0.15, animations: {
+                    view.menuView.alpha = 1
+                })
+            }
+            
             UIView.animate(withDuration: 0.15, animations: {
                 self.orderButtonView.alpha = 1
             })
+            self.currentCategory = primitivePosition
+            
+            showMenu()
             
         }
         /*
@@ -351,6 +394,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             destination.delegate = self
         }
     }
+    
+    
     
 
     

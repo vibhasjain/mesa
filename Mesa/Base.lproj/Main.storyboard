@@ -278,8 +278,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG6-AN-Nyg">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG6-AN-Nyg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JkG-4G-kTg">
+                                        <rect key="frame" x="25" y="43" width="325" height="624"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.091229453363914373" colorSpace="calibratedRGB"/>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -417,26 +424,29 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="JkG-4G-kTg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0kP-8a-OTs"/>
                             <constraint firstItem="RAK-Mo-xfb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="11T-GH-0uj"/>
+                            <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="15b-jI-yvK"/>
+                            <constraint firstAttribute="trailing" secondItem="UG6-AN-Nyg" secondAttribute="trailing" id="5ma-h4-isd"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="width" secondItem="RAK-Mo-xfb" secondAttribute="width" id="5nW-nP-Yh1"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="width" secondItem="bKY-AM-1nV" secondAttribute="width" constant="-80" id="7Sh-QK-CzX"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="7eH-Bo-gfO"/>
+                            <constraint firstAttribute="bottom" secondItem="JkG-4G-kTg" secondAttribute="bottom" id="7jb-vM-4mN"/>
                             <constraint firstItem="Rfg-cF-JZc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Dgo-PK-YkJ"/>
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ECL-av-IM4"/>
-                            <constraint firstItem="UG6-AN-Nyg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EGy-v1-XF3"/>
+                            <constraint firstItem="JkG-4G-kTg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-50" id="EyV-VY-Xfh"/>
                             <constraint firstItem="Rfg-cF-JZc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Gzb-X3-MIR"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="height" secondItem="RAK-Mo-xfb" secondAttribute="height" id="HKj-D0-K6h"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UG6-AN-Nyg" secondAttribute="bottom" id="M2L-5e-J4u"/>
                             <constraint firstItem="BTr-gw-7ci" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="MDS-SU-KlY"/>
+                            <constraint firstItem="UG6-AN-Nyg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MFq-eR-bow"/>
+                            <constraint firstItem="JkG-4G-kTg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-43" id="PRs-cZ-WH0"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerY" secondItem="bKY-AM-1nV" secondAttribute="centerY" id="Q3q-UD-upv"/>
                             <constraint firstAttribute="bottom" secondItem="BaS-lg-zo4" secondAttribute="bottom" constant="25" id="cSp-XW-ObB"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="BTr-gw-7ci" secondAttribute="centerY" constant="10" id="fOB-eB-O5a"/>
-                            <constraint firstItem="UG6-AN-Nyg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fti-DO-ESC"/>
+                            <constraint firstAttribute="bottom" secondItem="UG6-AN-Nyg" secondAttribute="bottom" id="hTR-Jf-7AN"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="9" id="j9R-Al-BwF"/>
-                            <constraint firstAttribute="trailing" secondItem="UG6-AN-Nyg" secondAttribute="trailing" id="jaL-tq-ysJ"/>
                             <constraint firstItem="uZ8-Ls-kqz" firstAttribute="centerY" secondItem="RAK-Mo-xfb" secondAttribute="centerY" id="n5g-KD-bFs"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="height" secondItem="bKY-AM-1nV" secondAttribute="height" constant="-40" id="sLv-D6-wsW"/>
-                            <constraint firstItem="UG6-AN-Nyg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tif-5u-m7b"/>
                             <constraint firstItem="BaS-lg-zo4" firstAttribute="centerX" secondItem="bKY-AM-1nV" secondAttribute="centerX" id="uMT-p0-LUM"/>
                             <constraint firstAttribute="trailing" secondItem="uZ8-Ls-kqz" secondAttribute="trailing" id="uPV-0G-ghN"/>
                             <constraint firstAttribute="trailing" secondItem="BaS-lg-zo4" secondAttribute="trailing" constant="20" id="xgh-by-wHZ"/>
@@ -447,6 +457,7 @@
                     <connections>
                         <outlet property="catLabel" destination="BTr-gw-7ci" id="9ED-eH-RVB"/>
                         <outlet property="categoryConstraint" destination="ECL-av-IM4" id="hDU-UN-DHD"/>
+                        <outlet property="menuTable" destination="JkG-4G-kTg" id="hJy-Jt-cfE"/>
                         <outlet property="orderButtonView" destination="BaS-lg-zo4" id="k3x-2c-KmX"/>
                         <outlet property="orderCount" destination="IIB-fO-ogx" id="FGm-5e-oTD"/>
                         <outlet property="scrollView" destination="UG6-AN-Nyg" id="jek-1H-PjJ"/>

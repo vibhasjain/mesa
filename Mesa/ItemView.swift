@@ -10,7 +10,8 @@ import UIKit
 
 protocol ItemViewDelegate: class {
     
-    func updateItemCount ()
+    func updateItemCount()
+    func showMenu()
     
 }
 
@@ -28,8 +29,10 @@ class ItemView: UIView {
     @IBOutlet weak var rightTap: UIImageView!
     @IBOutlet weak var leftTap: UIImageView!
     @IBOutlet weak var addButtonText: UIButton!
+    @IBOutlet weak var menuView: UIVisualEffectView!
     
-  
+    let burger = UIImageView(image: #imageLiteral(resourceName: "burger"))
+    
     weak var delegate : ItemViewDelegate?
     
     var ids : [String] = []
@@ -40,8 +43,14 @@ class ItemView: UIView {
     var availables : [Bool] = []
     var items : [Item] = []
     var barViews : [UIView] = []
-
-    @IBOutlet weak var menuView: UIVisualEffectView!
+    var menuIsExpanded = true
+    
+    @IBAction func menuTap(_ sender: Any) {
+        if !menuIsExpanded {
+            expandMenu()
+        }
+    }
+    
     
     var currentItemCount = 1
     
@@ -50,8 +59,36 @@ class ItemView: UIView {
         addItemToCart()
         
     }
-    @IBAction func menuTap(_ sender: Any) {
-        self.menuView.frame = CGRect(x: 20, y: self.itemName.frame.origin.y - 20, width: 20, height: 20)
+    
+    func resetMenuToggle() {
+        if !menuIsExpanded {
+            self.menuView.frame = CGRect(x: 15, y: self.itemName.frame.origin.y - 65, width: 45, height: 45)
+        }
+    }
+    
+    func collapseMenu() {
+        
+        UIView.animate(withDuration: 0.15, animations: {
+            self.menuView.frame = CGRect(x: 15, y: self.itemName.frame.origin.y - 65, width: 45, height: 45)
+            self.menuView.cornerRadius = 22.5
+            self.burger.alpha = 1
+        }) { (true) in
+            self.menuIsExpanded = false
+        }
+    }
+    
+    func expandMenu() {
+        
+        self.menuIsExpanded = true
+        self.delegate?.showMenu()
+        UIView.animate(withDuration: 0.15, animations: {
+            
+            self.showMenu()
+            self.burger.alpha = 0
+        }) { (true) in
+            
+            
+        }
     }
     
     @IBAction func priceTAP(_ sender: Any) {
@@ -103,10 +140,24 @@ class ItemView: UIView {
         
     }
     
+    func showMenu() {
+        self.menuView.frame = CGRect(x: self.itemName.frame.origin.x, y: 43, width: self.itemDescription.frame.size.width + 3 , height: self.frame.height + 50)
+        self.menuView.cornerRadius = 4
+    }
+    
     override func awakeFromNib() {
         
+        showMenu()
+        addBurger()
         
     }
+    
+    func addBurger() {
+        self.menuView.addSubview(burger)
+        burger.frame = CGRect(x: 12.3, y: 14, width: 20, height: 15)
+        burger.alpha = 0
+    }
+    
     
     func addItemToCart() {
         
@@ -161,6 +212,7 @@ class ItemView: UIView {
             addButtonText.alpha = 1
         }
         
+        resetMenuToggle()
         
         let refresher = UIActivityIndicatorView(frame: itemImage.frame)
         refresher.color = .white
@@ -185,7 +237,7 @@ class ItemView: UIView {
             }
         })
     }
-
+    
     
     func popItemCount() {
         
@@ -196,14 +248,14 @@ class ItemView: UIView {
             UIView.animate(withDuration: 0.05, animations: {
                 self.itemCount.transform = CGAffineTransform(scaleX: 1, y: 1)
             })
-        
+            
         }
         )
     }
     
     func flashTap(_ side : UIImageView) {
         
-        UIView.animate(withDuration: 0.1, animations: { 
+        UIView.animate(withDuration: 0.1, animations: {
             side.alpha = 0.75
         }) { (true) in
             UIView.animate(withDuration: 0.25, animations: {
