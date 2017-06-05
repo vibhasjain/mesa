@@ -460,6 +460,7 @@
                         <outlet property="menuTable" destination="JkG-4G-kTg" id="hJy-Jt-cfE"/>
                         <outlet property="orderButtonView" destination="BaS-lg-zo4" id="k3x-2c-KmX"/>
                         <outlet property="orderCount" destination="IIB-fO-ogx" id="FGm-5e-oTD"/>
+                        <outlet property="orderTapView" destination="bKY-AM-1nV" id="JSL-FR-KPu"/>
                         <outlet property="scrollView" destination="UG6-AN-Nyg" id="jek-1H-PjJ"/>
                     </connections>
                 </viewController>

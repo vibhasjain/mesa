@@ -26,6 +26,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var itemViews : [ItemView] = []
     
+    @IBOutlet weak var orderTapView: UIView!
+    
     var currentCategory = 0
     
     @IBAction func close(_ sender: Any) {
@@ -136,6 +138,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                     
                     self.itemViews = self.createItemViews()
                     
+                    self.orderButtonView.alpha = 0
+                    
+                    self.orderTapView.alpha = 0
+
                     self.setupTable()
                     
                     self.catLabel.text = self.categoryText
@@ -143,6 +149,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                     self.setupScrollView()
                     
                     self.attributeCategories()
+                    
                     
                 }
                 
@@ -215,16 +222,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         if itemViews[currentCategory].menuIsExpanded {
             menuTable.reloadData()
-            UIView.animate(withDuration: 0.15, animations: {
+            UIView.animate(withDuration: 0.1, animations: {
                 self.menuTable.alpha = 1
             })
         }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+                
         guard scrollView.contentOffset.x != self.xScroll else { return }
         guard scrollView.contentOffset.y == self.yScroll else { return }
+        if scrollView.contentOffset.x == 0 && scrollView.contentOffset.y == 0 && self.xScroll > 100.0 { return }
+
+        print("y : \(scrollView.contentOffset.y) ,  x : \(scrollView.contentOffset.x) , lastX : \(self.xScroll)")
+
         
         self.xScroll = scrollView.contentOffset.x
         self.yScroll = scrollView.contentOffset.y
@@ -235,15 +246,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         let newDifference = CGFloat(difference/2 + 0.50)
         
         self.orderButtonView.alpha = 0
+        self.orderTapView.alpha = 0
+
         
         itemViews.forEach { (view) in
             
-            UIView.animate(withDuration: 0.15, animations: {
+            UIView.animate(withDuration: 0.1, animations: {
                 view.menuView.alpha = 0
             })
         }
         
-        UIView.animate(withDuration: 0.15) {
+        UIView.animate(withDuration: 0.1) {
             self.menuTable.alpha = 0
         }
         
@@ -261,9 +274,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         if difference == 0 {
             
+            
             itemViews.forEach { (view) in
                 
-                UIView.animate(withDuration: 0.15, animations: {
+                UIView.animate(withDuration: 0.1, animations: {
                     view.menuView.alpha = 1
                 })
             }
@@ -407,6 +421,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         UIView.animate(withDuration: 0.15, animations: {
             self.orderButtonView.alpha = 1
+            self.orderTapView.alpha = 1
         })
     }
     
@@ -414,6 +429,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         UIView.animate(withDuration: 0.15, animations: {
             self.orderButtonView.alpha = 0
+            self.orderTapView.alpha = 0
         })
     }
     

@@ -47,12 +47,6 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Sonic Ramen Funk" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIU-gf-5hU" userLabel="itemName">
-                    <rect key="frame" x="17" y="538" width="338" height="26"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1Y-TG-acl" userLabel="topTouch">
                     <rect key="frame" x="150" y="70" width="225" height="477"/>
                     <subviews>
@@ -162,18 +156,23 @@
                         <outletCollection property="gestureRecognizers" destination="2Na-Ry-cYb" appends="YES" id="FdS-DC-lkW"/>
                     </connections>
                 </view>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-nf-vun">
-                    <rect key="frame" x="67" y="269" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="KLu-nf-p0A">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Sonic Ramen Funk" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIU-gf-5hU" userLabel="itemName">
+                    <rect key="frame" x="17" y="538" width="338" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-nf-vun">
+                    <rect key="frame" x="17" y="483" width="45" height="45"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KLu-nf-p0A">
+                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymi-7J-0Ns">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="3S5-rS-vtI">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <vibrancyEffect>
@@ -183,7 +182,16 @@
                         </subviews>
                     </view>
                     <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="3rg-Lp-gIW"/>
+                        <constraint firstAttribute="height" constant="45" id="Bbh-1N-eOs"/>
+                    </constraints>
                     <blurEffect style="light"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="22.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="9kW-mi-WDP" appends="YES" id="exj-37-sr7"/>
                     </connections>
@@ -218,8 +226,11 @@
                 <constraint firstAttribute="trailing" secondItem="BFK-Jc-sXK" secondAttribute="trailing" id="mQc-n0-bx4"/>
                 <constraint firstAttribute="trailing" secondItem="B1Y-TG-acl" secondAttribute="trailing" id="okC-Ma-LDI"/>
                 <constraint firstItem="rRZ-zv-mMK" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="pVb-go-y1e"/>
+                <constraint firstAttribute="bottom" secondItem="LG8-nf-vun" secondAttribute="bottom" priority="1" constant="139" id="qD5-2L-oxk"/>
+                <constraint firstItem="WIU-gf-5hU" firstAttribute="leading" secondItem="LG8-nf-vun" secondAttribute="leading" id="qNk-V7-1pT"/>
                 <constraint firstItem="DNl-d3-qVh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="19" id="sA5-Es-g3a"/>
                 <constraint firstItem="B1Y-TG-acl" firstAttribute="top" secondItem="rRZ-zv-mMK" secondAttribute="top" id="slx-Sq-fpu"/>
+                <constraint firstItem="WIU-gf-5hU" firstAttribute="top" secondItem="LG8-nf-vun" secondAttribute="bottom" priority="998" constant="10" id="tIf-dB-wI3"/>
                 <constraint firstAttribute="trailing" secondItem="wQA-QQ-Nz0" secondAttribute="trailing" id="wTm-kN-FLV"/>
                 <constraint firstAttribute="trailing" secondItem="Chi-6U-aUJ" secondAttribute="trailing" id="xRK-mS-flb"/>
                 <constraint firstItem="Chi-6U-aUJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="yPM-30-mbn"/>
@@ -237,7 +248,11 @@
                 <outlet property="itemName" destination="WIU-gf-5hU" id="9Wy-te-Lga"/>
                 <outlet property="itemPrice" destination="usw-2V-JeA" id="bdE-J9-RzV"/>
                 <outlet property="leftTap" destination="won-bV-fKR" id="xnm-Mo-CBm"/>
+                <outlet property="menuBottom" destination="tIf-dB-wI3" id="t9e-vp-1W7"/>
+                <outlet property="menuBottomBottom" destination="qD5-2L-oxk" id="bcW-Mk-oec"/>
+                <outlet property="menuHeight" destination="Bbh-1N-eOs" id="49n-sL-GH8"/>
                 <outlet property="menuView" destination="LG8-nf-vun" id="K5l-CB-Wgc"/>
+                <outlet property="menuWidth" destination="3rg-Lp-gIW" id="JoU-1N-7Er"/>
                 <outlet property="priceButton" destination="sT7-a5-ApI" id="XV9-24-1ll"/>
                 <outlet property="priceLabel" destination="usw-2V-JeA" id="UxT-31-Toj"/>
                 <outlet property="rightTap" destination="OZg-E7-yAk" id="YT5-eZ-GYM"/>

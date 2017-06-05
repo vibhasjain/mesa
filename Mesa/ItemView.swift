@@ -33,6 +33,11 @@ class ItemView: UIView {
     @IBOutlet weak var addButtonText: UIButton!
     @IBOutlet weak var menuView: UIVisualEffectView!
     
+    @IBOutlet weak var menuBottomBottom: NSLayoutConstraint!
+    @IBOutlet weak var menuBottom: NSLayoutConstraint!
+    @IBOutlet weak var menuWidth: NSLayoutConstraint!
+    @IBOutlet weak var menuHeight: NSLayoutConstraint!
+    
     let burger = UIImageView(image: #imageLiteral(resourceName: "burgerWhite"))
     
     weak var delegate : ItemViewDelegate?
@@ -61,20 +66,21 @@ class ItemView: UIView {
         addItemToCart()
         
     }
-    
-    func resetMenuToggle() {
-        if !menuIsExpanded {
-            self.menuView.frame = CGRect(x: 15, y: self.itemName.frame.origin.y - 65, width: 45, height: 45)
-        }
-    }
-    
+
     func collapseMenu() {
         
         delegate?.showOrderButton()
-        UIView.animate(withDuration: 0.15, animations: {
-            self.menuView.frame = CGRect(x: 15, y: self.itemName.frame.origin.y - 65, width: 45, height: 45)
-            self.menuView.cornerRadius = 22.5
+        
+        self.menuWidth.constant = 45
+        self.menuHeight.constant =  45
+        self.menuBottom.constant = 10
+        self.menuBottomBottom.priority = 1
+        self.menuBottom.priority = 999
+        self.menuView.cornerRadius = 22.5
+        
+        UIView.animate(withDuration: 0.1, animations: {
             self.burger.alpha = 1
+            self.layoutIfNeeded()
         }) { (true) in
             self.menuIsExpanded = false
         }
@@ -85,13 +91,24 @@ class ItemView: UIView {
         self.menuIsExpanded = true
         self.delegate?.showMenu()
         self.delegate?.hideOrderButton()
-        UIView.animate(withDuration: 0.15, animations: {
-            self.showMenu()
+        self.showMenu()
+        UIView.animate(withDuration: 0.1, animations: {
+            self.layoutIfNeeded()
             self.burger.alpha = 0
         }) { (true) in
             
             
         }
+    }
+    
+    func showMenu() {
+        
+        self.menuWidth.constant = self.itemDescription.frame.size.width + 3
+        self.menuHeight.constant =  self.frame.height + 34
+        self.menuBottomBottom.priority = 999
+        self.menuBottom.priority = 1
+        self.menuBottomBottom.constant = -10
+        self.menuView.cornerRadius = 4
     }
     
     @IBAction func priceTAP(_ sender: Any) {
@@ -143,10 +160,6 @@ class ItemView: UIView {
         
     }
     
-    func showMenu() {
-        self.menuView.frame = CGRect(x: self.itemName.frame.origin.x, y: 43, width: self.itemDescription.frame.size.width + 3 , height: self.frame.height + 50)
-        self.menuView.cornerRadius = 4
-    }
     
     override func awakeFromNib() {
         
