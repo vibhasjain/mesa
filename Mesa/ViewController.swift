@@ -21,6 +21,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     var number = 0
     
+    var xScroll : CGFloat = 0
+    
     var itemViews : [ItemView] = []
     
     var currentCategory = 0
@@ -220,7 +222,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        guard scrollView.contentOffset.y == 0 else { return }
+        guard scrollView.contentOffset.x != self.xScroll else { return }
+        
+        self.xScroll = scrollView.contentOffset.x
         
         let relativePosition = scrollView.contentOffset.x/view.frame.width
         let primitivePosition = Int(relativePosition)
@@ -261,10 +265,15 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 })
             }
             
+            self.currentCategory = primitivePosition
+            
+            if !self.itemViews[currentCategory].menuIsExpanded {
+            
             UIView.animate(withDuration: 0.15, animations: {
                 self.orderButtonView.alpha = 1
             })
-            self.currentCategory = primitivePosition
+                
+            }
             
             showMenu()
             
@@ -389,6 +398,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         self.stringAttributed.addAttribute(NSForegroundColorAttributeName, value: UIColor.white.withAlphaComponent(1), range: NSRange.init(location: 0, length: self.categories[0].count))
         self.catLabel.attributedText = self.stringAttributed
         
+    }
+    
+    func showOrderButton() {
+        
+        UIView.animate(withDuration: 0.15, animations: {
+            self.orderButtonView.alpha = 1
+        })
+    }
+    
+    func hideOrderButton() {
+        
+        UIView.animate(withDuration: 0.15, animations: {
+            self.orderButtonView.alpha = 0
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

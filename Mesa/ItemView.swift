@@ -12,6 +12,8 @@ protocol ItemViewDelegate: class {
     
     func updateItemCount()
     func showMenu()
+    func showOrderButton()
+    func hideOrderButton()
     
 }
 
@@ -68,6 +70,7 @@ class ItemView: UIView {
     
     func collapseMenu() {
         
+        delegate?.showOrderButton()
         UIView.animate(withDuration: 0.15, animations: {
             self.menuView.frame = CGRect(x: 15, y: self.itemName.frame.origin.y - 65, width: 45, height: 45)
             self.menuView.cornerRadius = 22.5
@@ -81,8 +84,8 @@ class ItemView: UIView {
         
         self.menuIsExpanded = true
         self.delegate?.showMenu()
+        self.delegate?.hideOrderButton()
         UIView.animate(withDuration: 0.15, animations: {
-            
             self.showMenu()
             self.burger.alpha = 0
         }) { (true) in
