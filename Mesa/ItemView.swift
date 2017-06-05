@@ -50,7 +50,7 @@ class ItemView: UIView {
     var availables : [Bool] = []
     var items : [Item] = []
     var barViews : [UIView] = []
-    var menuIsExpanded = true
+    var menuIsExpanded = false
     
     @IBAction func menuTap(_ sender: Any) {
         if !menuIsExpanded {
@@ -73,7 +73,7 @@ class ItemView: UIView {
         
         self.menuWidth.constant = 45
         self.menuHeight.constant =  45
-        self.menuBottom.constant = 10
+        self.menuBottom.constant = 15
         self.menuBottomBottom.priority = 1
         self.menuBottom.priority = 999
         self.menuView.cornerRadius = 22.5
@@ -163,7 +163,6 @@ class ItemView: UIView {
     
     override func awakeFromNib() {
         
-        showMenu()
         addBurger()
         
     }
@@ -171,7 +170,7 @@ class ItemView: UIView {
     func addBurger() {
         self.menuView.addSubview(burger)
         burger.frame = CGRect(x: 12.8, y: 15, width: 19, height: 14)
-        burger.alpha = 0
+        burger.alpha = 1
     }
     
     
