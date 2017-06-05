@@ -104,10 +104,10 @@ class ItemView: UIView {
     func showMenu() {
         
         self.menuWidth.constant = self.itemDescription.frame.size.width + 3
-        self.menuHeight.constant =  self.frame.height + 34
+        self.menuHeight.constant =  self.priceButton.frame.origin.y + 20
+        self.menuBottomBottom.constant = -10
         self.menuBottomBottom.priority = 999
         self.menuBottom.priority = 1
-        self.menuBottomBottom.constant = -10
         self.menuView.cornerRadius = 4
     }
     

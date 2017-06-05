@@ -233,9 +233,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         guard scrollView.contentOffset.x != self.xScroll else { return }
         guard scrollView.contentOffset.y == self.yScroll else { return }
         if scrollView.contentOffset.x == 0 && scrollView.contentOffset.y == 0 && self.xScroll > 100.0 { return }
-
-        print("y : \(scrollView.contentOffset.y) ,  x : \(scrollView.contentOffset.x) , lastX : \(self.xScroll)")
-
         
         self.xScroll = scrollView.contentOffset.x
         self.yScroll = scrollView.contentOffset.y
