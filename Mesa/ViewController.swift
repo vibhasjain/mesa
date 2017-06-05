@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     var number = 0
     
     var xScroll : CGFloat = 0
+    var yScroll : CGFloat = 0
     
     var itemViews : [ItemView] = []
     
@@ -223,8 +224,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         guard scrollView.contentOffset.x != self.xScroll else { return }
+        guard scrollView.contentOffset.y == self.yScroll else { return }
         
         self.xScroll = scrollView.contentOffset.x
+        self.yScroll = scrollView.contentOffset.y
         
         let relativePosition = scrollView.contentOffset.x/view.frame.width
         let primitivePosition = Int(relativePosition)
@@ -233,13 +236,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.orderButtonView.alpha = 0
         
-//        itemViews.forEach { (view) in
-//            
-//            UIView.animate(withDuration: 0.15, animations: {
-//                view.menuView.alpha = 0
-//            })
-//        }
-//        
+        itemViews.forEach { (view) in
+            
+            UIView.animate(withDuration: 0.15, animations: {
+                view.menuView.alpha = 0
+            })
+        }
+        
         UIView.animate(withDuration: 0.15) {
             self.menuTable.alpha = 0
         }
@@ -258,12 +261,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         if difference == 0 {
             
-//            itemViews.forEach { (view) in
-//                
-//                UIView.animate(withDuration: 0.15, animations: {
-//                    view.menuView.alpha = 1
-//                })
-//            }
+            itemViews.forEach { (view) in
+                
+                UIView.animate(withDuration: 0.15, animations: {
+                    view.menuView.alpha = 1
+                })
+            }
             
             self.currentCategory = primitivePosition
             
