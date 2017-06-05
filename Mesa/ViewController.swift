@@ -233,13 +233,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.orderButtonView.alpha = 0
         
-        itemViews.forEach { (view) in
-            
-            UIView.animate(withDuration: 0.15, animations: {
-                view.menuView.alpha = 0
-            })
-        }
-        
+//        itemViews.forEach { (view) in
+//            
+//            UIView.animate(withDuration: 0.15, animations: {
+//                view.menuView.alpha = 0
+//            })
+//        }
+//        
         UIView.animate(withDuration: 0.15) {
             self.menuTable.alpha = 0
         }
@@ -258,12 +258,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         if difference == 0 {
             
-            itemViews.forEach { (view) in
-                
-                UIView.animate(withDuration: 0.15, animations: {
-                    view.menuView.alpha = 1
-                })
-            }
+//            itemViews.forEach { (view) in
+//                
+//                UIView.animate(withDuration: 0.15, animations: {
+//                    view.menuView.alpha = 1
+//                })
+//            }
             
             self.currentCategory = primitivePosition
             
