@@ -16,7 +16,7 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var blackDot: UIView!
     
-    var images = [ "waiter" , "pictures" , "split" ]
+    var images = [  "pictures" ,"waiter" , "split" ]
     
     @IBOutlet weak var welcomeButtonLayer: UIButton!
     
@@ -35,8 +35,8 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    var obText = ["Order from your phone at your favorite restaurants",
-                  "Beautiful pictures of everything on the menu",
+    var obText = ["Beautiful pictures of everything on the menu",
+                  "Order from your phone at your favorite restaurants",
                   "Split the cheque with your friends"]
 
     override func viewDidLoad() {
