@@ -14,6 +14,8 @@ protocol ItemViewDelegate: class {
     func showMenu()
     func showOrderButton()
     func hideOrderButton()
+    func shrinkClose()
+    func growClose()
     
 }
 
@@ -77,6 +79,7 @@ class ItemView: UIView {
         self.menuBottomBottom.priority = 1
         self.menuBottom.priority = 999
         self.menuView.cornerRadius = 22.5
+//        delegate?.growClose()
         
         UIView.animate(withDuration: 0.1, animations: {
             self.burger.alpha = 1
@@ -92,6 +95,7 @@ class ItemView: UIView {
         self.delegate?.showMenu()
         self.delegate?.hideOrderButton()
         self.showMenu()
+//        delegate?.shrinkClose()
         UIView.animate(withDuration: 0.1, animations: {
             self.layoutIfNeeded()
             self.burger.alpha = 0

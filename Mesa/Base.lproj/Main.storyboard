@@ -457,6 +457,7 @@
                     <connections>
                         <outlet property="catLabel" destination="BTr-gw-7ci" id="9ED-eH-RVB"/>
                         <outlet property="categoryConstraint" destination="ECL-av-IM4" id="hDU-UN-DHD"/>
+                        <outlet property="closeButtonHeight" destination="6Mx-40-ivE" id="1aI-dT-JHi"/>
                         <outlet property="menuTable" destination="JkG-4G-kTg" id="hJy-Jt-cfE"/>
                         <outlet property="orderButtonView" destination="BaS-lg-zo4" id="k3x-2c-KmX"/>
                         <outlet property="orderCount" destination="IIB-fO-ogx" id="FGm-5e-oTD"/>

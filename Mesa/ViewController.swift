@@ -24,6 +24,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     var xScroll : CGFloat = 0
     var yScroll : CGFloat = 0
     
+    @IBOutlet weak var closeButtonHeight: NSLayoutConstraint!
+    
     var itemViews : [ItemView] = []
     
     @IBOutlet weak var orderTapView: UIView!
@@ -36,12 +38,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
-
-    
     @IBOutlet weak var orderButtonView: UIView!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
     
     @IBOutlet weak var orderCount: UILabel!
     
@@ -137,10 +136,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 DispatchQueue.main.async {
                     
                     self.itemViews = self.createItemViews()
-                    
-                    self.orderButtonView.alpha = 0
-                    
-                    self.orderTapView.alpha = 0
 
                     self.setupTable()
                     
@@ -224,6 +219,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             menuTable.reloadData()
             UIView.animate(withDuration: 0.1, animations: {
                 self.menuTable.alpha = 1
+        
             })
         }
     }
@@ -283,9 +279,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             
             if !self.itemViews[currentCategory].menuIsExpanded {
             
-            UIView.animate(withDuration: 0.15, animations: {
-                self.orderButtonView.alpha = 1
-            })
+            showOrderButton()
                 
             }
             
@@ -428,6 +422,21 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             self.orderButtonView.alpha = 0
             self.orderTapView.alpha = 0
         })
+    }
+    
+    func shrinkClose() {
+        self.closeButtonHeight.constant = 25
+        UIView.animate(withDuration: 0.1) { 
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func growClose() {
+        
+        self.closeButtonHeight.constant = 35
+        UIView.animate(withDuration: 0.1) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
