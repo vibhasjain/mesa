@@ -146,6 +146,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                     self.attributeCategories()
                     
                     
+                    
                 }
                 
             }
@@ -182,6 +183,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 item.imageURLs.append(dish.imageURL)
                 item.prices.append(dish.price)
                 item.items.append(dish)
+                loadImage(atURL: dish.imageURL, completion:  { (fetchedImage) in })
             }
             
             item.currentItemCount = 1
