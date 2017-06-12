@@ -21,18 +21,26 @@ class LoadingVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
         
-       
+    }
+    
+    func getData() {
         
         getCategories(number: number) { (sections) in
-        
+            
             DispatchQueue.main.async {
+                
+                guard sections.count != 0 else {
+                    self.getData()
+                    return
+                }
+                
                 self.sections = sections
                 self.performSegue(withIdentifier: "showMenu", sender: self)
             }
             
         }
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,17 +48,17 @@ class LoadingVC: UIViewController {
             self.loading.alpha = 0.7
         }, completion: nil)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ViewController {
-                destination.sections = sections
+            destination.sections = sections
             
         }
     }
     
     
-
-
-   
-
+    
+    
+    
+    
 }
