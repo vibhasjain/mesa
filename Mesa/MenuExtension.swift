@@ -13,9 +13,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return itemViews[currentCategory].items.count
+        guard sections.count != 0 else { return 0 }
+        return sections[currentCategory].items.count
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -24,12 +25,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return 70
     }
     
-    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         cell.backgroundColor = UIColor.white.withAlphaComponent(0)
-        cell.update(name: itemViews[currentCategory].names[indexPath.row], details: itemViews[currentCategory].details[indexPath.row])
+        cell.update(name: sections[currentCategory].items[indexPath.row].name, details: sections[currentCategory].items[indexPath.row].details)
     
         return cell
     }

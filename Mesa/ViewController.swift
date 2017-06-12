@@ -31,10 +31,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     @IBOutlet weak var orderTapView: UIView!
     
     var currentCategory = 0
+    var currentItemCount = 0
     
     @IBAction func close(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
     
@@ -52,7 +53,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBAction func swipeDown(_ sender: Any) {
         
-        dismiss(animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
     @IBAction func topRightTap(_ sender: Any) {
@@ -98,7 +99,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         
         self.view.subviews.forEach { (view) in
-                view.fadeSelfIn()
+            view.fadeSelfIn()
             
         }
     }
@@ -129,27 +130,23 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         scrollView.delegate = self
         
-            getCategories(number: number) { (sections) in
-                                
-                self.sections = sections
-                
-                DispatchQueue.main.async {
-                    
-                    self.itemViews = self.createItemViews()
-
-                    self.setupTable()
-                    
-                    self.catLabel.text = self.categoryText
-                    
-                    self.setupScrollView()
-                    
-                    self.attributeCategories()
-                    
-                    
-                    
-                }
-                
-            }
+        
+        DispatchQueue.main.async {
+            
+            self.itemViews = self.createItemViews()
+            
+            self.setupTable()
+            
+            self.catLabel.text = self.categoryText
+            
+            self.setupScrollView()
+            
+            self.attributeCategories()
+            
+            
+        }
+        
+        
     }
     
     func setupTable() {
@@ -221,13 +218,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             menuTable.reloadData()
             UIView.animate(withDuration: 0.1, animations: {
                 self.menuTable.alpha = 1
-        
+                
             })
         }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-                
+        
         guard scrollView.contentOffset.x != self.xScroll else { return }
         guard scrollView.contentOffset.y == self.yScroll else { return }
         if scrollView.contentOffset.x == 0 && scrollView.contentOffset.y == 0 && self.xScroll > 100.0 { return }
@@ -242,7 +239,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         self.orderButtonView.alpha = 0
         self.orderTapView.alpha = 0
-
+        
         
         itemViews.forEach { (view) in
             
@@ -280,8 +277,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
             self.currentCategory = primitivePosition
             
             if !self.itemViews[currentCategory].menuIsExpanded {
-            
-            showOrderButton()
+                
+                showOrderButton()
                 
             }
             
@@ -382,7 +379,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
-
+    
     
     func updateItemCount() {
         
@@ -428,7 +425,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     func shrinkClose() {
         self.closeButtonHeight.constant = 25
-        UIView.animate(withDuration: 0.1) { 
+        UIView.animate(withDuration: 0.1) {
             self.view.layoutIfNeeded()
         }
     }
@@ -449,7 +446,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     
     
-
+    
     
 }
 

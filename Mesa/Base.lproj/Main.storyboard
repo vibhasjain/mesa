@@ -103,7 +103,7 @@
                     <connections>
                         <outlet property="tableView" destination="dEn-Vk-NDk" id="Icc-XY-TSi"/>
                         <outlet property="topNav" destination="XRF-Op-Oqr" id="so8-cf-Ux4"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showMenu" id="yJv-VZ-gAj"/>
+                        <segue destination="nKM-7s-Urp" kind="presentation" identifier="loadMenu" id="Td1-Qm-VAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUL-DB-h28" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -463,6 +463,9 @@
                         <outlet property="orderCount" destination="IIB-fO-ogx" id="FGm-5e-oTD"/>
                         <outlet property="orderTapView" destination="bKY-AM-1nV" id="JSL-FR-KPu"/>
                         <outlet property="scrollView" destination="UG6-AN-Nyg" id="jek-1H-PjJ"/>
+                        <segue destination="3de-26-SN2" kind="popoverPresentation" identifier="backHome" popoverAnchorView="UG6-AN-Nyg" id="Tpe-gz-9fO">
+                            <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -499,6 +502,48 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="220" y="20.239880059970016"/>
+        </scene>
+        <!--LoadingVC-->
+        <scene sceneID="jT9-em-Ars">
+            <objects>
+                <viewController id="nKM-7s-Urp" customClass="LoadingVC" customModule="Mesa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eZ9-by-BKY"/>
+                        <viewControllerLayoutGuide type="bottom" id="GbW-mg-tJz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NKa-0t-hcO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-CW-jrF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="7HO-CW-jrF" firstAttribute="leading" secondItem="NKa-0t-hcO" secondAttribute="leading" id="0DT-uA-blh"/>
+                            <constraint firstItem="7HO-CW-jrF" firstAttribute="top" secondItem="NKa-0t-hcO" secondAttribute="top" id="P1a-6p-KPp"/>
+                            <constraint firstAttribute="bottom" secondItem="7HO-CW-jrF" secondAttribute="bottom" id="hwM-xv-DNu"/>
+                            <constraint firstAttribute="trailing" secondItem="7HO-CW-jrF" secondAttribute="trailing" id="jDd-5w-t1D"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7LN-wM-XLM" appends="YES" id="EVI-e2-psZ"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="loading" destination="7HO-CW-jrF" id="NW2-Ee-209"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showMenu" animates="NO" id="9bQ-QJ-CW8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJU-uW-CPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="7LN-wM-XLM">
+                    <connections>
+                        <action selector="close:" destination="nKM-7s-Urp" id="Z6G-Ny-duD"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-282.39999999999998" y="749.7751124437782"/>
         </scene>
         <!--Cart View Controller-->
         <scene sceneID="fNR-CN-rgc">
@@ -731,8 +776,12 @@
         <image name="close" width="22" height="22"/>
         <image name="closeSansCircle" width="35" height="35"/>
         <image name="dunzo" width="233" height="233"/>
+        <image name="loading" width="375" height="667"/>
         <image name="logoBlackSpaced" width="155" height="152"/>
         <image name="orderIcon" width="46" height="48"/>
         <image name="search" width="155" height="152"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tpe-gz-9fO"/>
+    </inferredMetricsTieBreakers>
 </document>
