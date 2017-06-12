@@ -97,7 +97,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ViewController {
+        if let destination = segue.destination as? LoadingVC {
             if let number = sender as? Int {
                 destination.number = number
             }

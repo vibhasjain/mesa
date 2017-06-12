@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBAction func swipeDown(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "backHome", sender: self)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
     @IBAction func topRightTap(_ sender: Any) {

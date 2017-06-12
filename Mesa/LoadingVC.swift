@@ -15,19 +15,30 @@ class LoadingVC: UIViewController {
     
     @IBOutlet weak var loading: UIImageView!
     
+    @IBAction func close(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.autoreverse, .repeat], animations: { 
-            self.loading.alpha = 0.5
-        }, completion: nil)
+       
         
         getCategories(number: number) { (sections) in
         
-            self.sections = sections
-            self.performSegue(withIdentifier: "showMenu", sender: self)
+            DispatchQueue.main.async {
+                self.sections = sections
+                self.performSegue(withIdentifier: "showMenu", sender: self)
+            }
+            
         }
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1, delay: 0, options: [.autoreverse, .repeat], animations: {
+            self.loading.alpha = 0.7
+        }, completion: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
