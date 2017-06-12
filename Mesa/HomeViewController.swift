@@ -92,7 +92,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.row != 2 {
-            self.performSegue(withIdentifier: "showMenu", sender: indexPath.row)
+            self.performSegue(withIdentifier: "loadMenu", sender: indexPath.row)
         }
     }
     
@@ -100,7 +100,6 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         if let destination = segue.destination as? ViewController {
             if let number = sender as? Int {
                 destination.number = number
-                destination.cart.reset()
             }
         }
     }

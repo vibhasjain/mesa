@@ -35,6 +35,7 @@
 		337392A21EBBF4770043BE07 /* CreditCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337392A11EBBF4770043BE07 /* CreditCardFormatter.swift */; };
 		33752E7D1EBADF8000FB747B /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33752E7C1EBADF8000FB747B /* PaymentView.swift */; };
 		33752E801EBAE22B00FB747B /* PaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33752E7F1EBAE22B00FB747B /* PaymentView.xib */; };
+		337CE3231EED148B000DFFE4 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337CE3221EED148B000DFFE4 /* LoadingVC.swift */; };
 		3390CAF31ED05D5900E6CBB5 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390CAF21ED05D5900E6CBB5 /* OnboardingVC.swift */; };
 		3390CAF61ED05FAC00E6CBB5 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3390CAF51ED05FAC00E6CBB5 /* OnboardingView.xib */; };
 		3390CAF81ED05FBB00E6CBB5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390CAF71ED05FBB00E6CBB5 /* OnboardingView.swift */; };
@@ -83,6 +84,7 @@
 		337392A11EBBF4770043BE07 /* CreditCardFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardFormatter.swift; sourceTree = "<group>"; };
 		33752E7C1EBADF8000FB747B /* PaymentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		33752E7F1EBAE22B00FB747B /* PaymentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentView.xib; sourceTree = "<group>"; };
+		337CE3221EED148B000DFFE4 /* LoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
 		3390CAF21ED05D5900E6CBB5 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		3390CAF51ED05FAC00E6CBB5 /* OnboardingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		3390CAF71ED05FBB00E6CBB5 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				33C108AB1ED9B22E004965D4 /* HomeViewController.swift */,
 				33F3C96B1EAFEBEB001EF325 /* ViewController.swift */,
+				337CE3221EED148B000DFFE4 /* LoadingVC.swift */,
 				330909581EB86CF8008021D9 /* CartViewController.swift */,
 			);
 			name = "View Controllers";
@@ -454,6 +457,7 @@
 				332ED9421EE443620031CD5C /* MenuExtension.swift in Sources */,
 				3390CAFA1ED06E7A00E6CBB5 /* UILabelExenstion.swift in Sources */,
 				33F3C9721EAFEBEB001EF325 /* Mesa.xcdatamodeld in Sources */,
+				337CE3231EED148B000DFFE4 /* LoadingVC.swift in Sources */,
 				332ED93F1EE441B50031CD5C /* menuCell.swift in Sources */,
 				33752E7D1EBADF8000FB747B /* PaymentView.swift in Sources */,
 				333EC41E1EDE65EA00A2F4DD /* AccessTokens.swift in Sources */,
