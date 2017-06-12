@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard : UIStoryboard?
     
     class func isIPhone5 () -> Bool{
         return max(UIScreen.main.bounds.width, UIScreen.main.bounds.height) == 568.0
@@ -20,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
         
+        if UserDefaults.standard.bool(forKey: "onboardingHasAppeared") {
+            
+            self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+
+            
+        }
         
         return true
 

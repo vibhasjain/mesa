@@ -26,6 +26,8 @@ class HomeViewController: UIViewController  {
         super.viewDidLoad()
         self.view.disappear()
         
+        UserDefaults.standard.set(true, forKey: "onboardingHasAppeared")
+        
         tableView.register(UINib(nibName: "RestaurantCell", bundle: nil), forCellReuseIdentifier: "RestaurantCell")
         
         
