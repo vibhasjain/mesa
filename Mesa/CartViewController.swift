@@ -93,52 +93,52 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func ccButton(_ sender: Any) {
         
-        self.paymentView.resetCard()
-        self.paymentView.setBorders()
-        self.paymentView.displaySavedCard()
-        
-        UIView.animate(withDuration: animationDuration) {
-            
-            self.cartView.transform = CGAffineTransform(translationX: self.view.frame.width, y: 0)
-            self.paymentView.transform = CGAffineTransform(translationX: self.view.frame.width, y: 0)
-            
-        }
-        
-        paymentView.cardNumber.becomeFirstResponder()
+//        self.paymentView.resetCard()
+//        self.paymentView.setBorders()
+//        self.paymentView.displaySavedCard()
+//        
+//        UIView.animate(withDuration: animationDuration) {
+//            
+//            self.cartView.transform = CGAffineTransform(translationX: self.view.frame.width, y: 0)
+//            self.paymentView.transform = CGAffineTransform(translationX: self.view.frame.width, y: 0)
+//            
+//        }
+//        
+//        paymentView.cardNumber.becomeFirstResponder()
         
     }
     
     @IBAction func nextButton(_ sender: Any) {
         
-        var cartEmpty = false
-        var noCC = false
-        
-        if Cart.shared.items.count == 0 {
-            
-            cartEmpty = true
-            cartSubtitle.shake()
-            
-        }
-        
-        if CreditCard.shared.cardNumber == nil {
-            
-            noCC = true
-            ccView.shake()
-            
-        }
-        
-        if !cartEmpty && !noCC {
-            
-            UIView.animate(withDuration: animationDuration) {
-                
-                self.cartView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
-                self.seatedView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
-                
-            }
-            
-            seatedView.tableNumber.becomeFirstResponder()
-            
-        }
+//        var cartEmpty = false
+//        var noCC = false
+//        
+//        if Cart.shared.items.count == 0 {
+//            
+//            cartEmpty = true
+//            cartSubtitle.shake()
+//            
+//        }
+//        
+//        if CreditCard.shared.cardNumber == nil {
+//            
+//            noCC = true
+//            ccView.shake()
+//            
+//        }
+//        
+//        if !cartEmpty && !noCC {
+//            
+//            UIView.animate(withDuration: animationDuration) {
+//                
+//                self.cartView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+//                self.seatedView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+//                
+//            }
+//            
+//            seatedView.tableNumber.becomeFirstResponder()
+//            
+//        }
         
     }
     

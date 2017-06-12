@@ -14,7 +14,7 @@
         <!--Home View Controller-->
         <scene sceneID="pOP-U3-7aZ">
             <objects>
-                <viewController id="3de-26-SN2" customClass="HomeViewController" customModule="Mesa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="3de-26-SN2" customClass="HomeViewController" customModule="Mesa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="baX-dR-puj"/>
                         <viewControllerLayoutGuide type="bottom" id="hA0-pU-EgT"/>
