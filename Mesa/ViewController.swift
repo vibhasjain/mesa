@@ -35,6 +35,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBAction func close(_ sender: Any) {
         
+        Cart.shared.reset()
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
@@ -53,6 +54,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBAction func swipeDown(_ sender: Any) {
         
+        Cart.shared.reset()
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
