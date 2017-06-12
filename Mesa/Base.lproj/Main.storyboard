@@ -529,7 +529,7 @@
                     </view>
                     <connections>
                         <outlet property="loading" destination="7HO-CW-jrF" id="NW2-Ee-209"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showMenu" animates="NO" id="9bQ-QJ-CW8"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showMenu" animates="NO" id="9bQ-QJ-CW8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJU-uW-CPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
