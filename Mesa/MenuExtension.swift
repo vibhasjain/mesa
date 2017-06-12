@@ -13,6 +13,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        guard sections.count != 0 else { return 0 }
         return sections[currentCategory].items.count
     }
     
