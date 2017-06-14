@@ -18,6 +18,10 @@ class HomeViewController: UIViewController  {
     @IBAction func mesaButton(_ sender: Any) {
     }
     
+    @IBOutlet weak var profileButton: UIButton!
+    
+    @IBOutlet weak var searchButton: UIButton!
+    
     @IBOutlet weak var topNav: UIView!
     
     @IBAction func account(_ sender: Any) {
@@ -37,6 +41,8 @@ class HomeViewController: UIViewController  {
     
     override func viewDidAppear(_ animated: Bool) {
         self.view.fadeIn()
+        self.profileButton.alpha = 0
+        self.searchButton.alpha = 0
     }
     
     override func didReceiveMemoryWarning() {

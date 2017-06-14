@@ -101,6 +101,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profileButton" destination="aT8-mo-Pbq" id="ubn-y7-wR1"/>
+                        <outlet property="searchButton" destination="eeJ-tp-Tcg" id="D0U-h9-t21"/>
                         <outlet property="tableView" destination="dEn-Vk-NDk" id="Icc-XY-TSi"/>
                         <outlet property="topNav" destination="XRF-Op-Oqr" id="so8-cf-Ux4"/>
                         <segue destination="nKM-7s-Urp" kind="presentation" identifier="loadMenu" id="Td1-Qm-VAx"/>
