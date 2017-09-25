@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FacebookShare
 
 protocol ItemViewDelegate: class {
     
@@ -115,6 +116,11 @@ class ItemView: UIView {
         self.menuView.cornerRadius = 4
     }
     
+    func shareFacebook(_ sender: Any) {
+        var myContent = 
+        let shareDialog = ShareDialog(content: myContent)
+    }
+    
     @IBAction func priceTAP(_ sender: Any) {
         
         addItemToCart()
@@ -172,7 +178,7 @@ class ItemView: UIView {
     }
     
     func addBurger() {
-        self.menuView.addSubview(burger)
+        self.menuView.contentView.addSubview(burger)
         burger.frame = CGRect(x: 12.8, y: 15, width: 19, height: 14)
         burger.alpha = 1
     }

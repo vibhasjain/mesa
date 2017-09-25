@@ -6,6 +6,7 @@
 //  Copyright © 2015 Contentful GmbH. All rights reserved.
 //
 
+import protocol Decodable.Decodable
 import Decodable
 import Foundation
 

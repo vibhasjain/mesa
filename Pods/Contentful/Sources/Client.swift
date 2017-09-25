@@ -6,6 +6,8 @@
 //  Copyright © 2015 Contentful GmbH. All rights reserved.
 //
 
+import protocol Decodable.Decodable
+import enum Decodable.DecodingError
 import Decodable
 import Foundation
 import Interstellar

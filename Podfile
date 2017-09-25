@@ -8,4 +8,7 @@ target 'Mesa' do
     pod 'CreditCardValidator'
     pod 'Alamofire'
     pod 'KeychainSwift', '~> 8.0'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
 end
