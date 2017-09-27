@@ -42,5 +42,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>branch_key</key>
+	<dict>
+		<key>live</key>
+		<string>key_live_bdvLovXAPdI02VtswiRIsibasziYGVVZ</string>
+	</dict>
 </dict>
 </plist>

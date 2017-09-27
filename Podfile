@@ -11,4 +11,5 @@ target 'Mesa' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'FacebookShare'
+    pod 'Branch'
 end

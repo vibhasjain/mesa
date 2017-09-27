@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookCore
+import Branch
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,9 +31,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
+            // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
+            // params will be empty if no data found
+            // ... insert custom logic here ...
+            print(params as? [String: AnyObject] ?? {})
+        }
+        
         return true
 
         
+    }
+    
+    // Respond to URI scheme links
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        // pass the url to the handle deep link call
+        Branch.getInstance().application(app,
+                                         open: url,
+                                         options:options
+        )
+        
+        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
+        return true
+    }
+    
+    // Respond to Universal Links
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        // pass the url to the handle deep link call
+        Branch.getInstance().continue(userActivity)
+        
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

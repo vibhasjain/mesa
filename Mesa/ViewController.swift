@@ -10,6 +10,7 @@ import UIKit
 import Contentful
 import Interstellar
 import Alamofire
+import Branch
 
 var tooltipOpacity : CGFloat = 0
 
@@ -50,6 +51,27 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     @IBAction func orderTap(_ sender: Any) {
         
+    }
+    @IBAction func shareButton(_ sender: UIButton) {
+        let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "monster/12345")
+        branchUniversalObject.title = "Meet Mr. Squiggles"
+        branchUniversalObject.contentDescription = "Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!"
+        branchUniversalObject.imageUrl = "https://example.com/monster-pic-12345.png"
+        branchUniversalObject.addMetadataKey("userId", value: "12345")
+        branchUniversalObject.addMetadataKey("userName", value: "Josh")
+        branchUniversalObject.addMetadataKey("monsterName", value: "Mr. Squiggles")
+        
+        let linkProperties: BranchLinkProperties = BranchLinkProperties()
+        linkProperties.feature = "share"
+        linkProperties.channel = "facebook"
+        
+        branchUniversalObject.showShareSheet(with: linkProperties, andShareText: "Super amazing", from: self, completion: { (activityType, completed) in
+            if (completed) {
+                print(String(format: "Completed sharing to %@", activityType!))
+            } else {
+                print("Link sharing cancelled")
+            }
+        })
     }
     
     @IBAction func swipeDown(_ sender: Any) {

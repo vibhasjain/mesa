@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookShare
+import Branch
 
 protocol ItemViewDelegate: class {
     
@@ -114,11 +115,6 @@ class ItemView: UIView {
         self.menuBottomBottom.priority = 999
         self.menuBottom.priority = 1
         self.menuView.cornerRadius = 4
-    }
-    
-    func shareFacebook(_ sender: Any) {
-        var myContent = 
-        let shareDialog = ShareDialog(content: myContent)
     }
     
     @IBAction func priceTAP(_ sender: Any) {
