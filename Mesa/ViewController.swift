@@ -54,8 +54,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     }
     @IBAction func shareButton(_ sender: UIButton) {
         let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "monster/12345")
-        branchUniversalObject.title = "Meet Mr. Squiggles"
-        branchUniversalObject.contentDescription = "Your friend Josh has invited you to meet his awesome monster, Mr. Squiggles!"
+        branchUniversalObject.title = "MESA - Visualize your food"
+        branchUniversalObject.contentDescription = "Check out this amazing dish I tried out!"
         branchUniversalObject.imageUrl = "https://example.com/monster-pic-12345.png"
         branchUniversalObject.addMetadataKey("userId", value: "12345")
         branchUniversalObject.addMetadataKey("userName", value: "Josh")
