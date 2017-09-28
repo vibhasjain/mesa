@@ -119,7 +119,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //        animateTooltip()
+//                animateTooltip()
         
         
         self.view.subviews.forEach { (view) in
@@ -136,12 +136,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
         //        if !UserDefaults.standard.bool(forKey: "tooltipHasAppeared") {
         
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-        //            UIView.animate(withDuration: 0.5, animations: {
-        //                self.tapTooltip.alpha = 1
-        //            })
-        //
-        //        })
+//                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+//                    UIView.animate(withDuration: 0.5, animations: {
+//                        self.tapTooltip.alpha = 1
+//                    })
+//        
+//                })
         
         
         //            UserDefaults.standard.set(true, forKey: "tooltipHasAppeared")
