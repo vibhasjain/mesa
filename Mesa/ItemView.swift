@@ -18,7 +18,7 @@ protocol ItemViewDelegate: class {
     func hideOrderButton()
     func shrinkClose()
     func growClose()
-    
+    func shareButtonPress(name: String)
 }
 
 class ItemView: UIView {
@@ -62,6 +62,9 @@ class ItemView: UIView {
         }
     }
     
+    @IBAction func shareButton(_ sender: UIButton) {
+        delegate?.shareButtonPress(name: names[currentItemCount])
+    }
     
     var currentItemCount = 1
     

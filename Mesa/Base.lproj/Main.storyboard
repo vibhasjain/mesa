@@ -422,14 +422,6 @@
                                     <outletCollection property="gestureRecognizers" destination="oRJ-aa-PWa" appends="YES" id="uUA-kn-aVF"/>
                                 </connections>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQI-mA-aFX">
-                                <rect key="frame" x="325" y="35" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Share"/>
-                                <connections>
-                                    <action selector="shareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XNH-wc-SVO"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>

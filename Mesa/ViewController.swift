@@ -52,10 +52,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
     @IBAction func orderTap(_ sender: Any) {
         
     }
-    @IBAction func shareButton(_ sender: UIButton) {
+    
+    func shareButtonPress(name: String) {
         let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "monster/12345")
         branchUniversalObject.title = "MESA - Visualize your food"
-        branchUniversalObject.contentDescription = "Check out this amazing dish I tried out!"
+        branchUniversalObject.contentDescription = "Check out this amazing " + name + " I tried out!"
         branchUniversalObject.imageUrl = "https://example.com/monster-pic-12345.png"
         branchUniversalObject.addMetadataKey("userId", value: "12345")
         branchUniversalObject.addMetadataKey("userName", value: "Josh")
