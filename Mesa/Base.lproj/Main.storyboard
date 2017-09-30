@@ -796,6 +796,24 @@
             </objects>
             <point key="canvasLocation" x="1136.8" y="19.340329835082461"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="brw-c3-Rpf">
+            <objects>
+                <tableViewController id="mhw-Yc-O25" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="27w-EE-oUA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="mhw-Yc-O25" id="Kvc-fU-YeJ"/>
+                            <outlet property="delegate" destination="mhw-Yc-O25" id="Ls1-FH-Fc1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ddi-4k-FHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1770" y="18"/>
+        </scene>
     </scenes>
     <resources>
         <image name="account" width="155" height="152"/>
