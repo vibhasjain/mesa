@@ -634,7 +634,7 @@
 				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesaa;
+				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -653,7 +653,7 @@
 				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesaa;
+				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
