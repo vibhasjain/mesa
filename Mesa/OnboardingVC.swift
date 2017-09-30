@@ -19,6 +19,7 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     var images = ["pictures" ,"waiter" , "split" ]
     
     @IBOutlet weak var welcomeButtonLayer: UIButton!
+    @IBOutlet weak var linkedinButtonLayer: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -29,6 +30,35 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
         UIView.animate(withDuration: 0.75, animations: {
             self.dots.alpha = 0
             self.welcomeButtonLayer.alpha = 0
+            self.linkedinButtonLayer.alpha = 0
+            self.scrollView.alpha = 0
+        }) { (true) in
+            self.performSegue(withIdentifier: "welcome", sender: Any?.self)
+        }
+    }
+    
+    @IBAction func linkedinButton(_ sender: UIButton) {
+        LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { (returnState) -> Void in
+            print("success called!")
+            let session = LISDKSessionManager.sharedInstance().session
+        }) { (error) -> Void in
+            print("Error: \(error)")
+        }
+        
+        let url = "https://api.linkedin.com/v1/people/~"
+        
+        if LISDKSessionManager.hasValidSession() {
+            LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) -> Void in
+                print(response)
+            }, error: { (error) -> Void in
+                print(error)
+            })
+        }
+        
+        UIView.animate(withDuration: 0.75, animations: {
+            self.dots.alpha = 0
+            self.welcomeButtonLayer.alpha = 0
+            self.linkedinButtonLayer.alpha = 0
             self.scrollView.alpha = 0
         }) { (true) in
             self.performSegue(withIdentifier: "welcome", sender: Any?.self)
@@ -42,7 +72,9 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         welcomeButtonLayer.alpha = 0
+        linkedinButtonLayer.alpha = 0
         welcomeButtonLayer.isEnabled = false
+        linkedinButtonLayer.isEnabled = false
         scrollView.delegate = self
         setupScrollView()
 
@@ -86,9 +118,11 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
             
             UIView.animate(withDuration: 0.3, animations: { 
                 self.welcomeButtonLayer.alpha = 1
+                self.linkedinButtonLayer.alpha = 1
             })
             
             self.welcomeButtonLayer.isEnabled = true
+            self.linkedinButtonLayer.isEnabled = true
         }
     }
 

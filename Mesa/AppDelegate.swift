@@ -70,6 +70,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // 
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if LISDKCallbackHandler.shouldHandle(url) {
+            return LISDKCallbackHandler.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        }
+        return true
+    }
+    
     // Respond to Universal Links
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         // pass the url to the handle deep link call

@@ -55,6 +55,7 @@
 		C9ED3B08902892C9F43C25F1 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D996A11F8C1B59FB988EABF6 /* BuddyBuildSDK.framework */; };
 		CD5E06584BEFEF909EFD44E3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83FAD6F27F2C476AA19BE16 /* CoreText.framework */; };
 		E3223AF0AA07BD1863439230 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BCB8C4037A390FA0D3C2C9 /* SystemConfiguration.framework */; };
+		F9190C2D1F804D9E00885A6D /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9190C2C1F804D9E00885A6D /* linkedin-sdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,8 @@
 		E43AF26DD719B48CC37070C5 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		E742E9B8CCE1488CA66CB11A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F61B5D214513B036CA24F288 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F9190C2B1F804AB000885A6D /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "linkedin-sdk.framework"; path = "../../../Downloads/li-ios-sdk-1/linkedin-sdk.framework"; sourceTree = "<group>"; };
+		F9190C2C1F804D9E00885A6D /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9190C2D1F804D9E00885A6D /* linkedin-sdk.framework in Frameworks */,
 				01CDBEE5A4D64ED24407D0FF /* Pods_Mesa.framework in Frameworks */,
 				C9ED3B08902892C9F43C25F1 /* BuddyBuildSDK.framework in Frameworks */,
 				7AAA9649A8AD6E6B08B5F366 /* AssetsLibrary.framework in Frameworks */,
@@ -290,7 +294,9 @@
 		5965554ECB7D3711CDA0826E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9190C2C1F804D9E00885A6D /* linkedin-sdk.framework */,
 				63B0F6DF838E6942B995B365 /* Pods_Mesa.framework */,
+				F9190C2B1F804AB000885A6D /* linkedin-sdk.framework */,
 				D996A11F8C1B59FB988EABF6 /* BuddyBuildSDK.framework */,
 				F61B5D214513B036CA24F288 /* AssetsLibrary.framework */,
 				A83FAD6F27F2C476AA19BE16 /* CoreText.framework */,
@@ -634,7 +640,7 @@
 				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
+				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -653,7 +659,7 @@
 				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
+				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
