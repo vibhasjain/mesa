@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // If the key 'pictureId' is present in the deep link dictionary
             if error == nil && params!["+clicked_branch_link"] != nil && params!["pictureId"] != nil {
 //                guard let data = params as? [String: AnyObject] else { return }
+//                self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "")
 //                data["itemID"]
                 print("Hello")
                 print(params as? [String: AnyObject] ?? {})
