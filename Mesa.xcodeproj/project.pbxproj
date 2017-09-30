@@ -348,7 +348,7 @@
 				TargetAttributes = {
 					33F3C9651EAFEBEB001EF325 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 44PY6HEEAQ;
+						DevelopmentTeam = V6JEA29ARM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -627,14 +627,14 @@
 			baseConfigurationReference = 368EA540EDFDB3E3DA4C39F5 /* Pods-Mesa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44PY6HEEAQ;
+				DEVELOPMENT_TEAM = V6JEA29ARM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
+				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -646,14 +646,14 @@
 			baseConfigurationReference = 4762FE7E7EC4C4E7DE0A2C3F /* Pods-Mesa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44PY6HEEAQ;
+				DEVELOPMENT_TEAM = V6JEA29ARM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Mesa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesa;
+				PRODUCT_BUNDLE_IDENTIFIER = PZRT.Mesaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

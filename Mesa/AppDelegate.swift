@@ -31,12 +31,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
-            // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
-            // params will be empty if no data found
-            // ... insert custom logic here ...
-            print(params as? [String: AnyObject] ?? {})
-        }
+//        Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
+//            // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
+//            // params will be empty if no data found
+//            // ... insert custom logic here ...
+//            print(params as? [String: AnyObject] ?? {})
+//        }
+        
+        let branch: Branch = Branch.getInstance()
+        branch.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: {params, error in
+            // If the key 'pictureId' is present in the deep link dictionary
+            if error == nil && params!["+clicked_branch_link"] != nil && params!["pictureId"] != nil {
+//                guard let data = params as? [String: AnyObject] else { return }
+//                data["itemID"]
+                print("Hello")
+                print(params as? [String: AnyObject] ?? {})
+                // load the view to show the picture
+            } else {
+                // load your normal view
+            }
+        })
         
         return true
 

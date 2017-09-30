@@ -53,20 +53,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         
     }
     
-    func shareButtonPress(name: String) {
+    func shareButtonPress(name: String, itemID: String, imageURL: URL) {
         let branchUniversalObject: BranchUniversalObject = BranchUniversalObject(canonicalIdentifier: "monster/12345")
         branchUniversalObject.title = "MESA - Visualize your food"
         branchUniversalObject.contentDescription = "Check out this amazing " + name + " I tried out!"
-        branchUniversalObject.imageUrl = "https://example.com/monster-pic-12345.png"
-        branchUniversalObject.addMetadataKey("userId", value: "12345")
-        branchUniversalObject.addMetadataKey("userName", value: "Josh")
-        branchUniversalObject.addMetadataKey("monsterName", value: "Mr. Squiggles")
+        branchUniversalObject.imageUrl = imageURL.absoluteString
+        branchUniversalObject.addMetadataKey("itemID", value: itemID)
+//        branchUniversalObject.addMetadataKey("itemID", value: "Jo sh")
+//        branchUniversalObject.addMetadataKey("monsterName", value: "Mr. Squiggles")
         
         let linkProperties: BranchLinkProperties = BranchLinkProperties()
         linkProperties.feature = "share"
         linkProperties.channel = "facebook"
         
-        branchUniversalObject.showShareSheet(with: linkProperties, andShareText: "Super amazing", from: self, completion: { (activityType, completed) in
+        branchUniversalObject.showShareSheet(with: linkProperties, andShareText: "Check out this amazing " + name + " I tried out!", from: self, completion: { (activityType, completed) in
             if (completed) {
                 print(String(format: "Completed sharing to %@", activityType!))
             } else {
@@ -182,7 +182,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         menuTable.reloadData()
     }
     
-    func createItemViews() -> [ItemView] {
+    func createItemViews(itemID: Int = 1) -> [ItemView] {
         
         var itemViews : [ItemView] = []
         
@@ -208,7 +208,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 loadImage(atURL: dish.imageURL, completion:  { (fetchedImage) in  })
             }
             
-            item.currentItemCount = 1
+            item.currentItemCount = itemID
             //            item.generateBars(screenWidth : self.view.frame.width, screenHeight : self.view.frame.height)
             item.displayItem()
             itemViews.append(item)
