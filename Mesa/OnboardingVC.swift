@@ -24,7 +24,9 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var linkedinButtonLayer: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let nextVC = segue.destination as? HomeViewController {
+            nextVC.user_name = self.user_name
+        }
     }
     
     @IBAction func welcomeButton(_ sender: Any) {
@@ -39,34 +41,29 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "welcome" {
-            if let nextVC = segue.destination as? HomeViewController {
-                nextVC.user_name = user_name
-            }
-        }
-    }
-    
     @IBAction func linkedinButton(_ sender: UIButton) {
         LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { (returnState) -> Void in
             print("success called!")
-            let session = LISDKSessionManager.sharedInstance().session
-        }) { (error) -> Void in
-            print("Error:")
-        }
-        
-        let url = "https://api.linkedin.com/v1/people/~"
-        
-        if LISDKSessionManager.hasValidSession() {
-            LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) -> Void in
-                let data = response?.data.data(using: .utf8)
-                let linkedinResponse = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-                print(linkedinResponse!)
-                self.user_name = linkedinResponse!["firstName"] as! String
-            }, error: { (error) -> Void in
-                print("Error")
-            })
-        }
+            print(LISDKSessionManager.sharedInstance().session)
+            
+            let url = "https://api.linkedin.com/v1/people/~"
+            
+            if LISDKSessionManager.hasValidSession() {
+                LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) -> Void in
+                    let data = response?.data.data(using: .utf8)
+                    let linkedinResponse = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                    print("response is: ")
+                    print(linkedinResponse!)
+                    self.user_name = linkedinResponse!["firstName"] as! String
+                }, error: { (error) -> Void in
+                    print(error)
+                })
+            }
+            
+            
+            }) { (error) -> Void in
+                print("Error: \(error)")
+            }
         
         UIView.animate(withDuration: 0.75, animations: {
             self.dots.alpha = 0
@@ -77,6 +74,51 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
             self.performSegue(withIdentifier: "welcome", sender: Any?.self)
         }
     }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        print("Hello")
+//        LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { (returnState) -> Void in
+//            print("success called!")
+//            let session = LISDKSessionManager.sharedInstance().session
+//        }) { (error) -> Void in
+//            print("Error:")
+//        }
+//
+//        let url = "https://api.linkedin.com/v1/people/~"
+//
+//        if LISDKSessionManager.hasValidSession() {
+//            print("In valid session")
+//            LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) -> Void in
+//                let data = response?.data.data(using: .utf8)
+//                let linkedinResponse = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+//                print("response is: ")
+//                print(linkedinResponse!)
+//                self.user_name = linkedinResponse!["firstName"] as! String
+//            }, error: { (error) -> Void in
+//                print("Error")
+//            })
+//        }
+//
+//        UIView.animate(withDuration: 0.75, animations: {
+//            self.dots.alpha = 0
+//            self.welcomeButtonLayer.alpha = 0
+//            self.linkedinButtonLayer.alpha = 0
+//            self.scrollView.alpha = 0
+//        }) { (true) in
+//            self.performSegue(withIdentifier: "welcome", sender: Any?.self)
+//        }
+//    }
     
     var obText = ["Beautiful pictures of everything on the menu",
                   "Order from your phone at your favorite restaurants",

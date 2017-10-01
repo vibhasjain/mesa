@@ -24,12 +24,13 @@ class HomeViewController: UIViewController  {
     
     @IBOutlet weak var topNav: UIView!
     
-    var user_name : String = "Guest"
+    var user_name : String = ""
     
     @IBAction func account(_ sender: Any) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.profileButton.setTitle(user_name, for: .normal)
         self.view.disappear()
         
         UserDefaults.standard.set(true, forKey: "onboardingHasAppeared")
@@ -43,7 +44,6 @@ class HomeViewController: UIViewController  {
     
     override func viewDidAppear(_ animated: Bool) {
         self.view.fadeIn()
-        self.profileButton.setTitle(user_name, for: .normal)
         self.searchButton.alpha = 0
     }
     

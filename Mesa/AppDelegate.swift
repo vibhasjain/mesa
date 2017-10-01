@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var storyboard : UIStoryboard?
+    var myVC : UIViewController?
     
     class func isIPhone5 () -> Bool{
         return max(UIScreen.main.bounds.width, UIScreen.main.bounds.height) == 568.0
@@ -47,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                data["itemID"]
                 print("Hello")
                 print(params as? [String: AnyObject] ?? {})
+                let myVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                myVC.currentItemCount = (params!["itemID"] as? Int)!
                 // load the view to show the picture
             } else {
                 // load your normal view
