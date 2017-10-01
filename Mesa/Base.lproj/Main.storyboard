@@ -37,11 +37,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-mo-Pbq">
-                                        <rect key="frame" x="10" y="5" width="40.5" height="40"/>
+                                        <rect key="frame" x="10" y="5" width="88" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="aT8-mo-Pbq" secondAttribute="height" multiplier="1:1" id="q3y-KR-sgN"/>
+                                            <constraint firstAttribute="width" secondItem="aT8-mo-Pbq" secondAttribute="height" multiplier="1:1" constant="48" id="q3y-KR-sgN"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="account"/>
+                                        <state key="normal" title="Guest">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="account:" destination="3de-26-SN2" eventType="touchUpInside" id="ghv-zH-g1X"/>
                                         </connections>
@@ -110,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUL-DB-h28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-830" y="19"/>
+            <point key="canvasLocation" x="-831.20000000000005" y="18.440779610194905"/>
         </scene>
         <!--OnboardingVC-->
         <scene sceneID="9f1-Iq-eSY">
@@ -816,7 +818,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account" width="155" height="152"/>
         <image name="arrow" width="515" height="515"/>
         <image name="card" width="86" height="56"/>
         <image name="close" width="22" height="22"/>

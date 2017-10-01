@@ -24,6 +24,8 @@ class HomeViewController: UIViewController  {
     
     @IBOutlet weak var topNav: UIView!
     
+    var user_name : String = "Guest"
+    
     @IBAction func account(_ sender: Any) {
     }
     override func viewDidLoad() {
@@ -41,7 +43,7 @@ class HomeViewController: UIViewController  {
     
     override func viewDidAppear(_ animated: Bool) {
         self.view.fadeIn()
-        self.profileButton.alpha = 0
+        self.profileButton.setTitle(user_name, for: .normal)
         self.searchButton.alpha = 0
     }
     

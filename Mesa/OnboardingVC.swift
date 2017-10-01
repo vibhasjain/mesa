@@ -18,6 +18,8 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
     
     var images = ["pictures" ,"waiter" , "split" ]
     
+    var user_name = "Guest"
+    
     @IBOutlet weak var welcomeButtonLayer: UIButton!
     @IBOutlet weak var linkedinButtonLayer: UIButton!
     
@@ -37,21 +39,31 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "welcome" {
+            if let nextVC = segue.destination as? HomeViewController {
+                nextVC.user_name = user_name
+            }
+        }
+    }
+    
     @IBAction func linkedinButton(_ sender: UIButton) {
         LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { (returnState) -> Void in
             print("success called!")
             let session = LISDKSessionManager.sharedInstance().session
         }) { (error) -> Void in
-            print("Error: \(error)")
+            print("Error:")
         }
         
         let url = "https://api.linkedin.com/v1/people/~"
         
         if LISDKSessionManager.hasValidSession() {
             LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) -> Void in
-                print(response)
+                let data = response?.data.data(using: .utf8)
+                let linkedinResponse = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                self.user_name = linkedinResponse!["firstName"] as! String
             }, error: { (error) -> Void in
-                print(error)
+                print("Error")
             })
         }
         
