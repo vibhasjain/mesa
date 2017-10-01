@@ -61,6 +61,7 @@ class OnboardingVC: UIViewController, UIScrollViewDelegate {
             LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) -> Void in
                 let data = response?.data.data(using: .utf8)
                 let linkedinResponse = try? JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                print(linkedinResponse!)
                 self.user_name = linkedinResponse!["firstName"] as! String
             }, error: { (error) -> Void in
                 print("Error")
