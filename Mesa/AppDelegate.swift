@@ -24,13 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
         
-        if UserDefaults.standard.bool(forKey: "onboardingHasAppeared") {
-            
-            self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
-
-            
-        }
+//        if UserDefaults.standard.bool(forKey: "onboardingHasAppeared") {
+//            
+//            self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+//
+//            
+//        }
         
 //        Branch.getInstance().initSession(launchOptions: launchOptions) { params, error in
 //            // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
