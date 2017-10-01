@@ -55,6 +55,7 @@ class ItemView: UIView {
     var items : [Item] = []
     var barViews : [UIView] = []
     var menuIsExpanded = false
+    var sales : [Int] = []
     
     @IBAction func menuTap(_ sender: Any) {
         if !menuIsExpanded {
@@ -62,6 +63,7 @@ class ItemView: UIView {
         }
     }
     
+    @IBOutlet weak var fireLabel: UILabel!
     @IBAction func shareButton(_ sender: UIButton) {
         delegate?.shareButtonPress(name: names[currentItemCount-1], itemID: ids[currentItemCount], imageURL: imageURLs[currentItemCount-1])
     }
@@ -218,6 +220,11 @@ class ItemView: UIView {
     
     func displayItem()  {
         
+        fireLabel.isHidden = true
+        if (currentItemCount == 1){
+            fireLabel.text = "\(sales[currentItemCount-1]) ⚡️⚡️"
+            fireLabel.isHidden = false
+        }
         
         itemName.text = names[currentItemCount-1]
         itemDescription.text = details[currentItemCount-1]

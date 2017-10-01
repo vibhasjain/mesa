@@ -17,8 +17,9 @@ class Item {
     var price : Double
     var available : Bool
     var thumbURL : URL
+    var sale : Int
     
-    init(id: String, name : String, imageURL : URL, details : String, price: Double, available : Bool, thumbURL : URL) {
+    init(id: String, name : String, imageURL : URL, details : String, price: Double, available : Bool, thumbURL : URL, sale: Int) {
         
         self.name = name
         self.imageURL = imageURL
@@ -27,6 +28,7 @@ class Item {
         self.available = available
         self.id = id
         self.thumbURL = thumbURL
+        self.sale = sale 
     }
     
 }

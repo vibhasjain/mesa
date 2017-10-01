@@ -204,6 +204,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
                 item.details.append(dish.details)
                 item.imageURLs.append(dish.imageURL)
                 item.prices.append(dish.price)
+                item.sales.append(dish.sale)
                 item.items.append(dish)
                 loadImage(atURL: dish.imageURL, completion:  { (fetchedImage) in  })
             }

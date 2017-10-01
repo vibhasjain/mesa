@@ -271,9 +271,11 @@ func getItemsFromEntries ( entries : [Entry] ) -> [Item] {
 
         guard let available = item.fields["available"] as? Bool else { return items  }
         
+        guard let sale = item.fields["salesToday"] as? Int else { return items  }
+        
         let id = item.identifier
         
-        let newItem = Item(id: id, name: name, imageURL: imageURL, details: details, price: price, available: available, thumbURL : thumbURL)
+        let newItem = Item(id: id, name: name, imageURL: imageURL, details: details, price: price, available: available, thumbURL : thumbURL, sale: sale)
         
         items.append(newItem)
         

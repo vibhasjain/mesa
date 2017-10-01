@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -162,6 +162,12 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-u5-bMp">
+                    <rect key="frame" x="308" y="538.5" width="50" height="25.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gM-0q-fTh">
                     <rect key="frame" x="82" y="480" width="40" height="40"/>
                     <constraints>
@@ -220,12 +226,14 @@
                 <constraint firstAttribute="trailing" secondItem="6db-6p-dd5" secondAttribute="trailing" id="JLQ-pk-k1F"/>
                 <constraint firstAttribute="bottom" secondItem="BFK-Jc-sXK" secondAttribute="bottom" id="K57-e0-7hn"/>
                 <constraint firstItem="Chi-6U-aUJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KCz-Qf-3JO"/>
+                <constraint firstItem="DNl-d3-qVh" firstAttribute="top" secondItem="c7I-u5-bMp" secondAttribute="bottom" constant="10" id="LXm-Wh-FZ0"/>
                 <constraint firstItem="BFK-Jc-sXK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Nia-vE-Suk"/>
                 <constraint firstItem="BFK-Jc-sXK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="O6q-Mq-SqJ"/>
                 <constraint firstAttribute="bottom" secondItem="sT7-a5-ApI" secondAttribute="bottom" constant="25" id="OHQ-nV-z1J"/>
                 <constraint firstItem="B1Y-TG-acl" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="Q2S-ur-lrt"/>
                 <constraint firstItem="6db-6p-dd5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RGA-Gk-3d3"/>
                 <constraint firstItem="wQA-QQ-Nz0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="T3f-Lm-ogT"/>
+                <constraint firstAttribute="trailing" secondItem="c7I-u5-bMp" secondAttribute="trailing" constant="17" id="Tyg-oW-fky"/>
                 <constraint firstItem="WIU-gf-5hU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="W3B-NT-MNk"/>
                 <constraint firstItem="B1Y-TG-acl" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" constant="-190" id="Wgu-sV-RhJ"/>
                 <constraint firstItem="Chi-6U-aUJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xam-tA-weA"/>
@@ -255,6 +263,7 @@
             <connections>
                 <outlet property="addButtonText" destination="Vap-n3-lWl" id="qOk-S8-YMV"/>
                 <outlet property="addLine" destination="znH-T8-FwP" id="fLW-3b-uPD"/>
+                <outlet property="fireLabel" destination="c7I-u5-bMp" id="a2E-Dt-WOd"/>
                 <outlet property="itemCount" destination="Chi-6U-aUJ" id="pig-Uc-roU"/>
                 <outlet property="itemDescription" destination="DNl-d3-qVh" id="cqt-Vn-Xn9"/>
                 <outlet property="itemImage" destination="BFK-Jc-sXK" id="VoK-or-d0y"/>
