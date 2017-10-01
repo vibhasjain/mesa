@@ -59,8 +59,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, ItemViewDelegate, 
         branchUniversalObject.contentDescription = "Check out this amazing " + name + " I tried out!"
         branchUniversalObject.imageUrl = imageURL.absoluteString
         branchUniversalObject.addMetadataKey("itemID", value: itemID)
-//        branchUniversalObject.addMetadataKey("itemID", value: "Jo sh")
-//        branchUniversalObject.addMetadataKey("monsterName", value: "Mr. Squiggles")
         
         let linkProperties: BranchLinkProperties = BranchLinkProperties()
         linkProperties.feature = "share"
